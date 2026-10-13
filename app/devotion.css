@@ -1,0 +1,73 @@
+/* Devotion layer: the opening rite, the diya, saree transitions and the zari thread. Loaded after live.css. */
+
+/* Diya: clay bowl, wick and a living flame. Size with --diya. */
+.diya{--d:var(--diya,110px);position:relative;width:var(--d);height:var(--d)}
+.diya>span{position:absolute;display:block}
+.diya-glow{left:50%;top:40%;width:300%;aspect-ratio:1;margin:-150% 0 0 -150%;pointer-events:none}
+.diya-glow i{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle,#ffd98a70 0%,#ffb04a2a 28%,transparent 62%);animation:diya-glow 2.4s ease-in-out infinite}
+.diya-bowl{left:6%;right:6%;bottom:10%;height:30%;border-radius:8% 8% 50% 50%/14% 14% 86% 86%;background:radial-gradient(ellipse at 32% 18%,#f0b06a 0%,#c06a2c 34%,#7d3814 70%,#43190a 100%);box-shadow:inset 0 -5px 9px #2a0e0499,0 10px 18px -6px #0000008c}
+.diya-rim{left:6%;right:6%;bottom:34%;height:12%;border-radius:50%;background:radial-gradient(ellipse at 50% 55%,#3b1a08 0 45%,#7a3d16 58%,#e7a85c 76%,#a35a22 100%)}
+.diya-wick{left:50%;bottom:39%;width:5%;height:10%;margin-left:-2.5%;border-radius:40% 40% 2px 2px;background:linear-gradient(#1c120c,#6d4a30)}
+.diya-flame{left:50%;bottom:46%;width:20%;height:42%;margin-left:-10%;transform-origin:50% 100%;filter:drop-shadow(0 0 6px #ffb347) drop-shadow(0 0 16px #ff7a1a99)}
+.diya-fire{position:absolute;inset:0;transform-origin:50% 100%;animation:diya-flicker 1.7s ease-in-out infinite}
+.diya-fire:before{content:'';position:absolute;left:0;right:0;bottom:22%;aspect-ratio:1;border-radius:50% 0 50% 50%;background:radial-gradient(circle at 36% 64%,#fffdf2 0%,#fff1a6 22%,#ffc23a 46%,#ff7b12 74%,#ff5a00 100%);transform:scaleY(1.65) rotate(-45deg)}
+.diya-fire i{position:absolute;left:36%;right:36%;bottom:4%;height:24%;border-radius:50%;background:radial-gradient(ellipse at 50% 70%,#a8ccff 0%,#5a8dff66 50%,transparent 72%)}
+.intro-cel-lamp{--diya:94px;cursor:pointer}.intro-cel-lamp:before{display:none}
+.spark{position:absolute;left:0;top:0;width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;background:#fff1c4;box-shadow:0 0 8px 3px #ffb347,0 0 18px 6px #ff7a1a66;pointer-events:none;z-index:7}
+.intro-dance-bottom{pointer-events:none}.intro-dance-bottom a{pointer-events:auto}
+.spark-ring{position:absolute;left:0;top:0;width:60px;height:60px;margin:-30px 0 0 -30px;border-radius:50%;border:1.5px solid #ffd27a;box-shadow:0 0 14px #ffb347aa;pointer-events:none;z-index:7}
+
+/* Opening rite: diya, aarti ring of fire, Maa Durga, then the ring opens onto the site. */
+html{scrollbar-gutter:stable}html.rite-active{overflow:hidden}
+.rite{--S:min(62vmin,480px);position:fixed;inset:0;z-index:200;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(72px,11vh,110px);background:radial-gradient(ellipse at 50% 44%,#2b0f07 0%,#140704 50%,#070302 100%);color:#f7e7c6;-webkit-mask-image:radial-gradient(circle at var(--hx,50%) var(--hy,50%),transparent var(--hole,-8vmax),#000 calc(var(--hole,-8vmax) + 7vmax));mask-image:radial-gradient(circle at var(--hx,50%) var(--hy,50%),transparent var(--hole,-8vmax),#000 calc(var(--hole,-8vmax) + 7vmax));animation:rite-failsafe .8s 9s forwards}
+.rite:before{content:'';position:absolute;inset:0;background-image:var(--grain);background-size:240px;opacity:.18;mix-blend-mode:overlay;pointer-events:none}
+.rite-stage{position:relative;width:var(--S);height:var(--S);flex:none}
+.rite-light{position:absolute;inset:-28%;border-radius:50%;background:radial-gradient(circle,#ffcb6e3d 0%,#ff9a3a17 35%,transparent 65%);opacity:0}
+.rite-durga{position:absolute;inset:9%;border-radius:50%;overflow:hidden;opacity:0;background:radial-gradient(circle at 50% 42%,#ffe0a0 0%,#f2a64a 38%,#8c3e12 78%);-webkit-mask-image:radial-gradient(circle,#000 62%,transparent 71%);mask-image:radial-gradient(circle,#000 62%,transparent 71%)}
+.rite-durga img{width:100%;height:100%;object-fit:cover;object-position:50% 8%}
+.rite-ring{position:absolute;inset:0;width:100%;height:100%;overflow:visible;opacity:0}
+.rite-guide{fill:none;stroke:#c9973f2e;stroke-width:.8}
+.rite-trail{fill:none;stroke:url(#rite-fire);stroke-width:2.6;stroke-linecap:round;filter:drop-shadow(0 0 4px #ffb347) drop-shadow(0 0 12px #ff7a1a)}
+.rite-spark{fill:#fff4cf;filter:drop-shadow(0 0 6px #ffd27a) drop-shadow(0 0 16px #ff8a1c)}
+.rite-flames{position:absolute;inset:0;pointer-events:none}
+.rite-flames b{position:absolute;left:50%;top:50%;width:0;height:0;transform:rotate(var(--a)) translateY(calc(var(--S) * -.45))}
+.rite-flames i{position:absolute;left:-5px;top:-17px;width:10px;height:17px;display:block;opacity:0}
+.rite-flames i:before{content:'';position:absolute;inset:0;border-radius:50% 50% 45% 45%/65% 65% 35% 35%;background:radial-gradient(ellipse at 50% 80%,#fffbe6 0%,#ffd45a 35%,#ff8a1c 70%,transparent 76%);filter:drop-shadow(0 0 4px #ffae3c);transform-origin:50% 100%;animation:ring-flicker 1.1s ease-in-out infinite alternate}
+.rite-flames b:nth-child(3n) i:before{animation-duration:.8s}.rite-flames b:nth-child(4n+1) i:before{animation-delay:-.45s}
+.rite-diya{--diya:clamp(84px,13vmin,118px);position:absolute;left:50%;top:50%;translate:-50% -60%;animation:rite-diya-in .9s .2s both}
+@keyframes rite-diya-in{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+.rite-diya .diya-flame,.rite-diya .diya-glow{transform:scale(0)}
+.rite-words{text-align:center;position:relative}
+.rite-words>*{opacity:0}
+.rite-name{font-family:var(--serif);font-size:clamp(28px,3.2vw,44px);letter-spacing:.32em;padding-left:.32em;color:#f3dba4;line-height:1}
+.rite-chant{font-size:9px;letter-spacing:.3em;color:#c99a52;margin-top:14px}
+.rite-chant span{font-family:'Nirmala UI','Kohinoor Devanagari','Noto Sans Devanagari','Devanagari Sangam MN','Mangal',sans-serif;letter-spacing:.06em;font-size:12px}
+.rite-skip{position:absolute;right:28px;bottom:22px;font-size:9px;letter-spacing:.26em;color:#c99a52;text-transform:uppercase;padding:12px}
+.rite-skip:hover{color:#f3dba4}
+
+/* Saree transitions: one sheet of real silk, drawn by SilkVeil, floats across the screen. */
+.saree-transition{position:relative;height:0}
+.silk-canvas{position:fixed;inset:0;width:100vw;height:100vh;z-index:56;pointer-events:none;visibility:hidden}
+.silk-fallback{position:fixed;left:-6vw;top:-8vh;width:112vw;height:116vh;z-index:56;pointer-events:none;visibility:hidden;background-size:cover;background-position:center;box-shadow:0 30px 60px #0006;will-change:transform}
+.saree-verse-layer{position:fixed;inset:0;z-index:57;pointer-events:none}
+.saree-verse{position:absolute;left:50%;top:50%;translate:-50% -50%;width:min(90vw,900px);text-align:center;color:#fff6e4;opacity:0;z-index:2}
+.saree-verse:before{content:'';position:absolute;inset:-90px -70px;background:radial-gradient(ellipse,#1a0603bf 0%,#1a06036b 45%,transparent 72%);z-index:-1}
+.saree-verse svg{width:40px;height:40px;color:#f0cf8a;margin:0 auto 18px;display:block}
+.saree-sanskrit{font-family:'Nirmala UI','Kohinoor Devanagari','Noto Serif Devanagari','Noto Sans Devanagari','Devanagari Sangam MN','Mangal',serif;font-size:clamp(26px,3.5vw,52px);line-height:1.4;text-shadow:0 2px 18px #000a;text-wrap:balance}
+.saree-translit{font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:#f0cf8a;margin-top:14px;line-height:1.7}
+.saree-meaning{font-family:var(--serif);font-style:italic;font-size:clamp(19px,1.9vw,27px);margin-top:8px;color:#fff1d6;line-height:1.3}
+
+.manifesto-window{position:absolute;inset:0;overflow:hidden}
+
+/* Craft chapter: gold zari thread trail */
+.craft{position:relative}
+.thread-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:4}
+
+@keyframes diya-flicker{0%,100%{transform:scale(1,1) rotate(-1deg)}25%{transform:scale(.95,1.07) rotate(2deg)}50%{transform:scale(1.04,.94) rotate(-2deg)}75%{transform:scale(.97,1.05) rotate(1deg)}}
+@keyframes diya-glow{0%,100%{transform:scale(.92);opacity:.85}50%{transform:scale(1.08);opacity:1}}
+@keyframes ring-flicker{from{transform:scale(.85,.8) rotate(-4deg)}to{transform:scale(1.05,1.15) rotate(4deg)}}
+@keyframes silk-sheen{from{background-position:100% 0}to{background-position:0% 0}}
+@keyframes rite-failsafe{to{opacity:0;visibility:hidden}}
+.motion-paused .diya-fire,.motion-paused .diya-glow i{animation-play-state:paused}
+@media(max-width:700px){.saree-sanskrit{font-size:6.2vw}.intro-cel-lamp{--diya:58px}.rite{--S:min(78vw,420px)}.saree-verse:before{inset:-60px -20px}.saree-translit{font-size:7px;letter-spacing:.18em}}
+@media(prefers-reduced-motion:reduce){.rite{display:none}.silk-canvas,.saree-verse-layer{display:none}}

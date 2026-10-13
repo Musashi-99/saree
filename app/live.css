@@ -1,0 +1,175 @@
+/* Live layer: cream opening, lamp-lit celebration, devotional interactions, side-entering content and the new footer. Loaded after globals.css. */
+:root{--grain:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .42 0 0 0 0 .3 0 0 0 0 .18 0 0 0 .55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");--cel-cream:#f4ecdf;--sheen:radial-gradient(circle at var(--gx,50%) var(--gy,50%),#ffffff60,transparent 55%)}
+
+/* Shared cream texture: the opening now carries the same ivory as Woven in Divinity. */
+.intro-hero-stage:before,.editorial:before{content:'';position:absolute;inset:0;background-image:var(--grain);background-size:240px;opacity:.45;mix-blend-mode:multiply;pointer-events:none;z-index:0}
+.depth-layer{position:absolute;inset:0;pointer-events:none}
+
+/* 1 — Opening */
+.intro-hero{background:var(--ivory);color:var(--brown)}
+.intro-hero-stage{background:radial-gradient(ellipse at 50% 42%,#fffaf0 0%,#f8f1e4 42%,#efe3cf 100%)}
+.intro-hero-stage:after{background:linear-gradient(transparent,var(--cel-cream))}
+.intro-blue-aura{background:radial-gradient(ellipse at 50% 44%,#f2c76a3d,transparent 58%)}
+.intro-hero-rangoli{color:#b4873c;opacity:.36;animation:none}
+.intro-hero-rangoli-inner{width:min(52vw,600px);height:min(52vw,600px);left:50%;top:49%;translate:-50% -50%;color:#8c2a2a;opacity:.13}
+.intro-hero .intro-embers>i{background:#d9a441;box-shadow:0 0 8px 2px #e9b95a66}
+.intro-hero-kicker{color:#8f6a2c}
+.intro-title-layer{z-index:2}
+.intro-hero-title{color:var(--wine)}
+.intro-hero-title em{background:linear-gradient(100deg,#8e5f17 0%,#d6a548 30%,#f1d58d 45%,#b07a26 60%,#8e5f17 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:gold-sheen 7s ease-in-out infinite;padding-right:.04em}
+.intro-hero-note{color:#6b4636}
+.intro-hero-scroll{border:1px solid #b89a6270;border-radius:40px;padding:12px 24px;background:#f7f1e7d6;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);text-shadow:none;color:var(--brown);transition:background .4s,color .4s}.intro-hero-scroll:hover{background:var(--wine);color:var(--ivory)}
+.intro-hero-foot{color:var(--brown)}.intro-hero-foot>span:first-child{color:#9a6b22}
+.intro-hero-foot>.intro-hero-hint{color:#8c6a3a;letter-spacing:.14em;animation:hint-glow 3.2s ease-in-out infinite}
+.intro-hero-hint .hint-click{display:none}
+@media(hover:hover) and (pointer:fine){.intro-hero-hint .hint-click{display:inline}.intro-hero-hint .hint-touch{display:none}}
+.intro-portrait-depth{position:absolute;inset:0;-webkit-mask-image:linear-gradient(180deg,#000 66%,transparent 99%);mask-image:linear-gradient(180deg,#000 66%,transparent 99%)}
+@media(min-width:701px){.intro-portrait{height:80%}}
+.intro-durga-face{filter:drop-shadow(0 18px 38px #6b3a1033)}
+.intro-halo{position:absolute;left:50%;top:34%;width:98%;aspect-ratio:1;translate:-50% -50%;color:#b8862f;pointer-events:none}
+.intro-halo .halo{position:relative;width:100%;height:100%;opacity:.5}
+.intro-halo:before{content:'';position:absolute;inset:16%;border-radius:50%;background:radial-gradient(circle,#ffd98a70 0%,#f6c25a24 45%,transparent 70%);animation:halo-breathe 5s ease-in-out infinite}
+.cursor-light{position:absolute;left:0;top:0;width:520px;height:520px;margin:-260px 0 0 -260px;border-radius:50%;pointer-events:none;opacity:0;transition:opacity .7s;z-index:1}
+.cursor-light.is-lit{opacity:1}
+.hero-light{background:radial-gradient(circle,#ffd47a5c 0%,#f7c46a24 35%,transparent 68%)}
+.petal{position:absolute;left:0;top:0;width:15px;height:10px;margin:-5px 0 0 -7px;border-radius:0 85% 0 85%;z-index:7;pointer-events:none;box-shadow:inset -2px -2px 3px #0000001f}
+.petal-ripple{position:absolute;left:0;top:0;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;border:1px solid #c9973f;z-index:7;pointer-events:none}
+
+/* 2 — Celebration: dancers rise on cream, then the lamp lights the courtyard */
+.intro-celebration{height:250svh;min-height:0;background:var(--cel-cream);overflow:visible}
+.intro-cel-stage{position:sticky;top:0;height:100svh;min-height:640px;overflow:hidden;isolation:isolate}
+.intro-cel-base{position:absolute;inset:0;background:var(--cel-cream);z-index:0}
+.intro-cel-base .intro-rangoli{width:820px;height:820px;left:50%;top:50%;translate:-50% -50%;color:#b4873c;opacity:.24}
+.intro-cel-reveal{position:absolute;inset:0;z-index:1;background:#073e3c;clip-path:circle(0% at 50% 80%)}
+.intro-cel-reveal .intro-courtyard{z-index:0}.intro-cel-reveal .intro-dance-shade{z-index:1}.intro-cel-reveal .intro-dance-rangoli{z-index:2;animation:none}.intro-cel-reveal .intro-embers{z-index:3}
+.intro-dance-heading{z-index:4}
+.intro-dancer{z-index:5}
+.intro-dancer img{transform-origin:50% 100%;animation:dancer-sway 3.4s ease-in-out infinite alternate;filter:drop-shadow(0 18px 26px #3a1d0a45)}
+.intro-dancer-right img{animation-delay:-1.7s}
+.intro-cel-lamp{position:absolute;left:50%;width:94px;margin-left:-47px;bottom:calc(8% + 58px);z-index:6}
+.intro-cel-lamp:before{content:'';position:absolute;left:50%;top:30%;width:280px;height:280px;margin:-140px 0 0 -140px;border-radius:50%;background:radial-gradient(circle,#ffcf6e70,#ffb84724 40%,transparent 68%);animation:lamp-glow 2.6s ease-in-out infinite;pointer-events:none}
+.intro-dance-bottom{z-index:6}
+
+/* 3 — Woven in Divinity: the bride's halo and letters that answer the cursor */
+.editorial-title .char{display:inline-block;transition:transform .55s var(--ease),color .4s}
+.editorial-title .char:hover{transform:translateY(-.09em);color:var(--wine)}
+.editorial-title .char.space{width:.26em}
+.editorial-portrait{isolation:isolate}
+.bride-halo{position:absolute;left:50%;top:0;width:108%;aspect-ratio:1;margin:8% 0 0 -54%;z-index:0;color:#b8862f;pointer-events:none}
+.bride-halo .halo{position:relative;width:100%;height:100%;opacity:.5;transition:opacity .8s}
+.bride-halo-glow{position:absolute;inset:14%;border-radius:50%;background:radial-gradient(circle,#ffd98a85 0%,#f4c46a30 42%,transparent 70%);animation:halo-breathe 5.5s ease-in-out infinite}
+.editorial-portrait:hover .bride-halo .halo{opacity:.9}
+.editorial-v2 .editorial-portrait>.rising-figure{z-index:1;perspective:1200px}
+.bride-light{width:680px;height:680px;margin:-340px 0 0 -340px;background:radial-gradient(circle,#f6cf7a45 0%,#f0c06a14 40%,transparent 70%)}
+
+/* 4 — Her story: a warm diya light over the black-and-white portrait */
+.mono-light{width:640px;height:640px;margin:-320px 0 0 -320px;background:radial-gradient(circle,#ffb65c 0%,#e98a3aa8 26%,transparent 62%);mix-blend-mode:overlay}
+.monochrome-frame .portrait-caption,.monochrome-frame .portrait-lotus{z-index:2}
+.emotion-cards{perspective:1100px}
+.emotion-card{position:relative;will-change:transform;transition:box-shadow .5s}
+.emotion-card:hover{box-shadow:0 24px 40px -20px #29171370}
+.emotion-card:after,.collection-photo:after,.gallery-item button:after{content:'';position:absolute;inset:0;background:var(--sheen);opacity:0;transition:opacity .45s;pointer-events:none;mix-blend-mode:soft-light}
+.emotion-card:hover:after,.collection-photo:hover:after,.gallery-item button:hover:after{opacity:1}
+
+/* Collections, ribbon and journal */
+.collection,.gallery-item{perspective:1200px}
+.collection-photo,.gallery-item button{will-change:transform}
+.text-ribbon{padding:30px 0;display:grid;gap:4px}
+.marquee-row{overflow:hidden}
+.marquee-track{display:flex;width:max-content;will-change:transform}
+.marquee-track .ribbon-text{white-space:pre}
+.marquee-outline .ribbon-text{color:transparent;-webkit-text-stroke:1px var(--wine);font-style:italic}
+.marquee-outline .ribbon-text span{-webkit-text-stroke:0;color:var(--gold)}
+.chapter-colour-wipe[data-wipe=depth]{transform-origin:50% 62%}
+
+/* Divine and manifesto mandalas */
+.divine-aura{position:absolute;left:50%;top:50%;width:min(80vw,880px);aspect-ratio:1;translate:-50% -50%;z-index:2;pointer-events:none}
+.divine-aura .intro-rangoli,.manifesto-mandala .intro-rangoli,.footer-mandala .intro-rangoli{inset:0;width:100%;height:100%}
+.divine-aura .intro-rangoli{color:#e2bf7a;opacity:.2}
+.manifesto-devotion{isolation:isolate}
+.manifesto-mandala{position:absolute;left:50%;top:50%;width:175%;aspect-ratio:1;margin:-87.5% 0 0 -87.5%;z-index:-1;pointer-events:none}
+.manifesto-mandala .intro-rangoli{color:#b89a62;opacity:.38}
+.mf-line{display:block}
+
+/* Footer */
+.footer-v2{position:relative;overflow:hidden;padding:0 0 22px;isolation:isolate;background:radial-gradient(ellipse at 12% 0%,#7c1828 0%,transparent 55%),radial-gradient(ellipse at 92% 100%,#3d0710 0%,transparent 60%),var(--wine)}
+.footer-v2:before{content:'';position:absolute;inset:0;background-image:var(--grain);background-size:240px;opacity:.3;mix-blend-mode:overlay;pointer-events:none;z-index:-1}
+.footer-mandala{position:absolute;right:-16vw;top:-14vw;width:60vw;aspect-ratio:1;z-index:-1;pointer-events:none}
+.footer-mandala .intro-rangoli{color:var(--gold);opacity:.14}
+.footer-blessing{display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:84px;padding-bottom:62px;border-bottom:1px solid #f7f1e71f}
+.footer-lotus{width:54px;height:54px;color:var(--gold);margin-bottom:22px}
+.footer-blessing p{font-family:var(--serif);font-size:clamp(32px,3.8vw,60px);line-height:1.04;letter-spacing:-.02em}
+.footer-blessing em{color:#e2c38a}
+.footer-main{display:grid;grid-template-columns:1.5fr 1fr 1fr auto;gap:40px;padding-top:58px;padding-bottom:30px;align-items:start}
+.footer-v2 .footer-brand{font-size:clamp(30px,3vw,46px)}
+.footer-about p{font-size:11px;line-height:1.85;color:#e6d4cc;max-width:300px;margin-top:22px}
+.footer-col{display:flex;flex-direction:column;align-items:flex-start;gap:12px;font-size:11px}
+.footer-col>span{font-size:7px;letter-spacing:.18em;color:var(--gold);margin-bottom:8px}
+.footer-links-col a,.footer-links-col button{position:relative;padding:2px 0;transition:color .35s,transform .45s var(--ease)}
+.footer-links-col a:after,.footer-links-col button:after{content:'';position:absolute;left:0;right:0;bottom:-2px;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+.footer-links-col a:hover,.footer-links-col button:hover{color:#e2c38a;transform:translateX(6px)}
+.footer-links-col a:hover:after,.footer-links-col button:hover:after{transform:scaleX(1);transform-origin:left}
+.footer-back{align-items:flex-end}
+.footer-v2 .back-top{position:relative;width:118px;height:118px;border:0;border-radius:50%;display:grid;place-items:center;color:var(--ivory)}
+.footer-v2 .back-top:before{content:'';position:absolute;inset:31px;border:1px solid #b89a6290;border-radius:50%;transition:background .45s,transform .55s var(--ease)}
+.footer-v2 .back-top:hover:before{background:var(--gold);transform:scale(1.1)}
+.footer-v2 .back-top:hover{color:var(--wine)}
+.footer-v2 .back-top>svg:not(.back-top-ring){position:relative}
+.back-top-ring{position:absolute;inset:0;width:100%;height:100%}
+.back-top-ring text{font-size:9.5px;letter-spacing:.16em;fill:#e2c38a}
+.footer-giant{display:flex;justify-content:center;overflow:hidden;padding:1vw 2vw 0;font-family:var(--serif);font-size:16.8vw;line-height:.8;letter-spacing:-.01em;user-select:none}
+.footer-giant>span{display:block}
+.footer-giant b{display:block;font-weight:400;background:linear-gradient(180deg,#f0d9a6 0%,#c9a464 42%,#8d2a33 100%);-webkit-background-clip:text;background-clip:text;color:transparent;transition:transform .7s var(--ease),filter .6s}
+.footer-giant b:hover{transform:translateY(-8%);filter:brightness(1.25)}
+.footer-v2 .footer-bottom{position:relative}
+
+/* Reading progress and cursor */
+.scroll-progress{position:fixed;top:0;left:0;right:0;height:2px;z-index:60;pointer-events:none}
+.scroll-progress i{display:block;height:100%;background:linear-gradient(90deg,#b89a62,#e9cd8c,#b89a62);transform-origin:0 50%;transform:scaleX(0)}
+.cursor-ring,.cursor-dot{position:fixed;left:0;top:0;z-index:9999;pointer-events:none;opacity:0;display:none}
+.has-cursor .cursor-ring{display:grid;place-items:center}.has-cursor .cursor-dot{display:block}
+.cursor-ring.is-visible,.cursor-dot.is-visible{opacity:1}
+.cursor-ring{width:38px;height:38px;margin:-19px 0 0 -19px;border:1px solid #b89a62;border-radius:50%;transition:width .4s var(--ease),height .4s var(--ease),margin .4s var(--ease),background .35s,border-color .35s,opacity .3s,scale .25s}
+.cursor-ring.is-link{width:62px;height:62px;margin:-31px 0 0 -31px;background:#b89a6224}
+.cursor-ring.has-label{width:98px;height:98px;margin:-49px 0 0 -49px;background:#570d19e6;border-color:#570d19}
+.cursor-ring.is-pressed{scale:.86}
+.cursor-ring span{font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--ivory);opacity:0;transition:opacity .3s;text-align:center;line-height:1.35;padding:0 12px}
+.cursor-ring.has-label span{opacity:1}
+.cursor-ring.has-label+.cursor-dot{opacity:0}
+.cursor-dot{width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;background:#b89a62;transition:opacity .3s}
+
+@keyframes gold-sheen{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@keyframes hint-glow{0%,100%{opacity:.55}50%{opacity:1}}
+@keyframes halo-breathe{0%,100%{transform:scale(.94);opacity:.75}50%{transform:scale(1.06);opacity:1}}
+@keyframes dancer-sway{from{transform:rotate(-1.4deg)}to{transform:rotate(1.4deg)}}
+@keyframes lamp-glow{0%,100%{transform:scale(.9);opacity:.8}50%{transform:scale(1.1);opacity:1}}
+.motion-paused .intro-dancer img,.motion-paused .intro-halo:before,.motion-paused .bride-halo-glow,.motion-paused .intro-cel-lamp:before,.motion-paused .intro-hero-title em,.motion-paused .intro-hero-hint{animation-play-state:paused}
+
+@media(max-width:1000px) and (min-width:701px){.footer-main{grid-template-columns:1.3fr 1fr 1fr;row-gap:30px}.footer-back{grid-column:3;align-items:flex-start}}
+@media(max-width:700px){
+ .intro-hero-rangoli-inner{width:84vw;height:84vw;top:53%}
+ .intro-hero-note{color:var(--wine);text-shadow:0 0 6px #f7f1e7,0 0 14px #f7f1e7,0 0 22px #f7f1e7}
+ .intro-halo{top:36%;width:104%}
+ .intro-hero-foot{flex-wrap:wrap;row-gap:0}.intro-hero-hint{order:-1;width:100%;text-align:center}
+ .intro-celebration{height:230svh}.intro-cel-stage{min-height:600px}
+ .intro-cel-base .intro-rangoli{width:125vw;height:125vw;top:58%}
+ .intro-cel-lamp{width:58px;margin-left:-29px;bottom:calc(3% + 64px)}
+ .intro-cel-lamp:before{width:190px;height:190px;margin:-95px 0 0 -95px}
+ .bride-halo{top:-2%;width:96%;margin-left:-48%}
+ .divine-aura{width:120vw}
+ .footer-blessing{padding-top:56px;padding-bottom:42px}
+ .footer-blessing p{font-size:30px}
+ .footer-main{grid-template-columns:1fr 1fr;gap:36px 20px;padding-top:40px}
+ .footer-about,.footer-back{grid-column:1/3}.footer-back{align-items:center}
+ .footer-v2 .back-top{width:104px;height:104px}.footer-v2 .back-top:before{inset:27px}
+ .footer-mandala{width:120vw;right:-55vw;top:-25vw}
+ .footer-giant{font-size:16.5vw}
+}
+@media(prefers-reduced-motion:reduce){
+ .intro-celebration{height:auto}
+ .intro-cel-stage{position:relative}
+ .intro-cel-reveal{clip-path:none!important}
+ .intro-cel-base{display:none}
+ .intro-dance-heading,.intro-dance-bottom,.intro-cel-lamp{opacity:1!important;transform:none!important}
+ .cursor-ring,.cursor-dot,.cursor-light,.intro-hero-hint{display:none!important}
+}

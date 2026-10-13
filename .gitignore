@@ -1,0 +1,29 @@
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+reference-research/
+.DS_Store
+
+# Media stays out of the repository: see "Adding the media" in README.md.
+public/assets/
+public/favicon.svg
+*.webp
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.mp4
+*.mov
+*.webm
+*.wav
+*.mp3
+*.woff
+*.woff2
+*.ttf
+
+# Local notes and hosting configuration
+docs/
+.openai/

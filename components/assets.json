@@ -1,0 +1,254 @@
+{
+  "garden": {
+    "width": 1600,
+    "height": 2400,
+    "variants": [
+      {
+        "src": "/assets/garden-640.webp",
+        "width": 640,
+        "height": 960
+      },
+      {
+        "src": "/assets/garden-1000.webp",
+        "width": 1000,
+        "height": 1500
+      },
+      {
+        "src": "/assets/garden-1600.webp",
+        "width": 1600,
+        "height": 2400
+      }
+    ]
+  },
+  "detail": {
+    "width": 1296,
+    "height": 1350,
+    "variants": [
+      {
+        "src": "/assets/detail-640.webp",
+        "width": 640,
+        "height": 667
+      },
+      {
+        "src": "/assets/detail-1000.webp",
+        "width": 1000,
+        "height": 1042
+      },
+      {
+        "src": "/assets/detail-1600.webp",
+        "width": 1296,
+        "height": 1350
+      }
+    ]
+  },
+  "portrait": {
+    "width": 1600,
+    "height": 2400,
+    "variants": [
+      {
+        "src": "/assets/portrait-640.webp",
+        "width": 640,
+        "height": 960
+      },
+      {
+        "src": "/assets/portrait-1000.webp",
+        "width": 1000,
+        "height": 1500
+      },
+      {
+        "src": "/assets/portrait-1600.webp",
+        "width": 1600,
+        "height": 2400
+      }
+    ]
+  },
+  "jewels": {
+    "width": 1200,
+    "height": 1800,
+    "variants": [
+      {
+        "src": "/assets/jewels-640.webp",
+        "width": 640,
+        "height": 960
+      },
+      {
+        "src": "/assets/jewels-1000.webp",
+        "width": 1000,
+        "height": 1500
+      },
+      {
+        "src": "/assets/jewels-1600.webp",
+        "width": 1200,
+        "height": 1800
+      }
+    ]
+  },
+  "gold": {
+    "width": 1600,
+    "height": 2400,
+    "variants": [
+      {
+        "src": "/assets/gold-640.webp",
+        "width": 640,
+        "height": 960
+      },
+      {
+        "src": "/assets/gold-1000.webp",
+        "width": 1000,
+        "height": 1500
+      },
+      {
+        "src": "/assets/gold-1600.webp",
+        "width": 1600,
+        "height": 2400
+      }
+    ]
+  },
+  "festive": {
+    "width": 1600,
+    "height": 2400,
+    "variants": [
+      {
+        "src": "/assets/festive-640.webp",
+        "width": 640,
+        "height": 960
+      },
+      {
+        "src": "/assets/festive-1000.webp",
+        "width": 1000,
+        "height": 1500
+      },
+      {
+        "src": "/assets/festive-1600.webp",
+        "width": 1600,
+        "height": 2400
+      }
+    ]
+  },
+  "green": {
+    "width": 1600,
+    "height": 1067,
+    "variants": [
+      {
+        "src": "/assets/green-640.webp",
+        "width": 640,
+        "height": 427
+      },
+      {
+        "src": "/assets/green-1000.webp",
+        "width": 1000,
+        "height": 667
+      },
+      {
+        "src": "/assets/green-1600.webp",
+        "width": 1600,
+        "height": 1067
+      }
+    ]
+  },
+  "loom": {
+    "width": 1600,
+    "height": 1067,
+    "variants": [
+      {
+        "src": "/assets/loom-640.webp",
+        "width": 640,
+        "height": 427
+      },
+      {
+        "src": "/assets/loom-1000.webp",
+        "width": 1000,
+        "height": 667
+      },
+      {
+        "src": "/assets/loom-1600.webp",
+        "width": 1600,
+        "height": 1067
+      }
+    ]
+  },
+  "modern": {
+    "width": 1600,
+    "height": 2399,
+    "variants": [
+      {
+        "src": "/assets/modern-640.webp",
+        "width": 640,
+        "height": 960
+      },
+      {
+        "src": "/assets/modern-1000.webp",
+        "width": 1000,
+        "height": 1499
+      },
+      {
+        "src": "/assets/modern-1600.webp",
+        "width": 1600,
+        "height": 2399
+      }
+    ]
+  },
+  "bridal": {
+    "width": 1600,
+    "height": 2400,
+    "variants": [
+      {
+        "src": "/assets/bridal-640.webp",
+        "width": 640,
+        "height": 960
+      },
+      {
+        "src": "/assets/bridal-1000.webp",
+        "width": 1000,
+        "height": 1500
+      },
+      {
+        "src": "/assets/bridal-1600.webp",
+        "width": 1600,
+        "height": 2400
+      }
+    ]
+  },
+  "divine": {
+    "width": 1600,
+    "height": 2000,
+    "variants": [
+      {
+        "src": "/assets/divine-640.webp",
+        "width": 640,
+        "height": 800
+      },
+      {
+        "src": "/assets/divine-1000.webp",
+        "width": 1000,
+        "height": 1250
+      },
+      {
+        "src": "/assets/divine-1600.webp",
+        "width": 1600,
+        "height": 2000
+      }
+    ]
+  },
+  "celebration": {
+    "width": 1600,
+    "height": 1068,
+    "variants": [
+      {
+        "src": "/assets/celebration-640.webp",
+        "width": 640,
+        "height": 427
+      },
+      {
+        "src": "/assets/celebration-1000.webp",
+        "width": 1000,
+        "height": 667
+      },
+      {
+        "src": "/assets/celebration-1600.webp",
+        "width": 1600,
+        "height": 1068
+      }
+    ]
+  }
+}
