@@ -31,7 +31,7 @@ for im in doc.images:
 for css in (OUT/'_next').rglob('*.css'):
     for ref in re.findall(r'url\([\"\']?(/[^)\"\']+)',css.read_text()):
         if not (OUT/ref.lstrip('/')).exists():failures.append(f'Missing CSS asset: {ref}')
-if doc.sections!=9:failures.append(f'Expected nine sections, found {doc.sections}')
+if doc.sections!=10:failures.append(f'Expected ten sections, found {doc.sections}')
 if failures:
     raise SystemExit('\n'.join(failures))
 print(f'PASS: {doc.sections} sections, {len(doc.images)} images with alt text, {len(set(doc.refs))} local asset references and all anchor destinations.')

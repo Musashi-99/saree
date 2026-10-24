@@ -9,14 +9,14 @@ export default function Motion({replay=0}:{replay?:number}) {
   mm.add({motion:'(prefers-reduced-motion: no-preference)',desktop:'(min-width: 900px)'}, context=>{
    if(!context.conditions?.motion)return;
 
-   // Durga enters first. Her portrait is centred independently of its entrance transform.
+   // Lakshmi enters first. Her portrait is centred independently of its entrance transform.
    const entrance=gsap.timeline({paused:true,defaults:{ease:'power3.out'}});
    entrance.from('.intro-rangoli-layer',{scale:.8,opacity:0,duration:2.4,stagger:.18,ease:'power2.out'},0)
     .from('.intro-durga-face',{yPercent:105,duration:1.85},0)
     .from('.intro-halo',{scale:.3,opacity:0,duration:2.2,ease:'power2.out'},.6)
     .from('.intro-hero-title span',{y:50,opacity:0,duration:1.1,stagger:.1},.7)
     .from('.intro-hero-kicker,.intro-hero-note,.intro-hero-scroll',{y:25,opacity:0,duration:.8,stagger:.1},1.25);
-   // The hero entrance waits for the opening rite to open its ring, and for Durga's portrait to load.
+   // The hero entrance waits for the opening rite to open its ring, and for Lakshmi's portrait to load.
    const hero=document.querySelector<HTMLImageElement>('.intro-durga-face');
    const playOpening=()=>{entrance.play();};
    const whenLoaded=()=>{
@@ -30,7 +30,7 @@ export default function Motion({replay=0}:{replay?:number}) {
     .to('.intro-hero-rangoli,.intro-hero-rangoli-inner',{scale:1.22,ease:'none'},0)
     .to('.intro-hero-title,.intro-hero-note,.intro-hero-kicker,.intro-hero-scroll,.intro-hero-foot',{opacity:0,y:-35,ease:'none'},0);
 
-   // The dancers rise first on cream; then the diya is lit and the night courtyard spreads out from its flame.
+   // The two women rise first on cream; then the diya is lit and the night courtyard spreads out from its flame.
    const celStage=document.querySelector<HTMLElement>('.intro-cel-stage');
    const lamp=document.querySelector<HTMLElement>('.intro-cel-lamp');
    const origin=()=>celStage&&lamp?`${((lamp.offsetLeft+lamp.offsetWidth/2)/celStage.offsetWidth*100).toFixed(2)}% ${((lamp.offsetTop+lamp.offsetHeight*.4)/celStage.offsetHeight*100).toFixed(2)}%`:'50% 80%';
@@ -64,7 +64,7 @@ export default function Motion({replay=0}:{replay?:number}) {
     if(echo&&side)tl.fromTo(echo,{xPercent:side*95},{xPercent:-side*4,duration:1.75,ease:'power1.out'},0);
    });
 
-   // Woven in / Divinity meet from opposite sides while her halo opens behind her, once the saree has lifted.
+   // Woven in / Light meet from opposite sides while her halo opens behind her, once the saree has lifted.
    gsap.timeline({scrollTrigger:{trigger:'.editorial',start:'top 38%',end:'top -8%',scrub:1}})
     .fromTo('.editorial-title > span:first-child',{xPercent:-35,opacity:0},{xPercent:0,opacity:1,ease:'power2.out'},0)
     .fromTo('.editorial-title > span:last-child',{xPercent:35,opacity:0},{xPercent:0,opacity:1,ease:'power2.out'},0);
@@ -88,7 +88,7 @@ export default function Motion({replay=0}:{replay?:number}) {
     .fromTo('.craft-visual',{xPercent:-14,opacity:0},{xPercent:0,opacity:1,ease:'power2.out'},0)
     .fromTo('.craft-copy',{xPercent:14,opacity:0},{xPercent:0,opacity:1,ease:'power2.out'},0);
 
-   // Durga remains a complete, upright devotional composition, never split or distorted.
+   // Lakshmi remains a complete, upright devotional composition, never split or distorted.
    const divine=gsap.timeline({scrollTrigger:{trigger:'.divine',start:'top 28%',end:'bottom bottom',scrub:.85}});
    divine.fromTo('.durga-figure',{yPercent:125},{yPercent:0,duration:1.35,ease:'power2.out'},0)
     .fromTo('.divine-aura',{scale:.4,opacity:0},{scale:1,opacity:1,duration:1.5,ease:'power2.out'},.3)

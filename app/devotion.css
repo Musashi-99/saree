@@ -17,7 +17,7 @@
 .intro-dance-bottom{pointer-events:none}.intro-dance-bottom a{pointer-events:auto}
 .spark-ring{position:absolute;left:0;top:0;width:60px;height:60px;margin:-30px 0 0 -30px;border-radius:50%;border:1.5px solid #ffd27a;box-shadow:0 0 14px #ffb347aa;pointer-events:none;z-index:7}
 
-/* Opening rite: diya, aarti ring of fire, Maa Durga, then the ring opens onto the site. */
+/* Opening rite: diya, aarti ring of fire, Maa Lakshmi, then the ring opens onto the site. */
 html{scrollbar-gutter:stable}html.rite-active{overflow:hidden}
 .rite{--S:min(62vmin,480px);position:fixed;inset:0;z-index:200;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(72px,11vh,110px);background:radial-gradient(ellipse at 50% 44%,#2b0f07 0%,#140704 50%,#070302 100%);color:#f7e7c6;-webkit-mask-image:radial-gradient(circle at var(--hx,50%) var(--hy,50%),transparent var(--hole,-8vmax),#000 calc(var(--hole,-8vmax) + 7vmax));mask-image:radial-gradient(circle at var(--hx,50%) var(--hy,50%),transparent var(--hole,-8vmax),#000 calc(var(--hole,-8vmax) + 7vmax));animation:rite-failsafe .8s 9s forwards}
 .rite:before{content:'';position:absolute;inset:0;background-image:var(--grain);background-size:240px;opacity:.18;mix-blend-mode:overlay;pointer-events:none}

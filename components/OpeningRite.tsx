@@ -6,7 +6,7 @@ import Diya from './Diya';
 const FLAMES=24;
 const RING=2*Math.PI*180;
 
-// The opening rite: the diya is lit, an aarti ring of fire circles it, Maa Durga appears within the ring,
+// The opening rite: the diya is lit, an aarti ring of fire circles it, Maa Lakshmi appears within the ring,
 // and the ring opens onto the site. Motion waits for `aaradhya:reveal` before playing the hero entrance.
 export default function OpeningRite({replay}:{replay:number}){
  const root=useRef<HTMLDivElement>(null);
@@ -27,7 +27,7 @@ export default function OpeningRite({replay}:{replay:number}){
    gsap.set(el,{autoAlpha:1,'--hole':'-8vmax'});
    tl=gsap.timeline({defaults:{ease:'power2.out'},onComplete:()=>{gsap.set(el,{autoAlpha:0});html.classList.remove('rite-active');}});
    // The unlit diya fades in with CSS before the script loads. Take over from wherever that fade is
-   // (a replay starts it from hidden) so GSAP can later carry the diya down to Durga's feet.
+   // (a replay starts it from hidden) so GSAP can later carry the diya down to Lakshmi's feet.
    const diya=el.querySelector<HTMLElement>('.rite-diya')!,shown=replay>0?0:parseFloat(getComputedStyle(diya).opacity);
    diya.style.animation='none';gsap.set(diya,{opacity:shown,y:26*(1-shown)});
    tl.to(diya,{opacity:1,y:0,duration:.8*(1-shown)+.01},.15)
@@ -56,12 +56,12 @@ export default function OpeningRite({replay}:{replay:number}){
  return <div className="rite" ref={root} aria-hidden="true">
   <div className="rite-stage">
    <div className="rite-light"/>
-   <div className="rite-durga"><img src="/assets/generated/durga-face.webp" alt="" width="1199" height="1312" fetchPriority="high"/></div>
+   <div className="rite-durga"><img src="/assets/generated/lakshmi-face.webp" alt="" width="1199" height="1312" fetchPriority="high"/></div>
    <svg className="rite-ring" viewBox="0 0 400 400"><defs><linearGradient id="rite-fire" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#fff1b8"/><stop offset=".45" stopColor="#ffb43c"/><stop offset="1" stopColor="#ff6a10"/></linearGradient></defs><circle cx="200" cy="200" r="190" className="rite-guide"/><circle cx="200" cy="200" r="180" className="rite-trail" transform="rotate(-90 200 200)" strokeDasharray={RING}/><g className="rite-orbit"><circle className="rite-spark" cx="200" cy="20" r="6"/></g></svg>
    <div className="rite-flames">{Array.from({length:FLAMES},(_,i)=><b key={i} style={{'--a':`${i*360/FLAMES}deg`} as CSSProperties}><i/></b>)}</div>
    <Diya className="rite-diya"/>
   </div>
-  <div className="rite-words"><p className="rite-name">AARADHYA</p><p className="rite-chant"><span lang="hi">जय माता दी</span> · JAI MATA DI</p></div>
+  <div className="rite-words"><p className="rite-name">AARADHYA</p><p className="rite-chant"><span lang="hi">शुभ दीपावली</span> · SHUBH DEEPAVALI</p></div>
   <button className="rite-skip" tabIndex={-1}>Skip</button>
  </div>;
 }

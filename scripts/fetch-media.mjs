@@ -15,7 +15,17 @@ const assets = {
   detail: '9419032',
   divine: '19284703',
   celebration: '34538958',
+  // Diwali moments
+  'diya-girl': '8819773',
+  'diya-plate': '8819122',
+  sparkler: '8229660',
+  'sparkler-dusk': '8229656',
+  aarti: '8887381',
+  'lamps-together': '27155549',
 };
+// Product photos come from the JSON catalogue (data/products.json).
+const products = JSON.parse(await readFile('data/products.json', 'utf8')).products;
+for (const product of products) for (const image of product.images) assets[image.name] = String(image.pexels);
 
 const fonts = {
   'serif-regular': 'https://cdn.jsdelivr.net/fontsource/fonts/cormorant-garamond@latest/latin-400-normal.woff',
@@ -35,9 +45,12 @@ async function download(url) {
 const catalog = JSON.parse(await readFile('components/assets.json', 'utf8'));
 
 for (const [name, id] of Object.entries(assets)) {
+  if (existsSync(`public/assets/${name}-1600.webp`) && catalog[name]) { console.log(`photo ${name} exists`); continue; }
   const url = `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=2400`;
   process.stdout.write(`photo ${name}... `);
-  let buf = await sharp(await download(url)).rotate().toBuffer();
+  // A JPEG already saved in reference-research/pexels/<id>.jpg is used instead of downloading it again.
+  const cached = `reference-research/pexels/${id}.jpg`;
+  let buf = await sharp(existsSync(cached) ? await readFile(cached) : await download(url)).rotate().toBuffer();
   if (name === 'detail') {
     const {width, height} = await sharp(buf).metadata();
     const left = Math.round(width * 0.18);
@@ -54,11 +67,11 @@ for (const [name, id] of Object.entries(assets)) {
     const height = Math.round(meta.height * size / meta.width);
     await sharp(buf).resize({width: size, height, fit: 'fill'}).webp({quality: width === 1600 ? 89 : 84}).toFile(`public/assets/${name}-${width}.webp`);
   }
-  if (catalog[name]) {
+  catalog[name] ??= {width: 0, height: 0, variants: [640, 1000, 1600].map(w => ({src: `/assets/${name}-${w}.webp`, width: w, height: 0}))};
+  {
     catalog[name].width = full;
     catalog[name].height = fullHeight;
     for (const variant of catalog[name].variants) {
-      const size = Math.min(variant.width > 1296 ? 1600 : variant.width, meta.width);
       const requested = variant.src.match(/-(\d+)\.webp$/)?.[1];
       const target = Number(requested);
       const outW = Math.min(target, meta.width);
