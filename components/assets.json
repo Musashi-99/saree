@@ -21,8 +21,8 @@
     ]
   },
   "detail": {
-    "width": 1296,
-    "height": 1350,
+    "width": 1600,
+    "height": 1667,
     "variants": [
       {
         "src": "/assets/detail-640.webp",
@@ -36,8 +36,8 @@
       },
       {
         "src": "/assets/detail-1600.webp",
-        "width": 1296,
-        "height": 1350
+        "width": 1600,
+        "height": 1667
       }
     ]
   },
@@ -63,8 +63,8 @@
     ]
   },
   "jewels": {
-    "width": 1200,
-    "height": 1800,
+    "width": 1600,
+    "height": 2400,
     "variants": [
       {
         "src": "/assets/jewels-640.webp",
@@ -78,8 +78,8 @@
       },
       {
         "src": "/assets/jewels-1600.webp",
-        "width": 1200,
-        "height": 1800
+        "width": 1600,
+        "height": 2400
       }
     ]
   },
@@ -174,7 +174,7 @@
       {
         "src": "/assets/modern-640.webp",
         "width": 640,
-        "height": 960
+        "height": 959
       },
       {
         "src": "/assets/modern-1000.webp",
@@ -232,7 +232,7 @@
   },
   "celebration": {
     "width": 1600,
-    "height": 1068,
+    "height": 1067,
     "variants": [
       {
         "src": "/assets/celebration-640.webp",
@@ -247,7 +247,7 @@
       {
         "src": "/assets/celebration-1600.webp",
         "width": 1600,
-        "height": 1068
+        "height": 1067
       }
     ]
   }
