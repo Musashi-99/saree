@@ -3,6 +3,8 @@
     "name": "AARADHYA",
     "currency": "INR",
     "commission": 10,
+    "maxQtyPerItem": 4,
+    "maxItemsPerOrder": 5,
     "freeShippingAbove": 0,
     "shippingFee": 0,
     "diwaliDispatchBy": "2026-11-05",

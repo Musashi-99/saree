@@ -1,7 +1,7 @@
 'use client';
 import {useState} from 'react';
 import Link from 'next/link';
-import {ArrowRight, Check} from 'lucide-react';
+import {ArrowRight, Check, Copy, Camera} from 'lucide-react';
 import Photo from './Photo';
 import {useCart} from './Cart';
 import {totals, money, lineKey} from '../lib/shop';
@@ -17,6 +17,8 @@ export default function Checkout(){
  const [emailed,setEmailed]=useState(true);
  const [sending,setSending]=useState(false);
  const [error,setError]=useState('');
+ const [copied,setCopied]=useState(false);
+ function copyId(id:string){navigator.clipboard?.writeText(id).then(()=>{setCopied(true);setTimeout(()=>setCopied(false),2000);}).catch(()=>{});}
  const t=totals(lines);
 
  async function place(e:React.FormEvent<HTMLFormElement>){
@@ -36,10 +38,21 @@ export default function Checkout(){
 
  if(order)return <section className="checkout section-pad checkout-done" aria-labelledby="done-title">
   <span className="done-mark"><Check size={26}/></span>
-  <span className="eyebrow">ORDER {order.id}</span>
   <h1 id="done-title">Shubh Deepavali,<br/><em>{order.customer.name.split(' ')[0]}.</em></h1>
   <p>Your order of {order.items.reduce((n,i)=>n+i.qty,0)} {order.items.reduce((n,i)=>n+i.qty,0)===1?'piece':'pieces'} has been placed. It will be packed and dispatched in time for Diwali. Please keep <strong>{money(order.total)}</strong> ready to pay in cash on delivery.</p>
-  <p className="body-small">{emailed?<>A confirmation has been sent to {order.customer.email}.</>:<>We could not email your confirmation to {order.customer.email}, but your order is placed. Please note your order number.</>}</p>
+  {/* Everything the customer needs later, in one card that fits a phone screenshot. */}
+  <div className="order-receipt">
+   <p className="order-receipt-note" role="note"><Camera size={16}/><span><strong>Please take a screenshot of this page.</strong> Keep your order ID safe: you will need it to track, change or ask about your order.</span></p>
+   <span className="mini-label">YOUR ORDER ID</span>
+   <div className="order-receipt-id"><strong>{order.id}</strong><button type="button" onClick={()=>copyId(order.id)} aria-label="Copy order ID"><Copy size={14}/>{copied?'Copied':'Copy'}</button></div>
+   <dl>
+    <div><dt>Placed</dt><dd>{new Date(order.placed).toLocaleString('en-IN',{dateStyle:'medium',timeStyle:'short'})}</dd></div>
+    <div><dt>Items</dt><dd>{order.items.map(i=><span key={i.sku+(i.size??'')}>{i.name}{i.size&&` · Size ${i.size}`} × {i.qty}</span>)}</dd></div>
+    <div><dt>Pay on delivery</dt><dd><strong>{money(order.total)}</strong> · Cash on delivery</dd></div>
+    <div><dt>Delivering to</dt><dd>{order.customer.name}, {order.customer.address}, {order.customer.city} {order.customer.pincode}</dd></div>
+   </dl>
+  </div>
+  <p className="body-small">{emailed?<>A confirmation has also been sent to {order.customer.email}.</>:<>We could not email your confirmation to {order.customer.email}, but your order is placed.</>}</p>
   <Link className="solid-button" href="/#shop">Continue shopping <ArrowRight size={17}/></Link>
  </section>;
 

@@ -223,3 +223,23 @@
 @media(max-width:700px){.order-card{padding:18px;overflow-x:auto}.order-card table{min-width:640px}.order-card header{flex-direction:column}.order-money{text-align:left}}
 .checkout-error{font-size:12px;color:#b3261e;background:#b3261e12;padding:12px 14px;margin-bottom:14px}
 .checkout .solid-button:disabled{opacity:.7;cursor:progress}
+/* Order confirmation card: the order ID and details, sized to fit one phone screenshot. */
+.order-receipt{width:100%;max-width:520px;background:#fff;border:1px solid #b89a6266;padding:24px 24px 18px;margin:6px 0 22px;text-align:left}
+.order-receipt .mini-label{font-size:8px;letter-spacing:.18em;color:#817269}
+.order-receipt-id{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:8px 0 16px;padding:12px 14px;background:var(--cream);border:1px dashed var(--wine)}
+.order-receipt-id strong{font-family:var(--sans);font-size:clamp(17px,4.6vw,24px);font-weight:500;letter-spacing:.04em;color:var(--wine);white-space:nowrap}
+.order-receipt-id button{display:inline-flex;align-items:center;gap:6px;font-size:11px;border:1px solid #29171333;padding:7px 10px;background:#fff;white-space:nowrap}
+.order-receipt dl{margin:0;font-size:12px}
+.order-receipt dl>div{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:8px 0;border-top:1px solid #29171314}
+.order-receipt dt{color:#77675e}
+.order-receipt dd{margin:0;line-height:1.5}
+.order-receipt dd span{display:block}
+.order-receipt dd strong{font-weight:500}
+.checkout-done .order-receipt-note{display:flex;gap:10px;align-items:flex-start;font-size:12px;line-height:1.55;background:#b89a6222;padding:12px 14px;margin:0 0 16px;max-width:none}
+.order-receipt-note svg{color:var(--wine);margin-top:2px}
+/* The confirmation keeps its heading compact so the whole order card fits on one screen. */
+.checkout-done:has(.order-receipt) .done-mark{width:48px;height:48px;margin-bottom:16px}
+.checkout-done:has(.order-receipt) h1{font-size:clamp(40px,4.6vw,64px);margin:0 0 14px}
+@media(max-width:700px){.order-receipt{padding:16px 14px 12px}.order-receipt dl>div{grid-template-columns:86px 1fr;padding:6px 0}.order-receipt-id{padding:10px 12px}
+ .checkout-done:has(.order-receipt){padding-top:88px}.checkout-done:has(.order-receipt) h1{font-size:36px}.checkout-done:has(.order-receipt)>p{font-size:12px;margin-bottom:10px}}
+.cart-notice{font-size:11px;line-height:1.55;color:var(--wine);background:#570d1912;border-left:2px solid var(--wine);padding:10px 14px;margin-bottom:8px}

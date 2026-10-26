@@ -30,3 +30,4 @@ docs/
 
 # Server secrets: the SMTP key for order emails. See config/mail.config.example.ts.
 config/mail.config.ts
+config/telegram.config.ts

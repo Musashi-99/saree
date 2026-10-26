@@ -1,10 +1,12 @@
-// POST /api/orders: places a cash-on-delivery order and emails it.
+// POST /api/orders: places a cash-on-delivery order and notifies the admin on Telegram.
 // The browser sends only the customer details and {id, qty, size} per item; every name, price, Amazon link
 // and the commission are taken from the catalogue here, so a tampered request cannot change them.
-// The admin email is sent first: if it fails, the order is refused, so no order goes unrecorded.
+// The Telegram message to the admin group is required: if it fails, the order is refused, so no order goes
+// unrecorded. The customer confirmation and admin emails are extras: their failure never blocks an order.
 import {NextResponse} from 'next/server';
-import {getProductById, totals, lineKey, type CartLine} from '../../../lib/shop';
+import {getProductById, totals, lineKey, MAX_QTY, MAX_ITEMS, type CartLine} from '../../../lib/shop';
 import {sendAdminMail, sendCustomerMail} from '../../../lib/order-mail';
+import {sendTelegramOrder} from '../../../lib/order-telegram';
 import type {Order} from '../../../lib/orders';
 
 export const runtime = 'nodejs';
@@ -33,13 +35,15 @@ export async function POST(request:Request) {
   customer[key] = value;
  }
 
- if (!Array.isArray(body.items) || body.items.length === 0 || body.items.length > 20) return bad('Your bag is empty.');
+ if (!Array.isArray(body.items) || body.items.length === 0) return bad('Your bag is empty.');
+ if (body.items.length > MAX_ITEMS) return bad(`An order can have up to ${MAX_ITEMS} different items. Please remove ${body.items.length - MAX_ITEMS} and try again.`);
  const lines:CartLine[] = [];
  for (const raw of body.items as {id?:unknown;qty?:unknown;size?:unknown}[]) {
   const product = getProductById(String(raw?.id));
   const qty = Number(raw?.qty);
   const size = raw?.size == null ? undefined : String(raw.size);
-  if (!product || !Number.isInteger(qty) || qty < 1 || qty > 10) return bad('An item in your bag is no longer available.');
+  if (!product || !Number.isInteger(qty) || qty < 1) return bad('An item in your bag is no longer available.');
+  if (qty > MAX_QTY) return bad(`You can order up to ${MAX_QTY} of ${product.name}.`);
   if (product.sizes.length ? !size || !product.sizes.includes(size) : size) return bad(`Please choose a size for ${product.name}.`);
   const line = {id:product.id, qty, ...(size ? {size} : {})};
   if (lines.some(l => lineKey(l) === lineKey(line))) return bad('Your bag has a duplicate item.');
@@ -53,10 +57,10 @@ export async function POST(request:Request) {
   items:t.items.map(({product:p, qty, size}) => ({sku:p.id, name:p.name, size, qty, price:p.price, asin:p.source.asin, amazonLink:p.source.link, amazonPrice:p.source.amazonPrice, commission:(p.price - p.source.amazonPrice) * qty})),
  };
 
- try { await sendAdminMail(order); }
- catch (e) { console.error('Order email to admin failed', order.id, e); return bad('We could not place your order just now. Please try again in a minute.', 502); }
- let customerEmailed = true;
- try { await sendCustomerMail(order); }
- catch (e) { customerEmailed = false; console.error('Order email to customer failed', order.id, e); }
- return NextResponse.json({order, customerEmailed});
+ try { await sendTelegramOrder(order); }
+ catch (e) { console.error('Telegram order notification failed', order.id, e); return bad('We could not place your order just now. Please try again in a minute.', 502); }
+ const [toCustomer, toAdmin] = await Promise.allSettled([sendCustomerMail(order), sendAdminMail(order)]);
+ if (toCustomer.status === 'rejected') console.error('Order email to customer failed', order.id, toCustomer.reason);
+ if (toAdmin.status === 'rejected') console.error('Order email to admin failed', order.id, toAdmin.reason);
+ return NextResponse.json({order, customerEmailed:toCustomer.status === 'fulfilled'});
 }

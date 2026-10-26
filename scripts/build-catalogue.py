@@ -14,6 +14,8 @@ SCRAPE, OUT = 'data/amazon-scrape.json', 'data/products.json'
 
 STORE = {
     'name': 'AARADHYA', 'currency': 'INR', 'commission': COMMISSION,
+    # Order limits: at most 4 of any one item, and at most 5 different items (a kurti in two sizes is two).
+    'maxQtyPerItem': 4, 'maxItemsPerOrder': 5,
     # Free shipping, and no coupons: a discount would cost more than the commission on each order.
     'freeShippingAbove': 0, 'shippingFee': 0, 'diwaliDispatchBy': '2026-11-05', 'coupons': [],
 }

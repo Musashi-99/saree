@@ -7,7 +7,8 @@ import {money} from './shop';
 import type {Order} from './orders';
 
 const esc = (s:string) => s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]!));
-const transport = nodemailer.createTransport({host:config.smtp.host, port:config.smtp.port, secure:config.smtp.secure, auth:{user:config.smtp.user, pass:config.smtp.pass}});
+// Short timeouts: email is a best-effort extra and must not hold up an order.
+const transport = nodemailer.createTransport({host:config.smtp.host, port:config.smtp.port, secure:config.smtp.secure, auth:{user:config.smtp.user, pass:config.smtp.pass}, connectionTimeout:8000, greetingTimeout:8000, socketTimeout:12000});
 const from = {name:config.from.name, address:config.from.email};
 const when = (o:Order) => new Date(o.placed).toLocaleString('en-IN', {dateStyle:'medium', timeStyle:'short', timeZone:'Asia/Kolkata'});
 const addressLines = (o:Order) => [o.customer.name, o.customer.address, `${o.customer.city}, ${o.customer.state} ${o.customer.pincode}`, `Phone: ${o.customer.phone}`, `Email: ${o.customer.email}`];

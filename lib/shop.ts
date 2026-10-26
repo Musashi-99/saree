@@ -12,6 +12,9 @@ export type CartLine = {id:string;qty:number;size?:string};
 export const lineKey = (l:{id:string;size?:string}) => l.size?`${l.id}|${l.size}`:l.id;
 
 export const store = db.store;
+// Order limits, enforced in the bag and again by /api/orders.
+export const MAX_QTY = store.maxQtyPerItem;
+export const MAX_ITEMS = store.maxItemsPerOrder;
 export const categories: Category[] = db.categories;
 export const products: Product[] = db.products;
 
