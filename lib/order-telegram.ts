@@ -1,7 +1,8 @@
 // Sends each new order to the admin Telegram group: the COD amount, commission, customer and address, and every
 // item with its size, prices, ASIN and original Amazon link, plus one button per item that opens the listing. Server only.
+// Settings come from environment variables: TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID (the group's id, e.g. -5585954862).
+// On Vercel, set them in Project → Settings → Environment Variables; locally, in .env.local (git-ignored).
 import 'server-only';
-import config from '../config/telegram.config';
 import {money} from './shop';
 import type {Order} from './orders';
 
@@ -37,10 +38,11 @@ export function telegramMessage(o:Order) {
 }
 
 export async function sendTelegramOrder(o:Order) {
- if (!config.chatId) throw new Error('Telegram chatId is not set in config/telegram.config.ts');
- const res = await fetch(`https://api.telegram.org/bot${config.botToken}/sendMessage`, {
+ const token = process.env.TELEGRAM_BOT_TOKEN, chatId = process.env.TELEGRAM_CHAT_ID;
+ if (!token || !chatId) throw new Error('TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID must be set');
+ const res = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
   method:'POST', headers:{'Content-Type':'application/json'}, signal:AbortSignal.timeout(15000),
-  body:JSON.stringify({chat_id:config.chatId, parse_mode:'HTML', link_preview_options:{is_disabled:true}, ...telegramMessage(o)}),
+  body:JSON.stringify({chat_id:chatId, parse_mode:'HTML', link_preview_options:{is_disabled:true}, ...telegramMessage(o)}),
  });
  const data = await res.json() as {ok:boolean;description?:string};
  if (!data.ok) throw new Error(`Telegram: ${data.description}`);

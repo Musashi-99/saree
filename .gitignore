@@ -6,9 +6,7 @@ next-env.d.ts
 reference-research/
 .DS_Store
 
-# Media stays out of the repository: see "Adding the media" in README.md.
-public/assets/
-public/favicon.svg
+# Media is ignored everywhere except the site's own files in public/, which Vercel needs to build from GitHub.
 *.webp
 *.png
 *.jpg
@@ -28,6 +26,11 @@ public/favicon.svg
 docs/
 .openai/
 
-# Server secrets: the SMTP key for order emails. See config/mail.config.example.ts.
-config/mail.config.ts
-config/telegram.config.ts
+# Secrets: Telegram bot token and chat id. See .env.example.
+.env*
+!.env.example
+
+# The site's media is committed so Vercel (which builds from GitHub) has it.
+!public/assets/
+!public/assets/**
+!public/favicon.svg

@@ -2,7 +2,7 @@
 
 A Diwali saree storefront built with Next.js, React, TypeScript, GSAP ScrollTrigger and a small WebGL renderer. It opens with an aarti rite in which Maa Lakshmi appears in a ring of fire, moves through Diwali, Lakshmi Puja and craft chapters, and changes chapters with sheets of real saree silk that float across the screen carrying Diwali verses. Shoppers can filter and sort 20 real Amazon.in products (silk sarees, cotton sarees and kurta sets), open a product page, keep a wishlist, fill a bag and check out.
 
-It is a Next.js app with one server route, `/api/orders`, which sends each order to a Telegram group (and by email). **`data/products.json` stands in for a database**: products, categories, prices, Amazon links, shipping rules and coupons all live there. The bag, wishlist and placed orders are kept in the browser's `localStorage`, and checkout takes no payment.
+It is a Next.js app with one server route, `/api/orders`, which sends each order to a Telegram group. **`data/products.json` stands in for a database**: products, categories, prices, Amazon links, shipping rules and coupons all live there. The bag, wishlist and placed orders are kept in the browser's `localStorage`, and checkout takes no payment.
 
 > **This repository holds the code and this guide only.** Photographs, AI-generated figures, saree fabric textures, fonts and the favicon are not committed. The site needs them in `public/assets/` to look as designed. See [Adding the media](#adding-the-media).
 
@@ -156,26 +156,29 @@ The catalogue is made of **real Amazon.in products**. Each one sells at its Amaz
 - **Homepage shop:** `components/Shop.tsx`, with category filters, sorting, wishlist and quick add. Kurtis show "Choose size" and go to their product page.
 - **Product pages:** `/products/<slug>/`, one per product, with a size picker for kurtis.
 - **Bag and wishlist:** `components/Cart.tsx`, kept in `localStorage`. The same kurti in two sizes is two lines.
-- **Checkout:** `/checkout/` (`components/Checkout.tsx`). Payment is **cash on delivery**. The form posts the address and `{id, qty, size}` per item to **`/api/orders/`** (`app/api/orders/route.ts`), which validates them and prices every item from the catalogue (prices in the request are ignored). Then:
-  - **Telegram (required):** the order goes to the admin group (`lib/order-telegram.ts`): COD amount, commission, customer and address, and every item's size, quantity, prices, ASIN and original Amazon link, with an "Open item on Amazon" button per item. If this fails, the order is refused and the shopper is asked to try again, so no order goes unrecorded.
-  - **Email (best effort):** a confirmation to the customer and a copy to the admin (`lib/order-mail.ts`). If email fails, the order still goes through.
+- **Checkout:** `/checkout/` (`components/Checkout.tsx`). Payment is **cash on delivery**, with at most 5 different items per order and 4 of each (`maxItemsPerOrder` and `maxQtyPerItem` in `data/products.json`). The form posts the address and `{id, qty, size}` per item to **`/api/orders/`** (`app/api/orders/route.ts`), which validates them and prices every item from the catalogue (prices in the request are ignored). It then sends the order to the admin Telegram group (`lib/order-telegram.ts`): COD amount, commission, customer and address, and every item's size, quantity, prices, ASIN and original Amazon link, with an "Open item on Amazon" button per item. If Telegram fails, the order is refused and the shopper is asked to try again, so no order goes unrecorded. The confirmation page shows the order ID and asks the customer to take a screenshot.
 - **Orders (store owner):** `/orders/` (`components/Orders.tsx`, not linked from the site) lists the orders with the customer's address and an "Open listing" link per item, to place the order on Amazon. Orders are stored in the browser they were placed in, so until a backend is connected you only see orders placed on that same browser.
 
-## Order notifications
+## Order notifications (Telegram)
 
-Settings live in config files, not environment variables. Both are **git-ignored** and start with `import 'server-only'`, so the build fails if browser code imports them; only the `/api/orders` server function reads them. After a build, `grep -rE "xsmtpsib|bot[0-9]" .next/static` should print nothing.
+Two environment variables, read only on the server by `/api/orders`:
 
-- **`config/telegram.config.ts`:** the bot token and the group's `chatId`. To fill in the chat id: make sure the bot is in the group, send any message in the group, then run `node scripts/telegram-chat-id.mjs` within 24 hours (Telegram keeps a bot's updates for one day). It lists the chats it sees and saves the group's id; with several groups, run it again with the id: `node scripts/telegram-chat-id.mjs -100…`.
-- **`config/mail.config.ts`:** Brevo SMTP for the emails. The `from` address must be a verified sender in Brevo, or Brevo rejects the mail.
+| Variable | Value |
+|---|---|
+| `TELEGRAM_BOT_TOKEN` | The bot's token from @BotFather |
+| `TELEGRAM_CHAT_ID` | The admin group's chat id (a negative number) |
 
-Copy `config/*.config.example.ts` to create them on another machine.
+- **Locally:** put them in `.env.local` (git-ignored; copy `.env.example`). `npm run dev` and `npm start` load it automatically.
+- **Finding the chat id:** add the bot to the group, send any message there, then run `node scripts/telegram-chat-id.mjs` within 24 hours. It prints the group's id and saves it to `.env.local`.
+- The token is never sent to the browser. After a build, `grep -r "TELEGRAM\|bot[0-9]" .next/static` should print nothing.
 
 ## Deploying to Vercel
 
-The site is a server build (`next build`), not a static export, because `/api/orders` sends email. Vercel detects Next.js with no extra settings.
+1. In Vercel → your project → **Settings → Environment Variables**, add `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` (for Production, and Preview if you use it).
+2. Redeploy (Deployments → ⋯ → Redeploy), or push to GitHub. Environment variables only apply to deployments made after they are set.
+3. Place a test order on the live site and check that it arrives in the group.
 
-- **Deploy with the Vercel CLI from this folder** (`npx vercel --prod`). The CLI uploads local files except those in `.vercelignore` (there is none), so the git-ignored config files go up with it. After deploying, place a test order to confirm the Telegram message arrives.
-- **Deploying from GitHub** (Vercel's Git integration) builds from the repository, which does not contain the git-ignored config files, so `/api/orders` will fail. Use the CLI, or commit the config only if the repository is private.
+Vercel builds from the GitHub repository, so everything the site needs must be committed, **including `public/assets/`** (photos, figures, fonts) and `public/favicon.svg`. Never commit `.env.local`.
 
 ## How the site works
 
@@ -249,11 +252,7 @@ app/
   products/[slug]/  one static page per product
   checkout/         checkout page
   orders/           store owner's order list with Amazon links
-  api/orders/       POST: validates and prices an order, notifies Telegram, emails customer and admin
-config/
-  telegram.config.ts      bot token and group chat id (git-ignored, server only)
-  mail.config.ts          SMTP key, sender and admin address (git-ignored, server only)
-  *.config.example.ts     templates for the above
+  api/orders/       POST: validates and prices an order, sends it to the Telegram group
   page.tsx          renders <Experience/>
   globals.css       base design system, sections, breakpoints
   intro.css         opening hero and celebration layout
@@ -267,7 +266,6 @@ lib/
   shop.ts           reads the catalogue; lookups, prices, cart totals
   orders.ts         the order record and its localStorage store
   order-telegram.ts the admin Telegram message (server only)
-  order-mail.ts     the two order emails (server only)
 components/
   Experience.tsx    the page: sections, navigation, dialogs
   OpeningRite.tsx   diya → ring of fire → Lakshmi → opening
@@ -298,7 +296,7 @@ scripts/
   fetch-media.mjs         Pexels and product photos → WebP variants; fonts
   make-diwali-figures.py  Lakshmi painting and photos → transparent figures
   make-saree-textures.mjs photos → saree fabric textures
-  telegram-chat-id.mjs    finds the admin group's chat id and saves it to the Telegram config
+  telegram-chat-id.mjs    finds the admin group's chat id and saves it to .env.local
   check-output.py         checks the built homepage
 ```
 

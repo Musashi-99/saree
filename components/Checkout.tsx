@@ -8,13 +8,12 @@ import {totals, money, lineKey} from '../lib/shop';
 import {saveOrder, type Order} from '../lib/orders';
 
 // Orders are cash on delivery. Placing one posts the details to /api/orders, which prices it from the catalogue
-// and emails the customer and the admin. The order that comes back is also kept in this browser for /orders/.
+// and sends it to the admin Telegram group. The order that comes back is also kept in this browser for /orders/.
 const fields=[['name','Full name','text','name'],['phone','Mobile number','tel','tel'],['email','Email','email','email'],['address','House, street and area','text','street-address'],['city','City','text','address-level2'],['state','State','text','address-level1'],['pincode','PIN code','text','postal-code']] as const;
 
 export default function Checkout(){
  const {lines,clear}=useCart();
  const [order,setOrder]=useState<Order|null>(null);
- const [emailed,setEmailed]=useState(true);
  const [sending,setSending]=useState(false);
  const [error,setError]=useState('');
  const [copied,setCopied]=useState(false);
@@ -31,7 +30,7 @@ export default function Checkout(){
    const res=await fetch('/api/orders/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({customer,items:t.items.map(({id,qty,size})=>({id,qty,size}))})});
    const data=await res.json().catch(()=>({error:'We could not place your order just now. Please try again.'}));
    if(!res.ok){setError(data.error||'We could not place your order just now. Please try again.');return;}
-   saveOrder(data.order);setEmailed(data.customerEmailed);setOrder(data.order);clear();window.scrollTo({top:0});
+   saveOrder(data.order);setOrder(data.order);clear();window.scrollTo({top:0});
   }catch{setError('No connection. Check your internet and try again.');}
   finally{setSending(false);}
  }
@@ -52,7 +51,6 @@ export default function Checkout(){
     <div><dt>Delivering to</dt><dd>{order.customer.name}, {order.customer.address}, {order.customer.city} {order.customer.pincode}</dd></div>
    </dl>
   </div>
-  <p className="body-small">{emailed?<>A confirmation has also been sent to {order.customer.email}.</>:<>We could not email your confirmation to {order.customer.email}, but your order is placed.</>}</p>
   <Link className="solid-button" href="/#shop">Continue shopping <ArrowRight size={17}/></Link>
  </section>;
 
@@ -73,7 +71,7 @@ export default function Checkout(){
     </fieldset>
     <fieldset><legend className="mini-label">PAYMENT</legend>
      <div className="pay-options"><label className="pay-option active"><input type="radio" name="payment" value="COD" checked readOnly/>Cash on delivery · pay {money(t.total)} when your order arrives</label></div>
-     <p className="concept-note">You will get an order confirmation by email.</p>
+     <p className="concept-note">You will get your order ID on the next screen. We may call you to confirm.</p>
     </fieldset>
     {error&&<p className="checkout-error" role="alert">{error}</p>}
     <button className="solid-button" type="submit" disabled={sending} aria-busy={sending}>{sending?'Placing your order…':<>Place order · {money(t.total)}</>}<ArrowRight size={17}/></button>

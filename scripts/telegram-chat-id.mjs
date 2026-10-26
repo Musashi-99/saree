@@ -1,14 +1,16 @@
-// Finds the Telegram group the order bot is in and saves its chat id to config/telegram.config.ts.
-//   1. Add the bot to the group (or keep it there) and send any message in the group, e.g. "hi".
-//   2. node scripts/telegram-chat-id.mjs            lists the chats, saves it if there is exactly one group
+// Finds the Telegram group the order bot is in and saves its chat id as TELEGRAM_CHAT_ID in .env.local.
+//   1. Put TELEGRAM_BOT_TOKEN in .env.local (see .env.example), and add the bot to the group.
+//   2. Send any message in the group, e.g. "hi".
+//   3. node scripts/telegram-chat-id.mjs            lists the chats, saves it if there is exactly one group
 //      node scripts/telegram-chat-id.mjs <chatId>   saves that chat id
 // Telegram only keeps a bot's updates for 24 hours, so send the message shortly before running this.
+// For Vercel, copy the printed id into Project → Settings → Environment Variables as TELEGRAM_CHAT_ID.
 import {readFile, writeFile} from 'node:fs/promises';
 
-const FILE = 'config/telegram.config.ts';
-const source = await readFile(FILE, 'utf8');
-const token = source.match(/botToken:\s*'([^']+)'/)?.[1];
-if (!token) throw new Error(`No botToken in ${FILE}`);
+const FILE = '.env.local';
+const env = await readFile(FILE, 'utf8').catch(() => '');
+const token = process.env.TELEGRAM_BOT_TOKEN || env.match(/^TELEGRAM_BOT_TOKEN=(.+)$/m)?.[1]?.trim();
+if (!token) throw new Error(`Set TELEGRAM_BOT_TOKEN in ${FILE} first (see .env.example)`);
 
 const api = async (method, params = {}) => {
   const res = await fetch(`https://api.telegram.org/bot${token}/${method}`, {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(params)});
@@ -18,8 +20,9 @@ const api = async (method, params = {}) => {
 };
 
 const save = async (chatId, title) => {
-  await writeFile(FILE, source.replace(/chatId:\s*'[^']*'/, `chatId: '${chatId}'`));
-  console.log(`Saved chat id ${chatId}${title ? ` (${title})` : ''} to ${FILE}`);
+  const line = `TELEGRAM_CHAT_ID=${chatId}`;
+  await writeFile(FILE, /^TELEGRAM_CHAT_ID=.*$/m.test(env) ? env.replace(/^TELEGRAM_CHAT_ID=.*$/m, line) : `${env.trimEnd()}\n${line}\n`);
+  console.log(`Saved ${line}${title ? ` (${title})` : ''} to ${FILE}. Set the same value on Vercel.`);
 };
 
 if (process.argv[2]) {

@@ -2,10 +2,9 @@
 // The browser sends only the customer details and {id, qty, size} per item; every name, price, Amazon link
 // and the commission are taken from the catalogue here, so a tampered request cannot change them.
 // The Telegram message to the admin group is required: if it fails, the order is refused, so no order goes
-// unrecorded. The customer confirmation and admin emails are extras: their failure never blocks an order.
+// unrecorded. The customer gets their order ID on the confirmation page.
 import {NextResponse} from 'next/server';
 import {getProductById, totals, lineKey, MAX_QTY, MAX_ITEMS, type CartLine} from '../../../lib/shop';
-import {sendAdminMail, sendCustomerMail} from '../../../lib/order-mail';
 import {sendTelegramOrder} from '../../../lib/order-telegram';
 import type {Order} from '../../../lib/orders';
 
@@ -59,8 +58,5 @@ export async function POST(request:Request) {
 
  try { await sendTelegramOrder(order); }
  catch (e) { console.error('Telegram order notification failed', order.id, e); return bad('We could not place your order just now. Please try again in a minute.', 502); }
- const [toCustomer, toAdmin] = await Promise.allSettled([sendCustomerMail(order), sendAdminMail(order)]);
- if (toCustomer.status === 'rejected') console.error('Order email to customer failed', order.id, toCustomer.reason);
- if (toAdmin.status === 'rejected') console.error('Order email to admin failed', order.id, toAdmin.reason);
- return NextResponse.json({order, customerEmailed:toCustomer.status === 'fulfilled'});
+ return NextResponse.json({order});
 }
