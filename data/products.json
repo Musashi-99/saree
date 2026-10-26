@@ -2,352 +2,1260 @@
   "store": {
     "name": "AARADHYA",
     "currency": "INR",
-    "freeShippingAbove": 9999,
-    "shippingFee": 249,
+    "commission": 10,
+    "freeShippingAbove": 0,
+    "shippingFee": 0,
     "diwaliDispatchBy": "2026-11-05",
-    "coupons": [
-      { "code": "DEEPAVALI10", "percent": 10, "label": "10% off for Diwali" },
-      { "code": "SHUBH500", "flat": 500, "minimum": 7999, "label": "₹500 off orders above ₹7,999" }
-    ]
+    "coupons": []
   },
   "categories": [
-    { "id": "kanjivaram", "name": "Kanjivaram Silk", "origin": "Kanchipuram, Tamil Nadu", "blurb": "Heavy mulberry silk with temple borders and contrast pallus, woven with real zari." },
-    { "id": "banarasi", "name": "Banarasi Silk", "origin": "Varanasi, Uttar Pradesh", "blurb": "Katan and kora silks brocaded in gold and silver zari, the classic Lakshmi Puja drape." },
-    { "id": "tissue-organza", "name": "Tissue & Organza", "origin": "Varanasi and Surat", "blurb": "Sheer, light-catching weaves that glow under diya light. Easy to drape for long festive nights." },
-    { "id": "handloom", "name": "Handloom & Soft Silk", "origin": "Kerala, Chanderi and Mysuru", "blurb": "Lighter hand-woven sarees for Dhanteras shopping, Bhai Dooj lunches and Diwali visits." }
+    {
+      "id": "silk-sarees",
+      "name": "Silk Sarees",
+      "origin": "Banarasi and Kanjivaram weaves",
+      "blurb": "Zari-woven silk sarees with blouse pieces, for Lakshmi Puja and Diwali night."
+    },
+    {
+      "id": "cotton-sarees",
+      "name": "Cotton Sarees",
+      "origin": "Handloom and cotton-silk",
+      "blurb": "Breathable cotton and cotton-silk sarees for Dhanteras mornings and Diwali visits."
+    },
+    {
+      "id": "kurtis",
+      "name": "Kurtis & Kurta Sets",
+      "origin": "Kurta, pant and dupatta sets",
+      "blurb": "Embroidered kurta sets with dupattas, easy to wear through all five days of Diwali."
+    }
   ],
   "products": [
     {
-      "id": "AAR-KJ-101",
-      "slug": "emerald-temple-border-kanjivaram",
-      "name": "Emerald Temple-Border Kanjivaram",
-      "category": "kanjivaram",
-      "colour": "Emerald green with antique gold",
-      "palette": ["#1f5b3a", "#b8923d", "#7a8a2a"],
-      "price": 14900,
-      "mrp": 17500,
-      "rating": 4.8,
-      "reviews": 126,
-      "stock": 7,
-      "badge": "Bestseller",
-      "featured": true,
-      "occasion": ["Lakshmi Puja", "Weddings"],
-      "images": [{ "name": "p-emerald-kanjivaram", "pexels": 35108774 }],
-      "description": "A deep emerald body with a broad antique-gold temple border and a gold-on-green brocade pallu. The weight of a true Kanjivaram, made to be worn on Lakshmi Puja night and passed down after.",
-      "details": ["Pure mulberry silk", "Tested zari, antique-gold finish", "Korvai temple border", "6.3 m with 0.8 m unstitched blouse piece"],
-      "care": "Dry clean only. Store folded in a muslin cloth and refold every few months."
-    },
-    {
-      "id": "AAR-KJ-102",
-      "slug": "peacock-blue-korvai-kanjivaram",
-      "name": "Peacock Blue Korvai Kanjivaram",
-      "category": "kanjivaram",
-      "colour": "Peacock blue with maroon and gold",
-      "palette": ["#1d4f7a", "#7d1f2b", "#c09a4a"],
-      "price": 16500,
-      "mrp": 19400,
-      "rating": 4.9,
-      "reviews": 84,
-      "stock": 4,
-      "badge": "New for Diwali",
-      "featured": true,
-      "occasion": ["Lakshmi Puja", "Diwali parties"],
-      "images": [{ "name": "p-peacock-kanjivaram", "pexels": 35108775 }],
-      "description": "Peacock blue meets a maroon korvai border, joined by hand in the traditional interlocked weave. The contrast pallu is brocaded with gold mango motifs that shimmer as you move.",
-      "details": ["Pure mulberry silk", "Hand-joined korvai border", "Gold zari mango-motif pallu", "6.3 m with 0.8 m unstitched blouse piece"],
-      "care": "Dry clean only. Keep away from perfume and direct sunlight."
-    },
-    {
-      "id": "AAR-KJ-103",
-      "slug": "wine-purple-kanjivaram",
-      "name": "Wine Purple Kanjivaram with Gold Pallu",
-      "category": "kanjivaram",
-      "colour": "Wine purple with olive and gold",
-      "palette": ["#6b1f4e", "#c9a14a", "#5e6b2c"],
-      "price": 18900,
-      "mrp": 21000,
-      "rating": 4.7,
-      "reviews": 52,
-      "stock": 3,
-      "badge": "Limited",
-      "featured": true,
-      "occasion": ["Lakshmi Puja", "Weddings"],
-      "images": [{ "name": "p-wine-kanjivaram", "pexels": 27575104 }],
-      "description": "A jewel-toned wine body with an olive-and-gold border and a heavy all-gold pallu. One of the richest weaves in our Diwali edit, for the evening you light the first diya.",
-      "details": ["Pure mulberry silk", "Heavy gold zari pallu", "Contrast olive border", "6.3 m with 0.8 m unstitched blouse piece"],
-      "care": "Dry clean only. Wrap in muslin; do not hang for long periods."
-    },
-    {
-      "id": "AAR-KJ-104",
-      "slug": "copper-tissue-kanjivaram",
-      "name": "Copper Tissue Kanjivaram",
-      "category": "kanjivaram",
-      "colour": "Burnt copper with gold tissue",
-      "palette": ["#b5541f", "#d9a441", "#7a2e14"],
-      "price": 15400,
-      "mrp": 18100,
-      "rating": 4.8,
-      "reviews": 71,
-      "stock": 6,
-      "badge": "Diwali pick",
-      "featured": true,
-      "occasion": ["Dhanteras", "Lakshmi Puja"],
-      "images": [{ "name": "p-copper-kanjivaram", "pexels": 27575174 }],
-      "description": "Burnt copper silk woven with a fine gold tissue weft, so the whole saree glows like a lamp flame. Wear it for Dhanteras gold shopping and again for the puja.",
-      "details": ["Mulberry silk with tissue weft", "Gold zari border and pallu", "Lightweight for a Kanjivaram", "6.3 m with 0.8 m unstitched blouse piece"],
-      "care": "Dry clean only. Iron on low heat from the reverse."
-    },
-    {
-      "id": "AAR-KJ-105",
-      "slug": "ivory-parrot-green-kanjivaram",
-      "name": "Ivory & Parrot Green Kanjivaram",
-      "category": "kanjivaram",
-      "colour": "Silver ivory with parrot green",
-      "palette": ["#e9e3d6", "#2f9a5a", "#c6a65a"],
-      "price": 13600,
-      "mrp": 16000,
-      "rating": 4.6,
-      "reviews": 39,
-      "stock": 9,
-      "badge": null,
+      "id": "AAR-B0CSN49Y26",
+      "slug": "cream-kanjivaram-pure-soft-silk-saree-cream-9y26",
+      "name": "Cream Kanjivaram Pure Soft Silk Saree",
+      "brand": "SGF11",
+      "category": "silk-sarees",
+      "colour": "Cream",
+      "palette": [
+        "#af8a61",
+        "#e8d7b5",
+        "#d3b98e"
+      ],
+      "price": 1177,
+      "mrp": 5999,
+      "rating": 4.0,
+      "reviews": 740,
+      "stock": 10,
+      "badge": "80% off",
       "featured": false,
-      "occasion": ["Govardhan Puja", "Daytime puja"],
-      "images": [{ "name": "p-ivory-kanjivaram", "pexels": 28054616 }],
-      "description": "A silver-ivory body with a bright parrot-green border and pallu. Fresh and festive for the morning puja, and quietly grand by lamplight.",
-      "details": ["Pure mulberry silk", "Silver and gold zari", "Contrast parrot-green border", "6.3 m with 0.8 m unstitched blouse piece"],
-      "care": "Dry clean only."
+      "occasion": [
+        "Lakshmi Puja",
+        "Diwali night"
+      ],
+      "sizes": [],
+      "images": [
+        {
+          "name": "a-b0csn49y26-1",
+          "url": "https://m.media-amazon.com/images/I/71SYCBsloBL._SL1500_.jpg"
+        },
+        {
+          "name": "a-b0csn49y26-2",
+          "url": "https://m.media-amazon.com/images/I/71qjagjlnfL._SL1104_.jpg"
+        },
+        {
+          "name": "a-b0csn49y26-3",
+          "url": "https://m.media-amazon.com/images/I/612GOVdVztL._SL1100_.jpg"
+        },
+        {
+          "name": "a-b0csn49y26-4",
+          "url": "https://m.media-amazon.com/images/I/71LuYIN6vPL._SL1447_.jpg"
+        }
+      ],
+      "description": "Bold and beautiful, this Kanchipuram KING & QUEEN ATTRACTIVE silk Pink color brocade saree is all about impactful presence.",
+      "details": [
+        "Fabric: Kanjivaram Pure Soft Silk Handloom, Blouse Fabric Kanchipuram Silk. Work: Kanjivaram Pure Soft Silk Handloom, Zari Woven.",
+        "Saree Length:5.50Meter, Blouse Piece Length: 0.80 Meter( Unsticthed, Attached With Saree)",
+        "Other Details : {Soft Finished Comfortable To Wear and Easy To Take Fleets } {Size-Free Size} { Saree Is Not Transparent } Package Included: 1 Saree with 1 Blou",
+        "Ocassion: Wedding Wear Saree | Party Wear Saree | Traditional Wear Saree | Festival Wear Saree."
+      ],
+      "care": "Dry clean only. Store folded in a muslin cloth.",
+      "source": {
+        "asin": "B0CSN49Y26",
+        "link": "https://www.amazon.in/dp/B0CSN49Y26",
+        "title": "SGF11 Women's Kanjivaram Pure Soft Silk Saree For Women Pure Golden Zari With Blouse Piece",
+        "amazonPrice": 1167,
+        "amazonMrp": 5999,
+        "commission": 10
+      }
     },
     {
-      "id": "AAR-BN-201",
-      "slug": "saffron-zari-katan-banarasi",
-      "name": "Saffron Zari Katan Banarasi",
-      "category": "banarasi",
-      "colour": "Saffron orange with gold zari",
-      "palette": ["#e0782b", "#c99a3e", "#b3402a"],
-      "price": 11200,
-      "mrp": 13200,
-      "rating": 4.9,
-      "reviews": 148,
-      "stock": 8,
+      "id": "AAR-B08354NT7W",
+      "slug": "magenta-banarasi-pure-kanjivaram-style-silk-saree-magenta-nt7w",
+      "name": "Magenta Banarasi Pure Kanjivaram Style Silk Saree",
+      "brand": "Monjolika Fashion",
+      "category": "silk-sarees",
+      "colour": "Magenta",
+      "palette": [
+        "#e76772",
+        "#ed2257",
+        "#d05d5e"
+      ],
+      "price": 508,
+      "mrp": 6999,
+      "rating": 3.9,
+      "reviews": 2886,
+      "stock": 10,
+      "badge": "93% off",
+      "featured": true,
+      "occasion": [
+        "Lakshmi Puja",
+        "Diwali night"
+      ],
+      "sizes": [],
+      "images": [
+        {
+          "name": "a-b08354nt7w-1",
+          "url": "https://m.media-amazon.com/images/I/81yg-mfLaAL._SL1500_.jpg"
+        },
+        {
+          "name": "a-b08354nt7w-2",
+          "url": "https://m.media-amazon.com/images/I/91mvFrCZMaL._SL1500_.jpg"
+        },
+        {
+          "name": "a-b08354nt7w-3",
+          "url": "https://m.media-amazon.com/images/I/81R8aZ52AaL._SL1500_.jpg"
+        },
+        {
+          "name": "a-b08354nt7w-4",
+          "url": "https://m.media-amazon.com/images/I/71cKksV9XVL._SL1500_.jpg"
+        }
+      ],
+      "description": "Colour: Saree – Magenta | Blouse –Green",
+      "details": [
+        "Fabric: Banarasi Silk Blend || Work: Zari Woven,Brocade",
+        "Colour: Saree – Magenta | Blouse –Green",
+        "Type :- Banarasi silk saree is intricately woven with zari detailing.",
+        "What’s in The Package: Length: Saree – 5.5m | Blouse Piece – 0.8 cm || Package Includes: 1 Saree with Attached Blouse Piece."
+      ],
+      "care": "Dry clean only. Store folded in a muslin cloth.",
+      "source": {
+        "asin": "B08354NT7W",
+        "link": "https://www.amazon.in/dp/B08354NT7W",
+        "title": "Monjolika Fashion Women's Banarasi Pure Kanjivaram Style Silk Saree With Blouse Piece for Wedding (37765 color)",
+        "amazonPrice": 498,
+        "amazonMrp": 6999,
+        "commission": 10
+      }
+    },
+    {
+      "id": "AAR-B0FSRXSBPC",
+      "slug": "purple-and-gold-banarasi-silk-kanjivaram-saree-purple-and-gold-sbpc",
+      "name": "Purple And Gold Banarasi Silk Kanjivaram Saree",
+      "brand": "Mehrang",
+      "category": "silk-sarees",
+      "colour": "Purple And Gold",
+      "palette": [
+        "#855c5b",
+        "#c79e86",
+        "#a77f77"
+      ],
+      "price": 949,
+      "mrp": 3999,
+      "rating": 4.0,
+      "reviews": 133,
+      "stock": 10,
+      "badge": "76% off",
+      "featured": false,
+      "occasion": [
+        "Lakshmi Puja",
+        "Diwali night"
+      ],
+      "sizes": [],
+      "images": [
+        {
+          "name": "a-b0fsrxsbpc-1",
+          "url": "https://m.media-amazon.com/images/I/918szKojolL._SL1500_.jpg"
+        },
+        {
+          "name": "a-b0fsrxsbpc-2",
+          "url": "https://m.media-amazon.com/images/I/916tD3BuzuL._SL1500_.jpg"
+        },
+        {
+          "name": "a-b0fsrxsbpc-3",
+          "url": "https://m.media-amazon.com/images/I/91VBgMaE58L._SL1500_.jpg"
+        },
+        {
+          "name": "a-b0fsrxsbpc-4",
+          "url": "https://m.media-amazon.com/images/I/91HNxwr4YpL._SL1500_.jpg"
+        }
+      ],
+      "description": "DESIGN ELEMENTS: Elaborate traditional motifs and patterns woven in metallic gold zari, enhanced with delicate sequin details",
+      "details": [
+        "FABRIC: Luxurious silk saree in a stunning lavender shade adorned with intricate gold zari embroidery work throughout",
+        "DESIGN ELEMENTS: Elaborate traditional motifs and patterns woven in metallic gold zari, enhanced with delicate sequin details",
+        "BLOUSE PIECE: Matching blouse piece with elegant neckline and coordinated zari embellishments",
+        "OCCASION WEAR: Perfect for weddings, festivals, formal ceremonies and special occasions, exuding timeless grace"
+      ],
+      "care": "Dry clean only. Store folded in a muslin cloth.",
+      "source": {
+        "asin": "B0FSRXSBPC",
+        "link": "https://www.amazon.in/dp/B0FSRXSBPC",
+        "title": "Mehrang Women's Banarasi Silk Kanjivaram Saree For Wedding With Pure Zari Work, Woven Design, With Unstitched Blouse Piece",
+        "amazonPrice": 939,
+        "amazonMrp": 3999,
+        "commission": 10
+      }
+    },
+    {
+      "id": "AAR-B0BNF2Q1H3",
+      "slug": "maroon-kanjivaram-pure-soft-silk-saree-maroon-q1h3",
+      "name": "Maroon Kanjivaram Pure Soft Silk Saree",
+      "brand": "AKHILAM",
+      "category": "silk-sarees",
+      "colour": "Maroon",
+      "palette": [
+        "#7f3d35",
+        "#5d211e",
+        "#481a17"
+      ],
+      "price": 693,
+      "mrp": 4049,
+      "rating": 4.0,
+      "reviews": 916,
+      "stock": 10,
       "badge": "Bestseller",
       "featured": true,
-      "occasion": ["Lakshmi Puja", "Diwali parties"],
-      "images": [
-        { "name": "p-saffron-banarasi-1", "pexels": 28943608 },
-        { "name": "p-saffron-banarasi-2", "pexels": 28943610 },
-        { "name": "p-saffron-banarasi-3", "pexels": 28943499 }
+      "occasion": [
+        "Lakshmi Puja",
+        "Diwali night"
       ],
-      "description": "The colour of marigold garlands and diya flames. A pure katan silk Banarasi with a dense gold zari border and buttis scattered across the body.",
-      "details": ["Pure katan silk", "Kadhua zari border", "Gold buttis all over", "6.2 m with 0.8 m unstitched blouse piece"],
-      "care": "Dry clean only. Store with neem leaves or silica, never with naphthalene."
+      "sizes": [],
+      "images": [
+        {
+          "name": "a-b0bnf2q1h3-1",
+          "url": "https://m.media-amazon.com/images/I/81aWtq1ya7L._SL1500_.jpg"
+        },
+        {
+          "name": "a-b0bnf2q1h3-2",
+          "url": "https://m.media-amazon.com/images/I/7112dzZ+YIL._SL1440_.jpg"
+        },
+        {
+          "name": "a-b0bnf2q1h3-3",
+          "url": "https://m.media-amazon.com/images/I/61KY493GpQL._SL1440_.jpg"
+        },
+        {
+          "name": "a-b0bnf2q1h3-4",
+          "url": "https://m.media-amazon.com/images/I/71SSAfKC4dL._SL1500_.jpg"
+        }
+      ],
+      "description": "Color :- Maroon Sarees for women With Maroon Unstitched Blouse",
+      "details": [
+        "Color :- Maroon Sarees for women With Maroon Unstitched Blouse",
+        "Fabric :- Banarasi Silk sarees for women with Silk Blend Blouse",
+        "Saree Work Detail :- Woven || Blouse Work Detail:- Ethnic Motif",
+        "Saree Length: Saree- 5.5 || Blouse Piece Length: 0.8 Mtr"
+      ],
+      "care": "Dry clean only. Store folded in a muslin cloth.",
+      "source": {
+        "asin": "B0BNF2Q1H3",
+        "link": "https://www.amazon.in/dp/B0BNF2Q1H3",
+        "title": "AKHILAM Women's Kanjivaram Pure Soft Silk Saree For Women Saree With Unstitched Blouse Piece |Soft banarasi saree for women|silk saree pure silk",
+        "amazonPrice": 683,
+        "amazonMrp": 4049,
+        "commission": 10
+      }
     },
     {
-      "id": "AAR-BN-202",
-      "slug": "sindoor-red-banarasi-brocade",
-      "name": "Sindoor Red Banarasi Brocade",
-      "category": "banarasi",
-      "colour": "Sindoor red with coral and gold",
-      "palette": ["#d23a3a", "#f08a6a", "#c9a14a"],
-      "price": 12750,
-      "mrp": 15000,
-      "rating": 4.8,
-      "reviews": 97,
-      "stock": 5,
-      "badge": "Diwali pick",
+      "id": "AAR-B0D8GYHB4M",
+      "slug": "maroon-pure-soft-silk-saree-maroon-hb4m",
+      "name": "Maroon Pure Soft Silk Saree",
+      "brand": "C J Enterprise",
+      "category": "silk-sarees",
+      "colour": "Maroon",
+      "palette": [
+        "#b5977d",
+        "#d9c3a8",
+        "#30121a"
+      ],
+      "price": 446,
+      "mrp": 999,
+      "rating": 3.8,
+      "reviews": 2303,
+      "stock": 10,
+      "badge": "Under ₹500",
       "featured": true,
-      "occasion": ["Lakshmi Puja", "Bhai Dooj"],
-      "images": [
-        { "name": "p-sindoor-banarasi-1", "pexels": 28943543 },
-        { "name": "p-sindoor-banarasi-2", "pexels": 28943579 },
-        { "name": "p-sindoor-banarasi-3", "pexels": 28943531 }
+      "occasion": [
+        "Lakshmi Puja",
+        "Diwali night"
       ],
-      "description": "Sindoor red shading into coral, brocaded in gold with a classic Banarasi jaal. The most-asked-for colour for Lakshmi Puja, and the one that photographs best by lamplight.",
-      "details": ["Pure silk brocade", "Gold zari jaal", "Tasselled pallu", "6.2 m with 0.8 m unstitched blouse piece"],
-      "care": "Dry clean only."
+      "sizes": [],
+      "images": [
+        {
+          "name": "a-b0d8gyhb4m-1",
+          "url": "https://m.media-amazon.com/images/I/716MoQU2KmL._SL1500_.jpg"
+        },
+        {
+          "name": "a-b0d8gyhb4m-2",
+          "url": "https://m.media-amazon.com/images/I/81Qu+5c6sTL._SL1500_.jpg"
+        },
+        {
+          "name": "a-b0d8gyhb4m-3",
+          "url": "https://m.media-amazon.com/images/I/61Fk5Xp9XEL.jpg"
+        },
+        {
+          "name": "a-b0d8gyhb4m-4",
+          "url": "https://m.media-amazon.com/images/I/51tXr7my23L.jpg"
+        }
+      ],
+      "description": "Type: Banarasi Silk Saree",
+      "details": [
+        "Type: Banarasi Silk Saree",
+        "Color: Multii",
+        "Fabric: Saree: Banarasi Art Silk || Blouse: Banarasi Art Silk",
+        "Dimension: Saree: 5.5 M II Blouse: 0.8 M"
+      ],
+      "care": "Dry clean only. Store folded in a muslin cloth.",
+      "source": {
+        "asin": "B0D8GYHB4M",
+        "link": "https://www.amazon.in/dp/B0D8GYHB4M",
+        "title": "C J Enterprise Women's Pure Soft Silk Saree With Blouse Piece For Wedding",
+        "amazonPrice": 436,
+        "amazonMrp": 999,
+        "commission": 10
+      }
     },
     {
-      "id": "AAR-BN-203",
-      "slug": "lotus-pink-katan-banarasi",
-      "name": "Lotus Pink Katan Banarasi",
-      "category": "banarasi",
-      "colour": "Lotus pink with silver-gold zari",
-      "palette": ["#e7a0c0", "#d8c39a", "#b25a86"],
-      "price": 9450,
-      "mrp": 11100,
-      "rating": 4.7,
-      "reviews": 64,
+      "id": "AAR-B0F9LJ8LFS",
+      "slug": "rani-pink-banarasi-saree-pure-kanjivaram-style-silk-saree-rani-pink-8lfs",
+      "name": "Rani Pink Banarasi Saree Pure Kanjivaram Style Silk Saree",
+      "brand": "C J Enterprise",
+      "category": "silk-sarees",
+      "colour": "Rani Pink",
+      "palette": [
+        "#e81554",
+        "#df7171",
+        "#e4ac99"
+      ],
+      "price": 458,
+      "mrp": 1999,
+      "rating": 3.9,
+      "reviews": 350,
+      "stock": 10,
+      "badge": "Under ₹500",
+      "featured": false,
+      "occasion": [
+        "Lakshmi Puja",
+        "Diwali night"
+      ],
+      "sizes": [],
+      "images": [
+        {
+          "name": "a-b0f9lj8lfs-1",
+          "url": "https://m.media-amazon.com/images/I/81TMMVGxVZL._SL1500_.jpg"
+        },
+        {
+          "name": "a-b0f9lj8lfs-2",
+          "url": "https://m.media-amazon.com/images/I/81wGUyFsUTL._SL1500_.jpg"
+        },
+        {
+          "name": "a-b0f9lj8lfs-3",
+          "url": "https://m.media-amazon.com/images/I/81MATMyN5xL._SL1500_.jpg"
+        },
+        {
+          "name": "a-b0f9lj8lfs-4",
+          "url": "https://m.media-amazon.com/images/I/71nVbR5AEhL._SL1500_.jpg"
+        }
+      ],
+      "description": "Type: Kanjivaram Art Silk Saree",
+      "details": [
+        "Type: Kanjivaram Art Silk Saree",
+        "Fabric: Saree: Kanjivaram Silk || Blouse: Kanjivaram Silk",
+        "Dimension: Saree: 5.5 M - Blouse: 0.8 M",
+        "Perfect for Event: Festive Wear Saree | Party Wear Saree | Occasional Wear Saree | Traditional Wear Saree | Wedding Wear Saree | Reception Wear Saree | Butta Sa"
+      ],
+      "care": "Dry clean only. Store folded in a muslin cloth.",
+      "source": {
+        "asin": "B0F9LJ8LFS",
+        "link": "https://www.amazon.in/dp/B0F9LJ8LFS",
+        "title": "C J Enterprise Women's Banarasi Saree Pure Kanjivaram Style Silk Saree With Blouse Piece for Wedding (Pari 121)",
+        "amazonPrice": 448,
+        "amazonMrp": 1999,
+        "commission": 10
+      }
+    },
+    {
+      "id": "AAR-B0FTZBH116",
+      "slug": "maroon-red-banarasi-kanjivaram-cotton-silk-saree-maroon-red-h116",
+      "name": "Maroon Red Banarasi Kanjivaram Cotton Silk Saree",
+      "brand": "Yashika",
+      "category": "silk-sarees",
+      "colour": "Maroon Red",
+      "palette": [
+        "#a37150",
+        "#340c0d",
+        "#1e0a0b"
+      ],
+      "price": 479,
+      "mrp": 1799,
+      "rating": 3.6,
+      "reviews": 773,
+      "stock": 10,
+      "badge": "Under ₹500",
+      "featured": false,
+      "occasion": [
+        "Lakshmi Puja",
+        "Diwali night"
+      ],
+      "sizes": [],
+      "images": [
+        {
+          "name": "a-b0ftzbh116-1",
+          "url": "https://m.media-amazon.com/images/I/61Sh8+QegNL._SL1500_.jpg"
+        },
+        {
+          "name": "a-b0ftzbh116-2",
+          "url": "https://m.media-amazon.com/images/I/61ZxwKFaJyL._SL1300_.jpg"
+        },
+        {
+          "name": "a-b0ftzbh116-3",
+          "url": "https://m.media-amazon.com/images/I/61Vdx52iFlL._SL1300_.jpg"
+        },
+        {
+          "name": "a-b0ftzbh116-4",
+          "url": "https://m.media-amazon.com/images/I/61dB6mQ4g9L._SL1300_.jpg"
+        }
+      ],
+      "description": "Work Type : Woven & Comfortable to wear",
+      "details": [
+        "Saree Fabric : Banarasi Silk Saree || Blouse Fabric : Banarasi Silk Saree",
+        "Saree Length : 6 Mtr included Blouse Piece (5.25 Mtr Saree + 0.75 Mtr Blouse)",
+        "Work Type : Woven & Comfortable to wear",
+        "Ocassion - Party Wear || Daily Wear || Festive Wear || Office Wear || Evening Wear"
+      ],
+      "care": "Dry clean only. Store folded in a muslin cloth.",
+      "source": {
+        "asin": "B0FTZBH116",
+        "link": "https://www.amazon.in/dp/B0FTZBH116",
+        "title": "Yashika Women's Banarasi Kanjivaram Cotton Silk Saree With Unstitched Blouse Material",
+        "amazonPrice": 469,
+        "amazonMrp": 1799,
+        "commission": 10
+      }
+    },
+    {
+      "id": "AAR-B0HHS1RMZJ",
+      "slug": "light-green-pure-cotton-gold-border-lotus-embroidery-hand-woven-saree-light-green-rmzj",
+      "name": "Light Green Pure Cotton Gold Border Lotus Embroidery Hand Woven Saree",
+      "brand": "Amita Collection",
+      "category": "cotton-sarees",
+      "colour": "Light Green",
+      "palette": [
+        "#a9bb82",
+        "#9bb373",
+        "#704f37"
+      ],
+      "price": 499,
+      "mrp": 1699,
+      "rating": 5.0,
+      "reviews": 3,
+      "stock": 10,
+      "badge": "Under ₹500",
+      "featured": false,
+      "occasion": [
+        "Dhanteras",
+        "Diwali visits"
+      ],
+      "sizes": [],
+      "images": [
+        {
+          "name": "a-b0hhs1rmzj-1",
+          "url": "https://m.media-amazon.com/images/I/61d9cLl6BcL._SL1195_.jpg"
+        },
+        {
+          "name": "a-b0hhs1rmzj-2",
+          "url": "https://m.media-amazon.com/images/I/71G4ZCL7N3L._SL1195_.jpg"
+        },
+        {
+          "name": "a-b0hhs1rmzj-3",
+          "url": "https://m.media-amazon.com/images/I/71mhqi49DPL._SL1195_.jpg"
+        },
+        {
+          "name": "a-b0hhs1rmzj-4",
+          "url": "https://m.media-amazon.com/images/I/71xbCV37XSL._SL1195_.jpg"
+        }
+      ],
+      "description": "Crafted from 100% natural pure cotton fabric for soft, highly breathable, and all-day comfortable ethnic wear during any season.",
+      "details": [
+        "Crafted from 100% natural pure cotton fabric for soft, highly breathable, and all-day comfortable ethnic wear during any season.",
+        "Features delicate floral and geometric embroidery work across the body and pallu for an elegant, understated look on any occasion.",
+        "Comes complete with a matching unstitched cotton blouse piece that can be easily customized to your exact desired fit and style.",
+        "Holds crisp, neat pleats effortlessly while maintaining a lightweight, fluid drape that stays manageable throughout long events."
+      ],
+      "care": "Dry clean or gentle hand wash in cold water. Dry in shade.",
+      "source": {
+        "asin": "B0HHS1RMZJ",
+        "link": "https://www.amazon.in/dp/B0HHS1RMZJ",
+        "title": "Women Pure Cotton Gold Border Lotus Embroidery Hand Woven Saree with Unstitched Blouse Piece (5.5m Saree, 0.8m Blouse)",
+        "amazonPrice": 489,
+        "amazonMrp": 1699,
+        "commission": 10
+      }
+    },
+    {
+      "id": "AAR-B0DTKNCYVF",
+      "slug": "pink-floral-handloom-erode-cotton-silk-saree-pink-floral-cyvf",
+      "name": "Pink Floral Handloom Erode Cotton Silk Saree",
+      "brand": "ALMAARI FASHION",
+      "category": "cotton-sarees",
+      "colour": "Pink Floral",
+      "palette": [
+        "#cb8a8d",
+        "#d0a09c",
+        "#dabcb1"
+      ],
+      "price": 1009,
+      "mrp": 2999,
+      "rating": 3.7,
+      "reviews": 352,
       "stock": 10,
       "badge": null,
       "featured": true,
-      "occasion": ["Lakshmi Puja", "Diwali visits"],
-      "images": [{ "name": "p-lotus-banarasi", "pexels": 35108806 }],
-      "description": "The pink of the lotus Maa Lakshmi stands on. Soft katan silk with fine silver-gold floral buttis and a woven border that frames the drape.",
-      "details": ["Pure katan silk", "Silver-gold zari florals", "Woven border", "6.2 m with 0.8 m unstitched blouse piece"],
-      "care": "Dry clean only."
-    },
-    {
-      "id": "AAR-BN-204",
-      "slug": "mint-blush-kora-banarasi",
-      "name": "Mint & Blush Kora Banarasi",
-      "category": "banarasi",
-      "colour": "Mint green with blush pink",
-      "palette": ["#a9cbbd", "#e9a7b8", "#c9b37a"],
-      "price": 7850,
-      "mrp": 9200,
-      "rating": 4.6,
-      "reviews": 58,
-      "stock": 12,
-      "badge": null,
-      "featured": false,
-      "occasion": ["Dhanteras", "Diwali parties"],
-      "images": [
-        { "name": "p-mint-banarasi-1", "pexels": 35108768 },
-        { "name": "p-mint-banarasi-2", "pexels": 35108770 },
-        { "name": "p-mint-banarasi-3", "pexels": 35108773 }
+      "occasion": [
+        "Dhanteras",
+        "Diwali visits"
       ],
-      "description": "A pastel kora silk Banarasi in mint, with a wide blush-pink border and pallu woven with silver lotus motifs. Light enough to wear from evening puja to late-night card parties.",
-      "details": ["Kora silk", "Silver zari lotus motifs", "Contrast blush border", "6.2 m with 0.8 m unstitched blouse piece"],
-      "care": "Dry clean recommended."
+      "sizes": [],
+      "images": [
+        {
+          "name": "a-b0dtkncyvf-1",
+          "url": "https://m.media-amazon.com/images/I/71G6ISHOCeL._SL1500_.jpg"
+        },
+        {
+          "name": "a-b0dtkncyvf-2",
+          "url": "https://m.media-amazon.com/images/I/91GGIeb86HL._SL1500_.jpg"
+        },
+        {
+          "name": "a-b0dtkncyvf-3",
+          "url": "https://m.media-amazon.com/images/I/81mI7NJTe+L._SL1500_.jpg"
+        },
+        {
+          "name": "a-b0dtkncyvf-4",
+          "url": "https://m.media-amazon.com/images/I/91Wfm0hlInL._SL1500_.jpg"
+        }
+      ],
+      "description": "Design: floral print saree for women printed saree for women saree for women latest design zari border saree traditional sarees for women gives stylish sarees for women elegant ethnic look",
+      "details": [
+        "Fabric: cotton saree for women cotton silk saree handloom sarees for women made from soft fabric light weight sarees for women latest design comfortable festive",
+        "Design: floral print saree for women printed saree for women saree for women latest design zari border saree traditional sarees for women gives stylish sarees f",
+        "Comfort: soft saree for women light weight sarees for women latest design cotton daily wear saree comfortable for office wear saree and daily use sarees for wom",
+        "Occasion: festive wear sarees for women latest design saree for wedding function wedding sarees for women saree festive wear suitable for engagement saree for w"
+      ],
+      "care": "Dry clean or gentle hand wash in cold water. Dry in shade.",
+      "source": {
+        "asin": "B0DTKNCYVF",
+        "link": "https://www.amazon.in/dp/B0DTKNCYVF",
+        "title": "ALMAARI FASHION Handloom Erode Cotton Silk Saree for Women wd Classic Zari",
+        "amazonPrice": 999,
+        "amazonMrp": 2999,
+        "commission": 10
+      }
     },
     {
-      "id": "AAR-BN-205",
-      "slug": "midnight-blue-banarasi-silk",
-      "name": "Midnight Blue Banarasi Silk",
-      "category": "banarasi",
-      "colour": "Midnight blue with silver zari",
-      "palette": ["#1f2f74", "#c7c9d6", "#8e1d2c"],
-      "price": 10800,
-      "mrp": 12700,
-      "rating": 4.7,
-      "reviews": 45,
-      "stock": 6,
+      "id": "AAR-B0FMSTSNB2",
+      "slug": "orange-dhiha-gadwal-cotton-saree-orange-snb2",
+      "name": "Orange DHIHA Gadwal Cotton Saree",
+      "brand": "Generic",
+      "category": "cotton-sarees",
+      "colour": "Orange",
+      "palette": [
+        "#c6380b",
+        "#2e2e29",
+        "#802812"
+      ],
+      "price": 1309,
+      "mrp": 2999,
+      "rating": 4.1,
+      "reviews": 121,
+      "stock": 10,
       "badge": null,
       "featured": false,
-      "occasion": ["Diwali parties", "Weddings"],
-      "images": [{ "name": "p-midnight-banarasi", "pexels": 28517477 }],
-      "description": "Like the Amavasya sky on Diwali night: midnight-blue silk scattered with silver zari motifs. A striking choice when everyone else is in red and gold.",
-      "details": ["Pure silk", "Silver zari motifs", "Rich woven pallu", "6.2 m with 0.8 m unstitched blouse piece"],
-      "care": "Dry clean only."
+      "occasion": [
+        "Dhanteras",
+        "Diwali visits"
+      ],
+      "sizes": [],
+      "images": [
+        {
+          "name": "a-b0fmstsnb2-1",
+          "url": "https://m.media-amazon.com/images/I/71LdsiRzafL._SL1500_.jpg"
+        },
+        {
+          "name": "a-b0fmstsnb2-2",
+          "url": "https://m.media-amazon.com/images/I/719guAibAnL._SL1500_.jpg"
+        },
+        {
+          "name": "a-b0fmstsnb2-3",
+          "url": "https://m.media-amazon.com/images/I/71ACdSvjC8L._SL1500_.jpg"
+        },
+        {
+          "name": "a-b0fmstsnb2-4",
+          "url": "https://m.media-amazon.com/images/I/71fK3TJaDuL._SL1500_.jpg"
+        }
+      ],
+      "description": "✨ Intricate Zari Border – Features rich gold-toned woven zari work for a royal ethnic touch",
+      "details": [
+        "✨ Intricate Zari Border – Features rich gold-toned woven zari work for a royal ethnic touch",
+        "🌿 Soft Cotton-Silk Blend – Lightweight & breathable fabric for all-day ease and elegance",
+        "🎯 Perfect for All Occasions – Great choice for weddings, festivals, office wear & special events",
+        "👚 Includes Blouse Piece – Comes with a matching 0.8m unstitched blouse for personalized fit"
+      ],
+      "care": "Dry clean or gentle hand wash in cold water. Dry in shade.",
+      "source": {
+        "asin": "B0FMSTSNB2",
+        "link": "https://www.amazon.in/dp/B0FMSTSNB2",
+        "title": "DHIHA Gadwal Cotton Saree for Women | Pure Kalyani Cotton Saree with Zari Border Tassels & Blouse | Kanjivaram Linen Silk | Handloom Weave",
+        "amazonPrice": 1299,
+        "amazonMrp": 2999,
+        "commission": 10
+      }
     },
     {
-      "id": "AAR-BN-206",
-      "slug": "kumkum-red-banarasi-georgette",
-      "name": "Kumkum Red Banarasi Georgette",
-      "category": "banarasi",
-      "colour": "Kumkum red with gold motifs",
-      "palette": ["#c62b2b", "#e2b04a", "#8a1717"],
-      "price": 6950,
-      "mrp": 8200,
-      "rating": 4.5,
-      "reviews": 112,
-      "stock": 15,
-      "badge": "Under ₹7,000",
+      "id": "AAR-B0GX9GBKFD",
+      "slug": "coffee-premium-pure-cotton-silk-saree-coffee-bkfd",
+      "name": "Coffee Premium Pure Cotton Silk Saree",
+      "brand": "Flosive",
+      "category": "cotton-sarees",
+      "colour": "Coffee",
+      "palette": [
+        "#5c3b2c",
+        "#472a20",
+        "#7d5844"
+      ],
+      "price": 409,
+      "mrp": 4500,
+      "rating": 4.0,
+      "reviews": 44,
+      "stock": 10,
+      "badge": "Under ₹500",
       "featured": false,
-      "occasion": ["Bhai Dooj", "Diwali visits"],
-      "images": [{ "name": "p-kumkum-banarasi", "pexels": 31699150 }],
-      "description": "A fluid Banarasi georgette in kumkum red with large gold zari motifs. Falls beautifully, travels well, and is easy to drape on a busy festival day.",
-      "details": ["Pure georgette", "Gold zari motifs", "Lightweight drape", "6.2 m with 0.8 m unstitched blouse piece"],
-      "care": "Dry clean recommended."
+      "occasion": [
+        "Dhanteras",
+        "Diwali visits"
+      ],
+      "sizes": [],
+      "images": [
+        {
+          "name": "a-b0gx9gbkfd-1",
+          "url": "https://m.media-amazon.com/images/I/715BEpFQUrL._SL1500_.jpg"
+        },
+        {
+          "name": "a-b0gx9gbkfd-2",
+          "url": "https://m.media-amazon.com/images/I/61c8PikBB8L._SL1280_.jpg"
+        },
+        {
+          "name": "a-b0gx9gbkfd-3",
+          "url": "https://m.media-amazon.com/images/I/61HXRdePY+L._SL1280_.jpg"
+        },
+        {
+          "name": "a-b0gx9gbkfd-4",
+          "url": "https://m.media-amazon.com/images/I/61kzz2Lu8WL._SL1280_.jpg"
+        }
+      ],
+      "description": "🖤 PREMIUM COTTON FABRIC: Crafted from high-quality, breathable cotton that offers a lightweight feel and a sophisticated, slightly sheer texture—ideal for all-day comfort.",
+      "details": [
+        "🖤 PREMIUM COTTON FABRIC: Crafted from high-quality, breathable cotton that offers a lightweight feel and a sophisticated, slightly sheer texture—ideal for all-d",
+        "🌬️ Pure Cotton Fabric: Soft, breathable, and skin-friendly material for maximum comfort",
+        "✨ ELEGANT GOLDEN ZARI: Features a rich, woven gold Zari border and subtle floral motifs (buttis) that add a touch of \"quiet luxury\" and festive glamour to the j",
+        "💃 STRUCTURED DRAPE: The fabric’s crisp handloom finish ensures sharp pleats and a flattering, structured silhouette that holds its shape for a perfect, professi"
+      ],
+      "care": "Dry clean or gentle hand wash in cold water. Dry in shade.",
+      "source": {
+        "asin": "B0GX9GBKFD",
+        "link": "https://www.amazon.in/dp/B0GX9GBKFD",
+        "title": "Flosive “Women's Premium Pure Cotton Silk Saree with Golden Zari Border and Butti Work | Traditional Handloom Style Saree for Festive & Office Wear",
+        "amazonPrice": 399,
+        "amazonMrp": 4500,
+        "commission": 10
+      }
     },
     {
-      "id": "AAR-TO-301",
-      "slug": "rose-gold-tissue-banarasi",
-      "name": "Rose Gold Tissue Banarasi",
-      "category": "tissue-organza",
-      "colour": "Rose gold tissue",
-      "palette": ["#e8b4a6", "#d9b98a", "#c88a7a"],
-      "price": 8990,
-      "mrp": 10600,
-      "rating": 4.8,
-      "reviews": 133,
-      "stock": 9,
-      "badge": "Trending",
+      "id": "AAR-B0HCYPKYPC",
+      "slug": "rust-orange-ethnic-block-print-cotton-linen-saree-rust-orange-kypc",
+      "name": "Rust Orange Ethnic Block Print Cotton Linen Saree",
+      "brand": "VEERA SILK MILLS",
+      "category": "cotton-sarees",
+      "colour": "Rust Orange",
+      "palette": [
+        "#834e3a",
+        "#663623",
+        "#922a0b"
+      ],
+      "price": 451,
+      "mrp": 999,
+      "rating": 3.8,
+      "reviews": 4,
+      "stock": 10,
+      "badge": "Under ₹500",
+      "featured": false,
+      "occasion": [
+        "Dhanteras",
+        "Diwali visits"
+      ],
+      "sizes": [],
+      "images": [
+        {
+          "name": "a-b0hcypkypc-1",
+          "url": "https://m.media-amazon.com/images/I/81FILVrZ8zL._SL1500_.jpg"
+        },
+        {
+          "name": "a-b0hcypkypc-2",
+          "url": "https://m.media-amazon.com/images/I/71BOV-3JWXL._SL1025_.jpg"
+        },
+        {
+          "name": "a-b0hcypkypc-3",
+          "url": "https://m.media-amazon.com/images/I/71L6mt+lTDL._SL1024_.jpg"
+        },
+        {
+          "name": "a-b0hcypkypc-4",
+          "url": "https://m.media-amazon.com/images/I/71E7x0UWOLL._SL1024_.jpg"
+        }
+      ],
+      "description": "DESIGN: Features a striking rust orange hue with an elegant ethnic block print pattern that adds a traditional and artistic charm to the saree.",
+      "details": [
+        "FABRIC: Crafted from a premium cotton linen blend, this saree offers a comfortable, breathable, and lightweight drape perfect for all-day wear.",
+        "DESIGN: Features a striking rust orange hue with an elegant ethnic block print pattern that adds a traditional and artistic charm to the saree.",
+        "PALLU TASSELS: The beautifully adorned pallu with decorative tassels lends a graceful and festive finish to the overall look.",
+        "UNSTITCHED BLOUSE PIECE: Comes with an unstitched blouse piece, allowing you to customise the fit and style as per your preference."
+      ],
+      "care": "Dry clean or gentle hand wash in cold water. Dry in shade.",
+      "source": {
+        "asin": "B0HCYPKYPC",
+        "link": "https://www.amazon.in/dp/B0HCYPKYPC",
+        "title": "Women's Rust Orange Ethnic Block Print Cotton Linen Saree with Blouse",
+        "amazonPrice": 441,
+        "amazonMrp": 999,
+        "commission": 10
+      }
+    },
+    {
+      "id": "AAR-B0DCSHBW1G",
+      "slug": "onion-pink-assam-cotton-silk-golden-boarder-thread-embroidered-saree-onion-pink-bw1g",
+      "name": "Onion Pink Assam Cotton Silk Golden Boarder Thread Embroidered Saree",
+      "brand": "StyleScope",
+      "category": "cotton-sarees",
+      "colour": "Onion Pink",
+      "palette": [
+        "#cc6e75",
+        "#9e464b",
+        "#aa6762"
+      ],
+      "price": 619,
+      "mrp": 2999,
+      "rating": 3.8,
+      "reviews": 155,
+      "stock": 10,
+      "badge": "79% off",
       "featured": true,
-      "occasion": ["Diwali parties", "Lakshmi Puja"],
-      "images": [{ "name": "p-rosegold-tissue", "pexels": 35108820 }],
-      "description": "Banarasi tissue is this Diwali's favourite, and this is why: a rose-gold sheen that turns liquid in candlelight, with a softly woven border and pallu.",
-      "details": ["Silk tissue", "Gold and silver zari weft", "Woven border and pallu", "6.2 m with 0.8 m unstitched blouse piece"],
-      "care": "Dry clean only. Fold with tissue paper between layers."
+      "occasion": [
+        "Dhanteras",
+        "Diwali visits"
+      ],
+      "sizes": [],
+      "images": [
+        {
+          "name": "a-b0dcshbw1g-1",
+          "url": "https://m.media-amazon.com/images/I/81oQ6eB8PWL._SL1500_.jpg"
+        },
+        {
+          "name": "a-b0dcshbw1g-2",
+          "url": "https://m.media-amazon.com/images/I/91UxlXFmfTL._SL1500_.jpg"
+        },
+        {
+          "name": "a-b0dcshbw1g-3",
+          "url": "https://m.media-amazon.com/images/I/81qM8j-5mWL._SL1500_.jpg"
+        },
+        {
+          "name": "a-b0dcshbw1g-4",
+          "url": "https://m.media-amazon.com/images/I/91b+C8fxCML._SL1500_.jpg"
+        }
+      ],
+      "description": "𝐒𝐚𝐫𝐞𝐞 𝐅𝐚𝐛𝐫𝐢𝐜 : Assam Cotton Silk , 𝐁𝐥𝐨𝐮𝐬𝐞 𝐅𝐚𝐛𝐫𝐢𝐜 : Assam Cotton Silk",
+      "details": [
+        "𝐒𝐚𝐫𝐞𝐞 𝐅𝐚𝐛𝐫𝐢𝐜 : Assam Cotton Silk , 𝐁𝐥𝐨𝐮𝐬𝐞 𝐅𝐚𝐛𝐫𝐢𝐜 : Assam Cotton Silk",
+        "𝐒𝐚𝐫𝐞𝐞 𝐖𝐨𝐫𝐤 : Assam Cotton Silk Multi Color Thread Embroidered Saree With Golden Zari And Temple Contrast Border Saree",
+        "𝐒𝐚𝐫𝐞𝐞 𝐂𝐨𝐥𝐨𝐫 : Onion , 𝐁𝐥𝐨𝐮𝐬𝐞 𝐂𝐨𝐥𝐨𝐫 : Onion",
+        "𝐒𝐚𝐫𝐞𝐞 𝐋𝐞𝐧𝐠𝐭𝐡 : 5.5 Meter , 𝐁𝐥𝐨𝐮𝐬𝐞 𝐋𝐞𝐧𝐠𝐭𝐡 : 0.8 Meter"
+      ],
+      "care": "Dry clean or gentle hand wash in cold water. Dry in shade.",
+      "source": {
+        "asin": "B0DCSHBW1G",
+        "link": "https://www.amazon.in/dp/B0DCSHBW1G",
+        "title": "StyleScope Women's Assam Cotton Silk Golden Boarder Thread Embroidered Saree With Unstitched Blouse Piece (Ulajh)",
+        "amazonPrice": 609,
+        "amazonMrp": 2999,
+        "commission": 10
+      }
     },
     {
-      "id": "AAR-TO-302",
-      "slug": "golden-yellow-organza",
-      "name": "Golden Yellow Banarasi Organza",
-      "category": "tissue-organza",
-      "colour": "Golden yellow organza",
-      "palette": ["#e5b82a", "#f3d97a", "#a8781c"],
-      "price": 5990,
-      "mrp": 6900,
-      "rating": 4.6,
-      "reviews": 88,
-      "stock": 14,
-      "badge": "Under ₹7,000",
-      "featured": false,
-      "occasion": ["Dhanteras", "Daytime puja"],
-      "images": [{ "name": "p-yellow-organza", "pexels": 33368823 }],
-      "description": "Sheer golden organza with woven gold motifs, as bright as a Dhanteras morning. Feather-light, so you can wear it all day of shopping and visits.",
-      "details": ["Organza silk", "Woven gold motifs", "Very lightweight", "6.2 m with 0.8 m unstitched blouse piece"],
-      "care": "Dry clean only. Steam rather than iron."
+      "id": "AAR-B0CTXFDW7Q",
+      "slug": "light-purple-green-kanjivaram-soft-cotton-linen-silk-saree-light-purple-green-dw7q",
+      "name": "Light Purple Green Kanjivaram Soft Cotton Linen Silk Saree",
+      "brand": "SGF11",
+      "category": "cotton-sarees",
+      "colour": "Light Purple Green",
+      "palette": [
+        "#9b595d",
+        "#6c3a43",
+        "#592636"
+      ],
+      "price": 809,
+      "mrp": 4999,
+      "rating": 3.9,
+      "reviews": 828,
+      "stock": 10,
+      "badge": "84% off",
+      "featured": true,
+      "occasion": [
+        "Dhanteras",
+        "Diwali visits"
+      ],
+      "sizes": [],
+      "images": [
+        {
+          "name": "a-b0ctxfdw7q-1",
+          "url": "https://m.media-amazon.com/images/I/616XKj7Wh8L._SL1500_.jpg"
+        },
+        {
+          "name": "a-b0ctxfdw7q-2",
+          "url": "https://m.media-amazon.com/images/I/51JWRUByN2L.jpg"
+        },
+        {
+          "name": "a-b0ctxfdw7q-3",
+          "url": "https://m.media-amazon.com/images/I/61mc6EBV2AL.jpg"
+        },
+        {
+          "name": "a-b0ctxfdw7q-4",
+          "url": "https://m.media-amazon.com/images/I/51tvc4g3HQL.jpg"
+        }
+      ],
+      "description": "Bold and beautiful, this Kanchipuram KING & QUEEN ATTRACTIVE silk Light Purple Green color brocade saree is all about impactful presence.",
+      "details": [
+        "Fabric: Kanjivaram Soft Cotton Linen, Blouse Fabric: Kanjivaram Soft Cotton Linen. Work: Jacquard Woven Stylish Sari, Zari Woven.",
+        "Saree Length:5.50Meter, Blouse Piece Length: 0.80 Meter( Unsticthed, Attached With Saree)",
+        "Other Details : {Soft Finished Comfortable To Wear and Easy To Take Fleets } {Size-Free Size} { Saree Is Not Transparent } Package Included: 1 Saree with 1 Blou",
+        "Ocassion: Wedding Wear Saree | Party Wear Saree | Traditional Wear Saree | Festival Wear Saree."
+      ],
+      "care": "Dry clean or gentle hand wash in cold water. Dry in shade.",
+      "source": {
+        "asin": "B0CTXFDW7Q",
+        "link": "https://www.amazon.in/dp/B0CTXFDW7Q",
+        "title": "SGF11 Women's Kanjivaram Soft Cotton Linen Silk Saree With Blouse Piece",
+        "amazonPrice": 799,
+        "amazonMrp": 4999,
+        "commission": 10
+      }
     },
     {
-      "id": "AAR-HL-401",
-      "slug": "marigold-soft-silk-rani-border",
-      "name": "Marigold Soft Silk, Rani Pink Border",
-      "category": "handloom",
-      "colour": "Marigold yellow with rani pink",
-      "palette": ["#f2b01e", "#d62f7a", "#c39a3c"],
-      "price": 8400,
-      "mrp": 9900,
-      "rating": 4.7,
-      "reviews": 76,
-      "stock": 8,
+      "id": "AAR-B0GLGKGCB4",
+      "slug": "maroon-pure-cotton-a-line-kurta-set-maroon-gcb4",
+      "name": "Maroon Pure Cotton A-Line Kurta Set",
+      "brand": "Amayra",
+      "category": "kurtis",
+      "colour": "Maroon",
+      "palette": [
+        "#6b061d",
+        "#6e444a",
+        "#2d0206"
+      ],
+      "price": 845,
+      "mrp": 1999,
+      "rating": 4.2,
+      "reviews": 924,
+      "stock": 10,
+      "badge": "Bestseller",
+      "featured": true,
+      "occasion": [
+        "Diwali parties",
+        "Bhai Dooj"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL",
+        "3XL",
+        "4XL"
+      ],
+      "images": [
+        {
+          "name": "a-b0glgkgcb4-1",
+          "url": "https://m.media-amazon.com/images/I/81stfgnFx4L._SL1500_.jpg"
+        },
+        {
+          "name": "a-b0glgkgcb4-2",
+          "url": "https://m.media-amazon.com/images/I/816VGHnMhaL._SL1500_.jpg"
+        },
+        {
+          "name": "a-b0glgkgcb4-3",
+          "url": "https://m.media-amazon.com/images/I/815NeW01-dL._SL1500_.jpg"
+        },
+        {
+          "name": "a-b0glgkgcb4-4",
+          "url": "https://m.media-amazon.com/images/I/81AIAL+l+xL._SL1500_.jpg"
+        }
+      ],
+      "description": "This set includes: 1 Kurta and 1 Pant with Dupatta || Work :- Embroidered || Neck Style:- Round Neck",
+      "details": [
+        "Kurta and Bottom Fabric: Cotton || Kurta Set Color :- Maroon",
+        "Style: A-Line || Length: Calf Length || Sleeves: 3/4 Sleeves || Size Chart- Kurta-S-36 in, M-38 in , L-40 in , XL-42 in , XXL-44 in, 3XL-46 in, 4XL- 48 in, Pant",
+        "This set includes: 1 Kurta and 1 Pant with Dupatta || Work :- Embroidered || Neck Style:- Round Neck",
+        "Colour Declaration : There might be slight variation in the actual color of the product due to different screen resolutions."
+      ],
+      "care": "Gentle hand wash in cold water. Dry in shade; iron on low heat.",
+      "source": {
+        "asin": "B0GLGKGCB4",
+        "link": "https://www.amazon.in/dp/B0GLGKGCB4",
+        "title": "Amayra Women's Pure Cotton A-Line Kurta Set with Palazzo Pants & Dupatta|Ethnic wear|Kurti Suit Set for Women",
+        "amazonPrice": 835,
+        "amazonMrp": 1999,
+        "commission": 10
+      }
+    },
+    {
+      "id": "AAR-B0GM93P1R2",
+      "slug": "blue-embroidery-solid-straight-kurta-and-pant-set-blue-p1r2",
+      "name": "Blue Embroidery Solid Straight Kurta and Pant Set",
+      "brand": "KLOSIA",
+      "category": "kurtis",
+      "colour": "Blue",
+      "palette": [
+        "#353443",
+        "#192236",
+        "#050f20"
+      ],
+      "price": 690,
+      "mrp": 2999,
+      "rating": 4.0,
+      "reviews": 1013,
+      "stock": 10,
+      "badge": "Bestseller",
+      "featured": true,
+      "occasion": [
+        "Diwali parties",
+        "Bhai Dooj"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL",
+        "3XL",
+        "4XL",
+        "5XL"
+      ],
+      "images": [
+        {
+          "name": "a-b0gm93p1r2-1",
+          "url": "https://m.media-amazon.com/images/I/719NauczPjL._SL1500_.jpg"
+        },
+        {
+          "name": "a-b0gm93p1r2-2",
+          "url": "https://m.media-amazon.com/images/I/81QVtRDggRL._SL1500_.jpg"
+        },
+        {
+          "name": "a-b0gm93p1r2-3",
+          "url": "https://m.media-amazon.com/images/I/818bTK9M+sL._SL1500_.jpg"
+        },
+        {
+          "name": "a-b0gm93p1r2-4",
+          "url": "https://m.media-amazon.com/images/I/81DY55Q-hRL._SL1500_.jpg"
+        }
+      ],
+      "description": "Elegant Design: Premium women’s kurta set with pant and dupatta, perfect for festivals, weddings, parties, and daily wear.",
+      "details": [
+        "Elegant Design: Premium women’s kurta set with pant and dupatta, perfect for festivals, weddings, parties, and daily wear.",
+        "Comfortable Fabric: Made with soft and breathable fabric for all-day comfort – ideal for office, casual outings, or special occasions.",
+        "Product Material:- Viscose | Colour:- Orange & Green | Pattern:- Solid & Embroidery | Dupatta:- Chanderi Cotton | Style:- Anarkali Kurta | Sleeve Length:- 3/4 S",
+        "Complete Outfit: This ethnic wear set includes a stylish kurta, matching pants, and a dupatta – a ready-to-wear suit set for women."
+      ],
+      "care": "Gentle hand wash in cold water. Dry in shade; iron on low heat.",
+      "source": {
+        "asin": "B0GM93P1R2",
+        "link": "https://www.amazon.in/dp/B0GM93P1R2",
+        "title": "Klosia Women Embroidery Solid Straight Kurta and Pant Set with Dupatta",
+        "amazonPrice": 680,
+        "amazonMrp": 2999,
+        "commission": 10
+      }
+    },
+    {
+      "id": "AAR-B0GTQY6BM7",
+      "slug": "maroon-rayon-kurta-set-maroon-6bm7",
+      "name": "Maroon Rayon Kurta Set",
+      "brand": "LookMark",
+      "category": "kurtis",
+      "colour": "Maroon",
+      "palette": [
+        "#952033",
+        "#7d1123",
+        "#b2736d"
+      ],
+      "price": 1417,
+      "mrp": 2599,
+      "rating": 3.7,
+      "reviews": 140,
+      "stock": 10,
       "badge": null,
+      "featured": false,
+      "occasion": [
+        "Diwali parties",
+        "Bhai Dooj"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL"
+      ],
+      "images": [
+        {
+          "name": "a-b0gtqy6bm7-1",
+          "url": "https://m.media-amazon.com/images/I/61rJvblndeL._SL1500_.jpg"
+        },
+        {
+          "name": "a-b0gtqy6bm7-2",
+          "url": "https://m.media-amazon.com/images/I/71vOQvRbiTL._SL1400_.jpg"
+        },
+        {
+          "name": "a-b0gtqy6bm7-3",
+          "url": "https://m.media-amazon.com/images/I/71xFD265-nL._SL1400_.jpg"
+        },
+        {
+          "name": "a-b0gtqy6bm7-4",
+          "url": "https://m.media-amazon.com/images/I/71CjnTUPvGL._SL1400_.jpg"
+        }
+      ],
+      "description": "Elegant Design: Premium women’s kurta set with pant and dupatta, perfect for festivals, weddings, parties, and daily wear.",
+      "details": [
+        "Elegant Design: Premium women’s kurta set with pant and dupatta, perfect for festivals, weddings, parties, and daily wear.",
+        "Comfortable Fabric: Made with soft and breathable fabric for all-day comfort – ideal for office, casual outings, or special occasions.",
+        "Complete Outfit: This ethnic wear set includes a stylish kurta, matching pant, and dupatta – a ready-to-wear suit set for women.",
+        "WORKMANSHIP: Crafted with high quality stitching and skin-friendly elastic at pyjama waist for added comfort and durability."
+      ],
+      "care": "Gentle hand wash in cold water. Dry in shade; iron on low heat.",
+      "source": {
+        "asin": "B0GTQY6BM7",
+        "link": "https://www.amazon.in/dp/B0GTQY6BM7",
+        "title": "LookMark Women's Rayon Kurta Set with Organza Dupatta | Floral Embroidery | Three-Quarter Sleeve",
+        "amazonPrice": 1407,
+        "amazonMrp": 2599,
+        "commission": 10
+      }
+    },
+    {
+      "id": "AAR-B0GPQJRP6P",
+      "slug": "red-kurta-set-red-rp6p",
+      "name": "Red Kurta Set",
+      "brand": "KLOSIA",
+      "category": "kurtis",
+      "colour": "Red",
+      "palette": [
+        "#91101b",
+        "#ab2d34",
+        "#670204"
+      ],
+      "price": 695,
+      "mrp": 2999,
+      "rating": 4.1,
+      "reviews": 901,
+      "stock": 10,
+      "badge": "Bestseller",
+      "featured": false,
+      "occasion": [
+        "Diwali parties",
+        "Bhai Dooj"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL",
+        "3XL",
+        "4XL",
+        "5XL"
+      ],
+      "images": [
+        {
+          "name": "a-b0gpqjrp6p-1",
+          "url": "https://m.media-amazon.com/images/I/61FRr2qNVPL._SL1500_.jpg"
+        },
+        {
+          "name": "a-b0gpqjrp6p-2",
+          "url": "https://m.media-amazon.com/images/I/71tQmgBdF2L._SL1500_.jpg"
+        },
+        {
+          "name": "a-b0gpqjrp6p-3",
+          "url": "https://m.media-amazon.com/images/I/71Iz53yLZtL._SL1500_.jpg"
+        },
+        {
+          "name": "a-b0gpqjrp6p-4",
+          "url": "https://m.media-amazon.com/images/I/81a1ERANr7L._SL1500_.jpg"
+        }
+      ],
+      "description": "Elegant Design: Premium women’s kurta set with pant and dupatta, perfect for festivals, weddings, parties, and daily wear.",
+      "details": [
+        "Elegant Design: Premium women’s kurta set with pant and dupatta, perfect for festivals, weddings, parties, and daily wear.",
+        "Comfortable Fabric: Made with soft and breathable fabric for all-day comfort – ideal for office, casual outings, or special occasions.",
+        "Product Material:- Silk | Colour:- Blue & Red | Pattern:- Solid & Embroidery | Dupatta:- Chanderi Cotton | Style:- Anarkali Kurta | Sleeve Length:- 3/4 Sleeve |",
+        "Complete Outfit: This ethnic wear set includes a stylish kurta, matching pants, and a dupatta – a ready-to-wear suit set for women."
+      ],
+      "care": "Gentle hand wash in cold water. Dry in shade; iron on low heat.",
+      "source": {
+        "asin": "B0GPQJRP6P",
+        "link": "https://www.amazon.in/dp/B0GPQJRP6P",
+        "title": "KLOSIA Women Kurta Set",
+        "amazonPrice": 685,
+        "amazonMrp": 2999,
+        "commission": 10
+      }
+    },
+    {
+      "id": "AAR-B0G6ZNCCHD",
+      "slug": "peach-embroidery-solid-a-line-kurta-and-pant-set-peach-cchd",
+      "name": "Peach Embroidery Solid A-Line Kurta and Pant Set",
+      "brand": "Nermosa",
+      "category": "kurtis",
+      "colour": "Peach",
+      "palette": [
+        "#215973",
+        "#627072",
+        "#163c4e"
+      ],
+      "price": 690,
+      "mrp": 2999,
+      "rating": 4.2,
+      "reviews": 1646,
+      "stock": 10,
+      "badge": "Bestseller",
       "featured": true,
-      "occasion": ["Govardhan Puja", "Diwali visits"],
-      "images": [{ "name": "p-marigold-silk", "pexels": 9419023 }],
-      "description": "Marigold yellow and rani pink, the two colours of every Diwali doorway toran. Soft silk that drapes easily and stays comfortable through long family gatherings.",
-      "details": ["Soft silk", "Gold zari border", "Contrast rani pink pallu", "6.2 m with 0.8 m unstitched blouse piece"],
-      "care": "Dry clean recommended."
+      "occasion": [
+        "Diwali parties",
+        "Bhai Dooj"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL",
+        "3XL",
+        "4XL",
+        "5XL"
+      ],
+      "images": [
+        {
+          "name": "a-b0g6zncchd-1",
+          "url": "https://m.media-amazon.com/images/I/71rjJMwzQaL._SL1500_.jpg"
+        },
+        {
+          "name": "a-b0g6zncchd-2",
+          "url": "https://m.media-amazon.com/images/I/81uZEDAzTnL._SL1500_.jpg"
+        },
+        {
+          "name": "a-b0g6zncchd-3",
+          "url": "https://m.media-amazon.com/images/I/81yhbhQLV6L._SL1500_.jpg"
+        },
+        {
+          "name": "a-b0g6zncchd-4",
+          "url": "https://m.media-amazon.com/images/I/81-kVWpi42L._SL1500_.jpg"
+        }
+      ],
+      "description": "Elegant Design: Premium women’s kurta set with pant and dupatta, perfect for festivals, weddings, parties, and daily wear.",
+      "details": [
+        "Elegant Design: Premium women’s kurta set with pant and dupatta, perfect for festivals, weddings, parties, and daily wear.",
+        "Comfortable Fabric: Made with soft and breathable fabric for all-day comfort – ideal for office, casual outings, or special occasions.",
+        "Product Material:- Viscose Silk | Colour:- Multicolored | Pattern :- Solid & Embroidery | Dupatta :- Chanderi Cotton | Style:- Anarkali Kurta | Sleeve Length:- ",
+        "Complete Outfit: This ethnic wear set includes a stylish kurta, matching pant, and dupatta – a ready-to-wear suit set for women."
+      ],
+      "care": "Gentle hand wash in cold water. Dry in shade; iron on low heat.",
+      "source": {
+        "asin": "B0G6ZNCCHD",
+        "link": "https://www.amazon.in/dp/B0G6ZNCCHD",
+        "title": "Nermosa Women Embroidery Solid A-Line Kurta and Pant Set with Dupatta",
+        "amazonPrice": 680,
+        "amazonMrp": 2999,
+        "commission": 10
+      }
     },
     {
-      "id": "AAR-HL-402",
-      "slug": "ivory-gold-kasavu",
-      "name": "Ivory Gold Tissue Kasavu",
-      "category": "handloom",
-      "colour": "Ivory with gold kasavu",
-      "palette": ["#efe6d2", "#d2b06a", "#a07d3a"],
-      "price": 4850,
-      "mrp": 5600,
-      "rating": 4.6,
-      "reviews": 61,
-      "stock": 18,
-      "badge": "Under ₹5,000",
+      "id": "AAR-B0FHWQXYY5",
+      "slug": "cream-viscose-silk-blend-straight-kurta-pant-set-cream-xyy5",
+      "name": "Cream Viscose Silk Blend Straight Kurta Pant Set",
+      "brand": "VredeVogel",
+      "category": "kurtis",
+      "colour": "Cream",
+      "palette": [
+        "#b89f86",
+        "#986f57",
+        "#c7ab92"
+      ],
+      "price": 1129,
+      "mrp": 5999,
+      "rating": 3.9,
+      "reviews": 224,
+      "stock": 10,
+      "badge": "81% off",
       "featured": false,
-      "occasion": ["Daytime puja", "Bhai Dooj"],
-      "images": [{ "name": "p-ivory-kasavu", "pexels": 37054318 }],
-      "description": "Kerala's handloom kasavu in ivory cotton with a gold tissue body. Clean, calm and luminous, for the morning prayers that start the festival.",
-      "details": ["Handloom cotton with gold tissue", "Broad kasavu border", "Breathable for daytime", "6.2 m with 0.8 m unstitched blouse piece"],
-      "care": "Gentle hand wash in cold water or dry clean. Dry in shade."
-    },
-    {
-      "id": "AAR-HL-403",
-      "slug": "blush-chanderi-silk-cotton",
-      "name": "Blush Chanderi Silk-Cotton",
-      "category": "handloom",
-      "colour": "Ivory with blush pink border",
-      "palette": ["#f1e8dc", "#e3a3a6", "#c9b07a"],
-      "price": 4250,
-      "mrp": 4900,
-      "rating": 4.5,
-      "reviews": 49,
-      "stock": 20,
-      "badge": "Under ₹5,000",
-      "featured": false,
-      "occasion": ["Bhai Dooj", "Diwali gifting"],
-      "images": [{ "name": "p-blush-chanderi", "pexels": 26971270 }],
-      "description": "A light Chanderi silk-cotton with gold buttis and a blush-pink border. Our most-gifted saree for Bhai Dooj and Diwali visits.",
-      "details": ["Chanderi silk-cotton", "Gold zari buttis", "Blush pink border", "6.2 m with 0.8 m unstitched blouse piece"],
-      "care": "Dry clean recommended."
+      "occasion": [
+        "Diwali parties",
+        "Bhai Dooj"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL",
+        "3XL"
+      ],
+      "images": [
+        {
+          "name": "a-b0fhwqxyy5-1",
+          "url": "https://m.media-amazon.com/images/I/71ecuzKnFIL._SL1440_.jpg"
+        },
+        {
+          "name": "a-b0fhwqxyy5-2",
+          "url": "https://m.media-amazon.com/images/I/71FYfCr-ZNL._SL1440_.jpg"
+        },
+        {
+          "name": "a-b0fhwqxyy5-3",
+          "url": "https://m.media-amazon.com/images/I/71yamSipWsL._SL1440_.jpg"
+        },
+        {
+          "name": "a-b0fhwqxyy5-4",
+          "url": "https://m.media-amazon.com/images/I/71-bZ0XFc-L._SL1440_.jpg"
+        }
+      ],
+      "description": "Hemline: Straight (Length: Calf Length) || Bottom Type: Pant || Neck Type: V Neck || Sizes: S, M, L, XL, 2XL",
+      "details": [
+        "Fabric: Viscose Assam Silk || Dupatta Fabric: Silk with Printed Dupatta 2.1 Mtr Approx || Pattern: Embroidered",
+        "Hemline: Straight (Length: Calf Length) || Bottom Type: Pant || Neck Type: V Neck || Sizes: S, M, L, XL, 2XL",
+        "Sleeves: Three Quarter Sleeve|| Set Type: Top with Bottom Wear & Dupatta || Age Range Description: Adult",
+        "Top Length: 44 to 45 inch Approx || Sleeve Length: 17 inch || Bottom Length: 37 inch || Dupatta Length: 2.10mtr Approx"
+      ],
+      "care": "Gentle hand wash in cold water. Dry in shade; iron on low heat.",
+      "source": {
+        "asin": "B0FHWQXYY5",
+        "link": "https://www.amazon.in/dp/B0FHWQXYY5",
+        "title": "VredeVogel Women's Viscose Silk Blend Straight Kurta Pant Set with Printed Dupatta for Festive & Casual Ethnic Kurta Sets",
+        "amazonPrice": 1119,
+        "amazonMrp": 5999,
+        "commission": 10
+      }
     }
   ]
 }

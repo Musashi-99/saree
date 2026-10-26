@@ -17,7 +17,7 @@ export default function ShopShell({children}:{children:React.ReactNode}){
   <footer className="shop-footer section-pad">
    <Lotus className="footer-lotus"/>
    <p>May every thread you wear<br/><em>carry Lakshmi&apos;s blessing.</em></p>
-   <div><span>© 2026 AARADHYA · DIWALI COLLECTION</span><span>Free shipping above ₹9,999 · Easy 7-day returns</span><Link href="/#shop">Continue shopping</Link></div>
+   <div><span>© 2026 AARADHYA · DIWALI COLLECTION</span><span>Free shipping on every order · Easy 7-day returns</span><Link href="/#shop">Continue shopping</Link></div>
   </footer>
  </div>;
 }

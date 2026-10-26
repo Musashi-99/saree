@@ -1,8 +1,8 @@
 # AARADHYA — Diwali Silk Sarees
 
-A Diwali saree storefront built with Next.js, React, TypeScript, GSAP ScrollTrigger and a small WebGL renderer. It opens with an aarti rite in which Maa Lakshmi appears in a ring of fire, moves through Diwali, Lakshmi Puja and craft chapters, and changes chapters with sheets of real saree silk that float across the screen carrying Diwali verses. Shoppers can filter and sort 16 sarees, open a product page, keep a wishlist, fill a bag and check out.
+A Diwali saree storefront built with Next.js, React, TypeScript, GSAP ScrollTrigger and a small WebGL renderer. It opens with an aarti rite in which Maa Lakshmi appears in a ring of fire, moves through Diwali, Lakshmi Puja and craft chapters, and changes chapters with sheets of real saree silk that float across the screen carrying Diwali verses. Shoppers can filter and sort 20 real Amazon.in products (silk sarees, cotton sarees and kurta sets), open a product page, keep a wishlist, fill a bag and check out.
 
-It is a static site with no backend. **`data/products.json` stands in for a database**: products, categories, prices, stock, shipping rules and coupons all live there. The bag, wishlist and placed orders are kept in the browser's `localStorage`, and checkout takes no payment.
+It is a Next.js app with one server route, `/api/orders`, which emails each order. **`data/products.json` stands in for a database**: products, categories, prices, Amazon links, shipping rules and coupons all live there. The bag, wishlist and placed orders are kept in the browser's `localStorage`, and checkout takes no payment.
 
 > **This repository holds the code and this guide only.** Photographs, AI-generated figures, saree fabric textures, fonts and the favicon are not committed. The site needs them in `public/assets/` to look as designed. See [Adding the media](#adding-the-media).
 
@@ -89,7 +89,7 @@ Editorial photographs from [Pexels](https://www.pexels.com/license/). Each is sa
 | `celebration` | Lakshmi Puja card | 34538958 |
 | `diya-girl`, `sparkler`, `aarti`, `lamps-together` | Diwali diaries gallery | 8819773, 8229660, 8887381, 27155549 |
 | `diya-plate`, `sparkler-dusk` | Chhoti Diwali and Bhai Dooj cards | 8819122, 8229656 |
-| `p-*` | Product photos, listed in `data/products.json` | one per image |
+| `a-<asin>-<n>` | Product photos: the Amazon listing photos, listed in `data/products.json` | — |
 
 `components/assets.json` holds each photo's real pixel size and its three variant paths. Update it if you swap a photo for one with a different aspect ratio.
 
@@ -133,20 +133,50 @@ node scripts/make-saree-textures.mjs
 npm run build
 ```
 
-This writes a fully static export to `out/` (`next.config.ts` sets `output: 'export'`). Upload the contents of `out/` to any static host, such as Netlify, Vercel, Cloudflare Pages, GitHub Pages or S3.
+This builds the site to `.next/`. Pages are prerendered; `/api/orders` runs as a server function. Run it with `npm start` (http://localhost:3000). See [Deploying to Vercel](#deploying-to-vercel) for hosting, since the order emails need a Node server; a static host cannot run them.
 
-- Serve it over HTTP. Opening `out/index.html` directly from disk breaks the absolute `/assets/...` paths.
-- To preview the export locally, run `npm start` (http://localhost:3000) or `python -m http.server 8000 --directory out`.
 - `npm run typecheck` runs TypeScript without building.
 
 ## The store
 
-- **Catalogue:** `data/products.json`. Each product has an `id` (SKU), `slug`, `category`, `price`, `mrp`, `rating`, `reviews`, `stock`, optional `badge`, `featured`, `occasion`, `palette`, `details`, `care` and `images` (an asset name plus its Pexels ID). `store` holds the free-shipping threshold, the shipping fee, the Diwali dispatch date and the coupons (`DEEPAVALI10`, `SHUBH500`).
-- **Data layer:** `lib/shop.ts` is the only code that reads the JSON. It exports typed products and categories, lookups, INR formatting and `totals()` (subtotal, coupon, shipping, total). To move to a real database, change this file.
-- **Homepage shop:** `components/Shop.tsx`, the "05 / Shop the Diwali collection" section. It has weave filters, sorting, a wishlist heart and quick add to bag. Each Diwali edit's dialog has a "Shop" button that filters this grid.
-- **Product pages:** `/products/<slug>/`, generated at build time for every product (`app/products/[slug]/page.tsx`, `components/ProductView.tsx`).
-- **Bag and wishlist:** `components/Cart.tsx`. A context provider in `app/layout.tsx` keeps them in `localStorage`, and the bag drawer opens from the header on every page.
-- **Checkout:** `/checkout/` (`components/Checkout.tsx`). It takes the address and a payment choice, applies coupons and saves the order to `localStorage` under `aaradhya-orders`. No payment is taken and no email is sent.
+The catalogue is made of **real Amazon.in products**. Each one sells at its Amazon price **plus ₹10 commission**, and keeps its Amazon ASIN and link, so every order shows exactly which listing to buy it from.
+
+- **Catalogue:** `data/products.json`. 20 products in three categories: silk sarees (7), cotton sarees (7) and kurtis & kurta sets (6). Each has a SKU (`AAR-<ASIN>`), `slug`, `brand`, `colour`, `price` (Amazon price + commission), `mrp`, `rating`, `reviews`, `sizes` (kurtis), `images`, `description`, `details`, `care`, and `source` with `asin`, `link` (`https://www.amazon.in/dp/<ASIN>`), the original Amazon `title`, `amazonPrice`, `amazonMrp` and `commission`. `store` holds shipping (free) and coupons (none: any discount would cost more than the ₹10 commission).
+- **Scraping and rebuilding it:**
+  ```bash
+  pip install playwright pillow
+  python scripts/scrape-amazon.py                       # search Amazon.in, pick 20 products → data/amazon-scrape.json
+  python scripts/scrape-amazon.py --refresh             # re-read the same products (current prices, photos, sizes)
+  python scripts/scrape-amazon.py --refresh --missing   # retry only products Amazon refused last time
+  python scripts/build-catalogue.py                     # scrape → data/products.json (price = Amazon + COMMISSION)
+  node scripts/fetch-media.mjs                          # product photos → public/assets/
+  ```
+  The search terms and counts per category are `CATEGORIES` in `scrape-amazon.py`; the commission is `COMMISSION` in `build-catalogue.py`. Amazon throttles fast page loads, so the scraper waits between pages and retries. Prices on Amazon change: refresh and rebuild before you take orders.
+- **Data layer:** `lib/shop.ts` is the only code that reads the JSON: typed products and categories, lookups, INR formatting and `totals()` (subtotal, shipping, total and commission).
+- **Homepage shop:** `components/Shop.tsx`, with category filters, sorting, wishlist and quick add. Kurtis show "Choose size" and go to their product page.
+- **Product pages:** `/products/<slug>/`, one per product, with a size picker for kurtis.
+- **Bag and wishlist:** `components/Cart.tsx`, kept in `localStorage`. The same kurti in two sizes is two lines.
+- **Checkout:** `/checkout/` (`components/Checkout.tsx`). Payment is **cash on delivery**. The form posts the address and `{id, qty, size}` per item to **`/api/orders/`** (`app/api/orders/route.ts`), which validates them, prices every item from the catalogue (prices in the request are ignored) and sends two emails (`lib/order-mail.ts`):
+  - **to the admin** (`admin` in the mail config): the order number, COD amount to collect, commission, customer's address and phone, and for every item its size, quantity, ASIN, Amazon price and **original Amazon link**;
+  - **to the customer**: a confirmation with the items, total, COD note and delivery address.
+
+  The admin email is sent first. If it fails, the order is refused and the shopper is asked to try again, so no order is lost without you hearing about it. If only the customer email fails, the order still goes through. The returned order is also kept in the browser for `/orders/`.
+- **Orders (store owner):** `/orders/` (`components/Orders.tsx`, not linked from the site) lists the orders with the customer's address and an "Open listing" link per item, to place the order on Amazon. Orders are stored in the browser they were placed in, so until a backend is connected you only see orders placed on that same browser.
+
+## Order emails (Brevo SMTP)
+
+The SMTP settings live in a config file, not environment variables: **`config/mail.config.ts`** (host, port, login, SMTP key, sender, admin address).
+
+- It is **git-ignored**, so the key never enters git. Copy `config/mail.config.example.ts` to create it on another machine.
+- It starts with `import 'server-only'`, so the build fails if any browser code imports it. Only the `/api/orders` server function reads it; the key is never sent to visitors. After a build, `grep -r xsmtpsib .next/static` should print nothing.
+- The `from` address must be a **verified sender in Brevo** (Brevo → Senders, domains & dedicated IPs), or Brevo will reject or spam-folder the mail.
+
+## Deploying to Vercel
+
+The site is a server build (`next build`), not a static export, because `/api/orders` sends email. Vercel detects Next.js with no extra settings.
+
+- **Deploy with the Vercel CLI from this folder** (`npx vercel --prod`). The CLI uploads local files except those in `.vercelignore` (there is none), so the git-ignored `config/mail.config.ts` goes up with it. After deploying, place a test order to confirm both emails arrive.
+- **Deploying from GitHub** (Vercel's Git integration) builds from the repository, which does not contain the git-ignored config, so `/api/orders` will fail. Use the CLI, or commit the config only if the repository is private.
 
 ## How the site works
 
@@ -219,6 +249,11 @@ app/
   layout.tsx        document shell, metadata, stylesheet order, bag provider
   products/[slug]/  one static page per product
   checkout/         checkout page
+  orders/           store owner's order list with Amazon links
+  api/orders/       POST: validates and prices an order, emails customer and admin
+config/
+  mail.config.ts          SMTP key, sender and admin address (git-ignored, server only)
+  mail.config.example.ts  template for the above
   page.tsx          renders <Experience/>
   globals.css       base design system, sections, breakpoints
   intro.css         opening hero and celebration layout
@@ -227,8 +262,11 @@ app/
   shop.css          bag drawer, product grid, product page, checkout
 data/
   products.json     the catalogue: products, categories, shipping and coupons
+  amazon-scrape.json  raw output of scripts/scrape-amazon.py
 lib/
   shop.ts           reads the catalogue; lookups, prices, cart totals
+  orders.ts         the order record and its localStorage store
+  order-mail.ts     the two order emails (server only)
 components/
   Experience.tsx    the page: sections, navigation, dialogs
   OpeningRite.tsx   diya → ring of fire → Lakshmi → opening
@@ -237,6 +275,7 @@ components/
   Cart.tsx          bag and wishlist state, bag drawer, header bag button
   Checkout.tsx      checkout form, coupons, order confirmation
   ShopShell.tsx     header and footer for the product and checkout pages
+  Orders.tsx        store owner's order list
   DevotionalIntro.tsx  hero and Diwali celebration
   SareeVeil.tsx     transition marker and verse
   SilkVeil.tsx      WebGL silk renderer (with CSS fallback)
@@ -253,11 +292,12 @@ public/
   credits.html      photography and font credits
 scripts/
   prepare-assets.py       photos → WebP variants, fonts → subset WOFF
-  fetch-media.mjs         Pexels photos (incl. products) → WebP variants; fonts
+  scrape-amazon.py        Amazon.in search and product pages → data/amazon-scrape.json
+  build-catalogue.py      scrape → data/products.json (Amazon price + commission)
+  fetch-media.mjs         Pexels and product photos → WebP variants; fonts
   make-diwali-figures.py  Lakshmi painting and photos → transparent figures
   make-saree-textures.mjs photos → saree fabric textures
-  check-output.py         checks the static export
-  serve.mjs               serves out/ for `npm start`
+  check-output.py         checks the built homepage
 ```
 
 ## Customising
@@ -289,19 +329,19 @@ scripts/
 | Command | What it does |
 |---|---|
 | `npm run dev` | Development server on port 3000 |
-| `npm run build` | Static export to `out/` |
-| `npm start` | Serves `out/` at http://localhost:3000 |
+| `npm run build` | Production build to `.next/` |
+| `npm start` | Runs the production build at http://localhost:3000 (order emails work here too) |
 | `npm run typecheck` | TypeScript check |
 | `node scripts/make-saree-textures.mjs` | Builds `public/assets/saree/*.webp` from the photos |
 | `python scripts/prepare-assets.py` | Builds photo variants and subset fonts from `reference-research/` |
 | `node scripts/fetch-media.mjs` | Downloads the photos (including every product image in `data/products.json`) and fonts, and records their sizes in `components/assets.json` |
 | `python scripts/make-diwali-figures.py` | Builds the Lakshmi and festive figures in `public/assets/generated/` (needs `rembg`) |
-| `python scripts/check-output.py` | Checks the export: local references, anchors, alt text, section count |
+| `python scripts/check-output.py` | After a build, checks the homepage: local references, anchors, alt text, section count |
 
 ## Credits and content notes
 
-- AARADHYA is a demonstration storefront, not an existing business. Product names, prices, ratings and stock are illustrative. Checkout saves orders in the browser and takes no payment, and the contact and social entries are placeholders.
-- Product and editorial photography is from Pexels under the Pexels licence; links are on `public/credits.html`. The people pictured do not endorse the store, and the photos do not show products sold by any real business.
+- Products, prices, ratings and product photos come from Amazon.in listings; the photos belong to the brands that listed them. Checkout saves orders in the browser and takes no payment, and the contact and social entries are placeholders.
+- Editorial photography is from Pexels under the Pexels licence; links are on `public/credits.html`. The people pictured do not endorse the store.
 - Maa Lakshmi is cut out from Raja Ravi Varma's *Goddess Lakshmi* (1896), which is in the public domain.
 - The verses are from the Brihadaranyaka Upanishad, the Lakshmi mantra and the Deepa Jyoti stotra.
 - Fonts: Cormorant Garamond and Inter, SIL Open Font License.

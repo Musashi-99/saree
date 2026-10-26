@@ -1,10 +1,16 @@
-"""Validate the actual static export's local asset references and anchors."""
+"""Validate the built homepage (after `npm run build`): local asset references, anchors, alt text, section count."""
 from pathlib import Path
 from html.parser import HTMLParser
 from urllib.parse import urlsplit, unquote
 import re
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'out'
+BUILT=ROOT/'.next'
+# Built pages are in .next/server/app; /_next/static/* is served from .next/static, everything else from public/.
+def local(ref):
+    path=unquote(urlsplit(ref).path)
+    if path.startswith('/_next/static/'):return BUILT/'static'/path[len('/_next/static/'):]
+    if path.endswith('/'):return BUILT/'server'/'app'/((path.strip('/') or 'index')+'.html')  # a prerendered page
+    return ROOT/'public'/path.lstrip('/')
 class Inspector(HTMLParser):
     def __init__(self):
         super().__init__();self.ids=set();self.links=[];self.refs=[];self.images=[];self.sections=0
@@ -19,18 +25,18 @@ class Inspector(HTMLParser):
             if value.startswith('/') and not value.startswith('//'):self.refs.append(value)
         for src in a.get('srcset','').split(','):
             if src.strip().startswith('/'):self.refs.append(src.strip().split()[0])
-doc=Inspector();doc.feed((OUT/'index.html').read_text())
+doc=Inspector();doc.feed((BUILT/'server'/'app'/'index.html').read_text())
 failures=[]
 for ref in set(doc.refs):
-    path=OUT/unquote(urlsplit(ref).path).lstrip('/')
+    path=local(ref)
     if not path.exists():failures.append(f'Missing reference: {ref}')
 for link in doc.links:
     if link.startswith('#') and link[1:] not in doc.ids:failures.append(f'Broken anchor: {link}')
 for im in doc.images:
     if 'alt' not in im:failures.append(f'Image missing alt: {im.get("src")}')
-for css in (OUT/'_next').rglob('*.css'):
+for css in (BUILT/'static').rglob('*.css'):
     for ref in re.findall(r'url\([\"\']?(/[^)\"\']+)',css.read_text()):
-        if not (OUT/ref.lstrip('/')).exists():failures.append(f'Missing CSS asset: {ref}')
+        if not local(ref).exists():failures.append(f'Missing CSS asset: {ref}')
 if doc.sections!=10:failures.append(f'Expected ten sections, found {doc.sections}')
 if failures:
     raise SystemExit('\n'.join(failures))

@@ -4,54 +4,54 @@ import Link from 'next/link';
 import {ArrowRight, Check} from 'lucide-react';
 import Photo from './Photo';
 import {useCart} from './Cart';
-import {totals, findCoupon, money, type Coupon} from '../lib/shop';
+import {totals, money, lineKey} from '../lib/shop';
+import {saveOrder, type Order} from '../lib/orders';
 
-// Payments are not connected yet, so a placed order is saved in this browser (localStorage) and shown back.
-const ORDERS='aaradhya-orders';
-type Order={id:string;placed:string;name:string;email:string;total:number;payment:string;items:{name:string;qty:number;price:number}[]};
+// Orders are cash on delivery. Placing one posts the details to /api/orders, which prices it from the catalogue
+// and emails the customer and the admin. The order that comes back is also kept in this browser for /orders/.
 const fields=[['name','Full name','text','name'],['phone','Mobile number','tel','tel'],['email','Email','email','email'],['address','House, street and area','text','street-address'],['city','City','text','address-level2'],['state','State','text','address-level1'],['pincode','PIN code','text','postal-code']] as const;
 
 export default function Checkout(){
  const {lines,clear}=useCart();
- const [code,setCode]=useState('');
- const [coupon,setCoupon]=useState<Coupon>();
- const [couponNote,setCouponNote]=useState('');
- const [payment,setPayment]=useState('UPI');
  const [order,setOrder]=useState<Order|null>(null);
- const t=totals(lines,coupon);
+ const [emailed,setEmailed]=useState(true);
+ const [sending,setSending]=useState(false);
+ const [error,setError]=useState('');
+ const t=totals(lines);
 
- function applyCoupon(){
-  const c=findCoupon(code);
-  if(!c){setCoupon(undefined);setCouponNote('That code is not valid.');return;}
-  if(t.subtotal<(c.minimum??0)){setCoupon(undefined);setCouponNote(`${c.code} needs an order of ${money(c.minimum!)} or more.`);return;}
-  setCoupon(c);setCouponNote(`${c.code} applied: ${c.label}.`);
- }
- function place(e:React.FormEvent<HTMLFormElement>){
+ async function place(e:React.FormEvent<HTMLFormElement>){
   e.preventDefault();
+  if(sending)return;
   const form=new FormData(e.currentTarget);
-  const placed:Order={id:`AAR-${Date.now().toString(36).toUpperCase()}`,placed:new Date().toISOString(),name:String(form.get('name')),email:String(form.get('email')),total:t.total,payment,items:t.items.map(l=>({name:l.product.name,qty:l.qty,price:l.product.price}))};
-  try{localStorage.setItem(ORDERS,JSON.stringify([placed,...JSON.parse(localStorage.getItem(ORDERS)||'[]')]));}catch{}
-  setOrder(placed);clear();window.scrollTo({top:0});
+  const customer=Object.fromEntries(fields.map(([name])=>[name,String(form.get(name)||'').trim()]));
+  setSending(true);setError('');
+  try{
+   const res=await fetch('/api/orders/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({customer,items:t.items.map(({id,qty,size})=>({id,qty,size}))})});
+   const data=await res.json().catch(()=>({error:'We could not place your order just now. Please try again.'}));
+   if(!res.ok){setError(data.error||'We could not place your order just now. Please try again.');return;}
+   saveOrder(data.order);setEmailed(data.customerEmailed);setOrder(data.order);clear();window.scrollTo({top:0});
+  }catch{setError('No connection. Check your internet and try again.');}
+  finally{setSending(false);}
  }
 
  if(order)return <section className="checkout section-pad checkout-done" aria-labelledby="done-title">
   <span className="done-mark"><Check size={26}/></span>
   <span className="eyebrow">ORDER {order.id}</span>
-  <h1 id="done-title">Shubh Deepavali,<br/><em>{order.name.split(' ')[0]}.</em></h1>
-  <p>Your order of {order.items.reduce((n,i)=>n+i.qty,0)} {order.items.length===1&&order.items[0].qty===1?'saree':'sarees'} for {money(order.total)} has been placed. It will be folded in tissue, wrapped and dispatched in time for Diwali.</p>
-  <p className="body-small">This store is not connected to payments or email yet, so no money was taken and no confirmation was sent. The order is saved in this browser.</p>
+  <h1 id="done-title">Shubh Deepavali,<br/><em>{order.customer.name.split(' ')[0]}.</em></h1>
+  <p>Your order of {order.items.reduce((n,i)=>n+i.qty,0)} {order.items.reduce((n,i)=>n+i.qty,0)===1?'piece':'pieces'} has been placed. It will be packed and dispatched in time for Diwali. Please keep <strong>{money(order.total)}</strong> ready to pay in cash on delivery.</p>
+  <p className="body-small">{emailed?<>A confirmation has been sent to {order.customer.email}.</>:<>We could not email your confirmation to {order.customer.email}, but your order is placed. Please note your order number.</>}</p>
   <Link className="solid-button" href="/#shop">Continue shopping <ArrowRight size={17}/></Link>
  </section>;
 
  if(!t.items.length)return <section className="checkout section-pad checkout-done" aria-labelledby="empty-title">
   <span className="eyebrow">CHECKOUT</span>
   <h1 id="empty-title">Your bag<br/><em>is empty.</em></h1>
-  <p>Add a saree or two from the Diwali collection, then come back here to check out.</p>
+  <p>Add a saree or a kurta set from the Diwali collection, then come back here to check out.</p>
   <Link className="solid-button" href="/#shop">Shop the Diwali collection <ArrowRight size={17}/></Link>
  </section>;
 
  return <section className="checkout section-pad" aria-labelledby="checkout-title">
-  <div className="section-topline"><span>CHECKOUT</span><span>SECURE · DISPATCHED IN TIME FOR DIWALI</span></div>
+  <div className="section-topline"><span>CHECKOUT</span><span>CASH ON DELIVERY · DISPATCHED IN TIME FOR DIWALI</span></div>
   <h1 id="checkout-title" className="checkout-title">Almost <em>yours.</em></h1>
   <div className="checkout-grid">
    <form className="checkout-form" onSubmit={place}>
@@ -59,16 +59,16 @@ export default function Checkout(){
      <div className="field-grid">{fields.map(([name,label,type,auto])=><label key={name} className={`field field-${name}`}><span>{label}</span><input name={name} type={type} autoComplete={auto} required {...(name==='pincode'?{pattern:'[0-9]{6}',inputMode:'numeric' as const,title:'Six-digit PIN code'}:name==='phone'?{pattern:'[0-9+ ]{10,14}',title:'Ten-digit mobile number'}:{})}/></label>)}</div>
     </fieldset>
     <fieldset><legend className="mini-label">PAYMENT</legend>
-     <div className="pay-options">{[['UPI','UPI · Google Pay, PhonePe, Paytm'],['Card','Credit or debit card'],['COD','Cash on delivery']].map(([v,l])=><label key={v} className={payment===v?'pay-option active':'pay-option'}><input type="radio" name="payment" value={v} checked={payment===v} onChange={()=>setPayment(v)}/>{l}</label>)}</div>
-     <p className="concept-note">Payments are not connected yet. Placing an order saves it in this browser only.</p>
+     <div className="pay-options"><label className="pay-option active"><input type="radio" name="payment" value="COD" checked readOnly/>Cash on delivery · pay {money(t.total)} when your order arrives</label></div>
+     <p className="concept-note">You will get an order confirmation by email.</p>
     </fieldset>
-    <button className="solid-button" type="submit">Place order · {money(t.total)}<ArrowRight size={17}/></button>
+    {error&&<p className="checkout-error" role="alert">{error}</p>}
+    <button className="solid-button" type="submit" disabled={sending} aria-busy={sending}>{sending?'Placing your order…':<>Place order · {money(t.total)}</>}<ArrowRight size={17}/></button>
    </form>
    <aside className="checkout-summary" aria-label="Order summary">
     <span className="mini-label">ORDER SUMMARY · {t.count} {t.count===1?'ITEM':'ITEMS'}</span>
-    <ul className="cart-lines">{t.items.map(({product:p,qty})=><li key={p.id}><span className="cart-thumb"><Photo name={p.images[0].name} alt={p.name} sizes="90px"/></span><div><h3>{p.name}</h3><p>Qty {qty} · {money(p.price)} each</p></div><strong>{money(p.price*qty)}</strong></li>)}</ul>
-    <div className="coupon"><label htmlFor="coupon" className="mini-label">COUPON CODE</label><div><input id="coupon" value={code} onChange={e=>setCode(e.target.value)} placeholder="DEEPAVALI10" onKeyDown={e=>{if(e.key==='Enter'){e.preventDefault();applyCoupon();}}}/><button type="button" onClick={applyCoupon}>Apply</button></div><p aria-live="polite">{couponNote}</p></div>
-    <dl className="cart-sum"><div><dt>Subtotal</dt><dd>{money(t.subtotal)}</dd></div>{t.saving>0&&<div><dt>Coupon {t.coupon?.code}</dt><dd>−{money(t.saving)}</dd></div>}<div><dt>Shipping</dt><dd>{t.shipping?money(t.shipping):'Free'}</dd></div><div className="cart-total"><dt>Total</dt><dd>{money(t.total)}</dd></div></dl>
+    <ul className="cart-lines">{t.items.map(({product:p,qty,size})=><li key={lineKey({id:p.id,size})}><span className="cart-thumb"><Photo name={p.images[0].name} alt={p.name} sizes="90px"/></span><div><h3>{p.name}</h3><p>{size&&`Size ${size} · `}Qty {qty} · {money(p.price)} each</p></div><strong>{money(p.price*qty)}</strong></li>)}</ul>
+    <dl className="cart-sum"><div><dt>Subtotal</dt><dd>{money(t.subtotal)}</dd></div><div><dt>Shipping</dt><dd>{t.shipping?money(t.shipping):'Free'}</dd></div><div className="cart-total"><dt>Total</dt><dd>{money(t.total)}</dd></div></dl>
    </aside>
   </div>
  </section>;

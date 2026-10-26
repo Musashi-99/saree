@@ -193,3 +193,33 @@
 @media(prefers-reduced-motion:reduce){.cart-modal[open]{animation:none}.product-photo img{transition:none}}
 /* Her lotus-bearing hands reach wider than the portrait this hero was set for: keep "Lakshmi." in front of them. */
 @media(min-width:701px){.intro-title-layer{z-index:4}.intro-hero-title{left:3%;right:2.5%}}
+/* Size picker (kurtis) */
+.pdp-sizes{border:0;padding:0;margin:22px 0 0}
+.pdp-sizes legend{font-size:8px;letter-spacing:.18em;color:#817269;margin-bottom:10px;padding:0}
+.pdp-sizes>div{display:flex;flex-wrap:wrap;gap:8px}
+.pdp-sizes button{min-width:46px;height:40px;padding:0 10px;border:1px solid #29171333;font-size:11px;transition:background .3s,color .3s,border-color .3s}
+.pdp-sizes button:hover{border-color:var(--wine)}
+.pdp-sizes button[aria-pressed=true]{background:var(--wine);border-color:var(--wine);color:var(--ivory)}
+.pdp-sizes p{font-size:11px;color:var(--wine);margin-top:8px}
+/* Amazon listing photos are studio shots on white: show the whole garment rather than cropping it. */
+.product-photo,.pdp-main,.pdp-thumbs button,.cart-thumb{background:#fff}
+.product-photo img,.pdp-main img,.pdp-thumbs img,.cart-thumb img{object-fit:contain;object-position:50% 50%}
+/* Store owner's orders page */
+.orders-note{max-width:620px;margin:-24px 0 40px}
+.orders-empty{font-size:13px}
+.order-list{list-style:none;margin:0;padding:0;display:grid;gap:28px}
+.order-card{background:var(--cream);padding:28px}
+.order-card header{display:flex;justify-content:space-between;gap:20px;align-items:start;border-bottom:1px solid #29171322;padding-bottom:18px}
+.order-card h2{font-family:var(--serif);font-size:32px;line-height:1.1;color:var(--wine);margin:4px 0}
+.order-card header p,.order-money span{font-size:11px;color:#77675e}
+.order-money{text-align:right;display:flex;flex-direction:column;gap:4px}
+.order-money strong{font-size:20px;font-weight:500}
+.order-card address{font-style:normal;font-size:12px;line-height:1.7;padding:16px 0}
+.order-card table{width:100%;border-collapse:collapse;font-size:12px}
+.order-card th{font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:#817269;text-align:left;font-weight:500;padding:8px 10px 8px 0;border-bottom:1px solid #29171322}
+.order-card td{padding:12px 10px 12px 0;border-bottom:1px solid #29171314;vertical-align:top}
+.order-card td span{display:block;font-size:10px;color:#9f8c7a;margin-top:2px}
+.order-card td .text-link{padding:4px 0;gap:10px}
+@media(max-width:700px){.order-card{padding:18px;overflow-x:auto}.order-card table{min-width:640px}.order-card header{flex-direction:column}.order-money{text-align:left}}
+.checkout-error{font-size:12px;color:#b3261e;background:#b3261e12;padding:12px 14px;margin-bottom:14px}
+.checkout .solid-button:disabled{opacity:.7;cursor:progress}

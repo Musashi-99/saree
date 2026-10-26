@@ -23,9 +23,10 @@ const assets = {
   aarti: '8887381',
   'lamps-together': '27155549',
 };
-// Product photos come from the JSON catalogue (data/products.json).
+// Product photos come from the JSON catalogue (data/products.json): Amazon listing photos, which
+// scripts/build-catalogue.py has already saved to reference-research/amazon/<name>.jpg.
 const products = JSON.parse(await readFile('data/products.json', 'utf8')).products;
-for (const product of products) for (const image of product.images) assets[image.name] = String(image.pexels);
+for (const product of products) for (const image of product.images) assets[image.name] = image.pexels ? String(image.pexels) : {url: image.url};
 
 const fonts = {
   'serif-regular': 'https://cdn.jsdelivr.net/fontsource/fonts/cormorant-garamond@latest/latin-400-normal.woff',
@@ -46,10 +47,10 @@ const catalog = JSON.parse(await readFile('components/assets.json', 'utf8'));
 
 for (const [name, id] of Object.entries(assets)) {
   if (existsSync(`public/assets/${name}-1600.webp`) && catalog[name]) { console.log(`photo ${name} exists`); continue; }
-  const url = `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=2400`;
+  const url = id.url ?? `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=2400`;
   process.stdout.write(`photo ${name}... `);
-  // A JPEG already saved in reference-research/pexels/<id>.jpg is used instead of downloading it again.
-  const cached = `reference-research/pexels/${id}.jpg`;
+  // A JPEG already saved in reference-research/ is used instead of downloading it again.
+  const cached = id.url ? `reference-research/amazon/${name}.jpg` : `reference-research/pexels/${id}.jpg`;
   let buf = await sharp(existsSync(cached) ? await readFile(cached) : await download(url)).rotate().toBuffer();
   if (name === 'detail') {
     const {width, height} = await sharp(buf).metadata();
@@ -82,6 +83,8 @@ for (const [name, id] of Object.entries(assets)) {
   console.log(`${full}x${fullHeight}`);
 }
 
+// Drop product photos that are no longer in the catalogue.
+for (const name of Object.keys(catalog)) if (/^[pa]-/.test(name) && !(name in assets)) delete catalog[name];
 await writeFile('components/assets.json', JSON.stringify(catalog, null, 2) + '\n');
 
 for (const [name, url] of Object.entries(fonts)) {

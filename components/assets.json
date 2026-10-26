@@ -377,465 +377,1683 @@
       }
     ]
   },
-  "p-emerald-kanjivaram": {
-    "width": 1600,
-    "height": 2400,
+  "a-b0csn49y26-1": {
+    "width": 1000,
+    "height": 1500,
     "variants": [
       {
-        "src": "/assets/p-emerald-kanjivaram-640.webp",
+        "src": "/assets/a-b0csn49y26-1-640.webp",
         "width": 640,
         "height": 960
       },
       {
-        "src": "/assets/p-emerald-kanjivaram-1000.webp",
+        "src": "/assets/a-b0csn49y26-1-1000.webp",
         "width": 1000,
         "height": 1500
       },
       {
-        "src": "/assets/p-emerald-kanjivaram-1600.webp",
-        "width": 1600,
-        "height": 2400
+        "src": "/assets/a-b0csn49y26-1-1600.webp",
+        "width": 1000,
+        "height": 1500
       }
     ]
   },
-  "p-peacock-kanjivaram": {
-    "width": 1600,
-    "height": 2400,
+  "a-b0csn49y26-2": {
+    "width": 736,
+    "height": 1104,
     "variants": [
       {
-        "src": "/assets/p-peacock-kanjivaram-640.webp",
+        "src": "/assets/a-b0csn49y26-2-640.webp",
         "width": 640,
         "height": 960
       },
       {
-        "src": "/assets/p-peacock-kanjivaram-1000.webp",
-        "width": 1000,
-        "height": 1500
+        "src": "/assets/a-b0csn49y26-2-1000.webp",
+        "width": 736,
+        "height": 1104
       },
       {
-        "src": "/assets/p-peacock-kanjivaram-1600.webp",
-        "width": 1600,
-        "height": 2400
+        "src": "/assets/a-b0csn49y26-2-1600.webp",
+        "width": 736,
+        "height": 1104
       }
     ]
   },
-  "p-wine-kanjivaram": {
-    "width": 1600,
-    "height": 2400,
+  "a-b0csn49y26-3": {
+    "width": 800,
+    "height": 1100,
     "variants": [
       {
-        "src": "/assets/p-wine-kanjivaram-640.webp",
+        "src": "/assets/a-b0csn49y26-3-640.webp",
+        "width": 640,
+        "height": 880
+      },
+      {
+        "src": "/assets/a-b0csn49y26-3-1000.webp",
+        "width": 800,
+        "height": 1100
+      },
+      {
+        "src": "/assets/a-b0csn49y26-3-1600.webp",
+        "width": 800,
+        "height": 1100
+      }
+    ]
+  },
+  "a-b0csn49y26-4": {
+    "width": 1000,
+    "height": 1447,
+    "variants": [
+      {
+        "src": "/assets/a-b0csn49y26-4-640.webp",
+        "width": 640,
+        "height": 926
+      },
+      {
+        "src": "/assets/a-b0csn49y26-4-1000.webp",
+        "width": 1000,
+        "height": 1447
+      },
+      {
+        "src": "/assets/a-b0csn49y26-4-1600.webp",
+        "width": 1000,
+        "height": 1447
+      }
+    ]
+  },
+  "a-b08354nt7w-1": {
+    "width": 1038,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/a-b08354nt7w-1-640.webp",
+        "width": 640,
+        "height": 925
+      },
+      {
+        "src": "/assets/a-b08354nt7w-1-1000.webp",
+        "width": 1000,
+        "height": 1445
+      },
+      {
+        "src": "/assets/a-b08354nt7w-1-1600.webp",
+        "width": 1038,
+        "height": 1500
+      }
+    ]
+  },
+  "a-b08354nt7w-2": {
+    "width": 1038,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/a-b08354nt7w-2-640.webp",
+        "width": 640,
+        "height": 925
+      },
+      {
+        "src": "/assets/a-b08354nt7w-2-1000.webp",
+        "width": 1000,
+        "height": 1445
+      },
+      {
+        "src": "/assets/a-b08354nt7w-2-1600.webp",
+        "width": 1038,
+        "height": 1500
+      }
+    ]
+  },
+  "a-b08354nt7w-3": {
+    "width": 1000,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/a-b08354nt7w-3-640.webp",
         "width": 640,
         "height": 960
       },
       {
-        "src": "/assets/p-wine-kanjivaram-1000.webp",
+        "src": "/assets/a-b08354nt7w-3-1000.webp",
         "width": 1000,
         "height": 1500
       },
       {
-        "src": "/assets/p-wine-kanjivaram-1600.webp",
-        "width": 1600,
-        "height": 2400
+        "src": "/assets/a-b08354nt7w-3-1600.webp",
+        "width": 1000,
+        "height": 1500
       }
     ]
   },
-  "p-copper-kanjivaram": {
-    "width": 1600,
-    "height": 2400,
+  "a-b08354nt7w-4": {
+    "width": 981,
+    "height": 1500,
     "variants": [
       {
-        "src": "/assets/p-copper-kanjivaram-640.webp",
+        "src": "/assets/a-b08354nt7w-4-640.webp",
         "width": 640,
-        "height": 960
+        "height": 979
       },
       {
-        "src": "/assets/p-copper-kanjivaram-1000.webp",
-        "width": 1000,
+        "src": "/assets/a-b08354nt7w-4-1000.webp",
+        "width": 981,
         "height": 1500
       },
       {
-        "src": "/assets/p-copper-kanjivaram-1600.webp",
-        "width": 1600,
-        "height": 2400
+        "src": "/assets/a-b08354nt7w-4-1600.webp",
+        "width": 981,
+        "height": 1500
       }
     ]
   },
-  "p-ivory-kanjivaram": {
-    "width": 1600,
-    "height": 2400,
+  "a-b0fsrxsbpc-1": {
+    "width": 1125,
+    "height": 1500,
     "variants": [
       {
-        "src": "/assets/p-ivory-kanjivaram-640.webp",
+        "src": "/assets/a-b0fsrxsbpc-1-640.webp",
         "width": 640,
-        "height": 960
+        "height": 853
       },
       {
-        "src": "/assets/p-ivory-kanjivaram-1000.webp",
+        "src": "/assets/a-b0fsrxsbpc-1-1000.webp",
         "width": 1000,
-        "height": 1500
+        "height": 1333
       },
       {
-        "src": "/assets/p-ivory-kanjivaram-1600.webp",
-        "width": 1600,
-        "height": 2400
+        "src": "/assets/a-b0fsrxsbpc-1-1600.webp",
+        "width": 1125,
+        "height": 1500
       }
     ]
   },
-  "p-saffron-banarasi-1": {
-    "width": 1600,
-    "height": 2400,
+  "a-b0fsrxsbpc-2": {
+    "width": 1125,
+    "height": 1500,
     "variants": [
       {
-        "src": "/assets/p-saffron-banarasi-1-640.webp",
+        "src": "/assets/a-b0fsrxsbpc-2-640.webp",
         "width": 640,
-        "height": 960
+        "height": 853
       },
       {
-        "src": "/assets/p-saffron-banarasi-1-1000.webp",
+        "src": "/assets/a-b0fsrxsbpc-2-1000.webp",
         "width": 1000,
-        "height": 1500
+        "height": 1333
       },
       {
-        "src": "/assets/p-saffron-banarasi-1-1600.webp",
-        "width": 1600,
-        "height": 2400
+        "src": "/assets/a-b0fsrxsbpc-2-1600.webp",
+        "width": 1125,
+        "height": 1500
       }
     ]
   },
-  "p-saffron-banarasi-2": {
-    "width": 1600,
-    "height": 2400,
+  "a-b0fsrxsbpc-3": {
+    "width": 1125,
+    "height": 1500,
     "variants": [
       {
-        "src": "/assets/p-saffron-banarasi-2-640.webp",
+        "src": "/assets/a-b0fsrxsbpc-3-640.webp",
         "width": 640,
-        "height": 960
+        "height": 853
       },
       {
-        "src": "/assets/p-saffron-banarasi-2-1000.webp",
+        "src": "/assets/a-b0fsrxsbpc-3-1000.webp",
         "width": 1000,
-        "height": 1500
+        "height": 1333
       },
       {
-        "src": "/assets/p-saffron-banarasi-2-1600.webp",
-        "width": 1600,
-        "height": 2400
+        "src": "/assets/a-b0fsrxsbpc-3-1600.webp",
+        "width": 1125,
+        "height": 1500
       }
     ]
   },
-  "p-saffron-banarasi-3": {
-    "width": 1600,
-    "height": 2400,
+  "a-b0fsrxsbpc-4": {
+    "width": 1125,
+    "height": 1500,
     "variants": [
       {
-        "src": "/assets/p-saffron-banarasi-3-640.webp",
+        "src": "/assets/a-b0fsrxsbpc-4-640.webp",
         "width": 640,
-        "height": 960
+        "height": 853
       },
       {
-        "src": "/assets/p-saffron-banarasi-3-1000.webp",
+        "src": "/assets/a-b0fsrxsbpc-4-1000.webp",
         "width": 1000,
-        "height": 1500
+        "height": 1333
       },
       {
-        "src": "/assets/p-saffron-banarasi-3-1600.webp",
-        "width": 1600,
-        "height": 2400
+        "src": "/assets/a-b0fsrxsbpc-4-1600.webp",
+        "width": 1125,
+        "height": 1500
       }
     ]
   },
-  "p-sindoor-banarasi-1": {
-    "width": 1600,
-    "height": 2400,
+  "a-b0bnf2q1h3-1": {
+    "width": 1125,
+    "height": 1500,
     "variants": [
       {
-        "src": "/assets/p-sindoor-banarasi-1-640.webp",
+        "src": "/assets/a-b0bnf2q1h3-1-640.webp",
         "width": 640,
-        "height": 960
+        "height": 853
       },
       {
-        "src": "/assets/p-sindoor-banarasi-1-1000.webp",
+        "src": "/assets/a-b0bnf2q1h3-1-1000.webp",
         "width": 1000,
-        "height": 1500
+        "height": 1333
       },
       {
-        "src": "/assets/p-sindoor-banarasi-1-1600.webp",
-        "width": 1600,
-        "height": 2400
+        "src": "/assets/a-b0bnf2q1h3-1-1600.webp",
+        "width": 1125,
+        "height": 1500
       }
     ]
   },
-  "p-sindoor-banarasi-2": {
-    "width": 1600,
-    "height": 2400,
+  "a-b0bnf2q1h3-2": {
+    "width": 1080,
+    "height": 1440,
     "variants": [
       {
-        "src": "/assets/p-sindoor-banarasi-2-640.webp",
+        "src": "/assets/a-b0bnf2q1h3-2-640.webp",
         "width": 640,
-        "height": 960
+        "height": 853
       },
       {
-        "src": "/assets/p-sindoor-banarasi-2-1000.webp",
+        "src": "/assets/a-b0bnf2q1h3-2-1000.webp",
         "width": 1000,
-        "height": 1500
+        "height": 1333
       },
       {
-        "src": "/assets/p-sindoor-banarasi-2-1600.webp",
-        "width": 1600,
-        "height": 2400
+        "src": "/assets/a-b0bnf2q1h3-2-1600.webp",
+        "width": 1080,
+        "height": 1440
       }
     ]
   },
-  "p-sindoor-banarasi-3": {
-    "width": 1600,
-    "height": 2400,
+  "a-b0bnf2q1h3-3": {
+    "width": 1080,
+    "height": 1440,
     "variants": [
       {
-        "src": "/assets/p-sindoor-banarasi-3-640.webp",
+        "src": "/assets/a-b0bnf2q1h3-3-640.webp",
         "width": 640,
-        "height": 960
+        "height": 853
       },
       {
-        "src": "/assets/p-sindoor-banarasi-3-1000.webp",
+        "src": "/assets/a-b0bnf2q1h3-3-1000.webp",
         "width": 1000,
-        "height": 1500
+        "height": 1333
       },
       {
-        "src": "/assets/p-sindoor-banarasi-3-1600.webp",
-        "width": 1600,
-        "height": 2400
+        "src": "/assets/a-b0bnf2q1h3-3-1600.webp",
+        "width": 1080,
+        "height": 1440
       }
     ]
   },
-  "p-lotus-banarasi": {
-    "width": 1600,
-    "height": 2400,
+  "a-b0bnf2q1h3-4": {
+    "width": 1125,
+    "height": 1500,
     "variants": [
       {
-        "src": "/assets/p-lotus-banarasi-640.webp",
+        "src": "/assets/a-b0bnf2q1h3-4-640.webp",
         "width": 640,
-        "height": 960
+        "height": 853
       },
       {
-        "src": "/assets/p-lotus-banarasi-1000.webp",
+        "src": "/assets/a-b0bnf2q1h3-4-1000.webp",
         "width": 1000,
-        "height": 1500
+        "height": 1333
       },
       {
-        "src": "/assets/p-lotus-banarasi-1600.webp",
-        "width": 1600,
-        "height": 2400
+        "src": "/assets/a-b0bnf2q1h3-4-1600.webp",
+        "width": 1125,
+        "height": 1500
       }
     ]
   },
-  "p-mint-banarasi-1": {
-    "width": 1600,
-    "height": 2400,
+  "a-b0d8gyhb4m-1": {
+    "width": 1468,
+    "height": 1500,
     "variants": [
       {
-        "src": "/assets/p-mint-banarasi-1-640.webp",
+        "src": "/assets/a-b0d8gyhb4m-1-640.webp",
         "width": 640,
-        "height": 960
+        "height": 654
       },
       {
-        "src": "/assets/p-mint-banarasi-1-1000.webp",
+        "src": "/assets/a-b0d8gyhb4m-1-1000.webp",
         "width": 1000,
-        "height": 1500
+        "height": 1022
       },
       {
-        "src": "/assets/p-mint-banarasi-1-1600.webp",
-        "width": 1600,
-        "height": 2400
+        "src": "/assets/a-b0d8gyhb4m-1-1600.webp",
+        "width": 1468,
+        "height": 1500
       }
     ]
   },
-  "p-mint-banarasi-2": {
-    "width": 1600,
-    "height": 2400,
+  "a-b0d8gyhb4m-2": {
+    "width": 837,
+    "height": 1500,
     "variants": [
       {
-        "src": "/assets/p-mint-banarasi-2-640.webp",
+        "src": "/assets/a-b0d8gyhb4m-2-640.webp",
         "width": 640,
-        "height": 960
+        "height": 1147
       },
       {
-        "src": "/assets/p-mint-banarasi-2-1000.webp",
-        "width": 1000,
+        "src": "/assets/a-b0d8gyhb4m-2-1000.webp",
+        "width": 837,
         "height": 1500
       },
       {
-        "src": "/assets/p-mint-banarasi-2-1600.webp",
-        "width": 1600,
-        "height": 2400
+        "src": "/assets/a-b0d8gyhb4m-2-1600.webp",
+        "width": 837,
+        "height": 1500
       }
     ]
   },
-  "p-mint-banarasi-3": {
-    "width": 1600,
-    "height": 2400,
+  "a-b0d8gyhb4m-3": {
+    "width": 623,
+    "height": 832,
     "variants": [
       {
-        "src": "/assets/p-mint-banarasi-3-640.webp",
+        "src": "/assets/a-b0d8gyhb4m-3-640.webp",
+        "width": 623,
+        "height": 832
+      },
+      {
+        "src": "/assets/a-b0d8gyhb4m-3-1000.webp",
+        "width": 623,
+        "height": 832
+      },
+      {
+        "src": "/assets/a-b0d8gyhb4m-3-1600.webp",
+        "width": 623,
+        "height": 832
+      }
+    ]
+  },
+  "a-b0d8gyhb4m-4": {
+    "width": 404,
+    "height": 550,
+    "variants": [
+      {
+        "src": "/assets/a-b0d8gyhb4m-4-640.webp",
+        "width": 404,
+        "height": 550
+      },
+      {
+        "src": "/assets/a-b0d8gyhb4m-4-1000.webp",
+        "width": 404,
+        "height": 550
+      },
+      {
+        "src": "/assets/a-b0d8gyhb4m-4-1600.webp",
+        "width": 404,
+        "height": 550
+      }
+    ]
+  },
+  "a-b0f9lj8lfs-1": {
+    "width": 1072,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/a-b0f9lj8lfs-1-640.webp",
         "width": 640,
-        "height": 960
+        "height": 896
       },
       {
-        "src": "/assets/p-mint-banarasi-3-1000.webp",
+        "src": "/assets/a-b0f9lj8lfs-1-1000.webp",
         "width": 1000,
-        "height": 1500
+        "height": 1399
       },
       {
-        "src": "/assets/p-mint-banarasi-3-1600.webp",
-        "width": 1600,
-        "height": 2400
+        "src": "/assets/a-b0f9lj8lfs-1-1600.webp",
+        "width": 1072,
+        "height": 1500
       }
     ]
   },
-  "p-midnight-banarasi": {
-    "width": 1600,
-    "height": 2400,
+  "a-b0f9lj8lfs-2": {
+    "width": 1071,
+    "height": 1500,
     "variants": [
       {
-        "src": "/assets/p-midnight-banarasi-640.webp",
+        "src": "/assets/a-b0f9lj8lfs-2-640.webp",
         "width": 640,
-        "height": 960
+        "height": 896
       },
       {
-        "src": "/assets/p-midnight-banarasi-1000.webp",
+        "src": "/assets/a-b0f9lj8lfs-2-1000.webp",
         "width": 1000,
-        "height": 1500
+        "height": 1401
       },
       {
-        "src": "/assets/p-midnight-banarasi-1600.webp",
-        "width": 1600,
-        "height": 2400
+        "src": "/assets/a-b0f9lj8lfs-2-1600.webp",
+        "width": 1071,
+        "height": 1500
       }
     ]
   },
-  "p-kumkum-banarasi": {
-    "width": 1600,
-    "height": 2135,
+  "a-b0f9lj8lfs-3": {
+    "width": 1071,
+    "height": 1500,
     "variants": [
       {
-        "src": "/assets/p-kumkum-banarasi-640.webp",
+        "src": "/assets/a-b0f9lj8lfs-3-640.webp",
+        "width": 640,
+        "height": 896
+      },
+      {
+        "src": "/assets/a-b0f9lj8lfs-3-1000.webp",
+        "width": 1000,
+        "height": 1401
+      },
+      {
+        "src": "/assets/a-b0f9lj8lfs-3-1600.webp",
+        "width": 1071,
+        "height": 1500
+      }
+    ]
+  },
+  "a-b0f9lj8lfs-4": {
+    "width": 1071,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/a-b0f9lj8lfs-4-640.webp",
+        "width": 640,
+        "height": 896
+      },
+      {
+        "src": "/assets/a-b0f9lj8lfs-4-1000.webp",
+        "width": 1000,
+        "height": 1401
+      },
+      {
+        "src": "/assets/a-b0f9lj8lfs-4-1600.webp",
+        "width": 1071,
+        "height": 1500
+      }
+    ]
+  },
+  "a-b0ftzbh116-1": {
+    "width": 1031,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/a-b0ftzbh116-1-640.webp",
+        "width": 640,
+        "height": 931
+      },
+      {
+        "src": "/assets/a-b0ftzbh116-1-1000.webp",
+        "width": 1000,
+        "height": 1455
+      },
+      {
+        "src": "/assets/a-b0ftzbh116-1-1600.webp",
+        "width": 1031,
+        "height": 1500
+      }
+    ]
+  },
+  "a-b0ftzbh116-2": {
+    "width": 900,
+    "height": 1300,
+    "variants": [
+      {
+        "src": "/assets/a-b0ftzbh116-2-640.webp",
+        "width": 640,
+        "height": 924
+      },
+      {
+        "src": "/assets/a-b0ftzbh116-2-1000.webp",
+        "width": 900,
+        "height": 1300
+      },
+      {
+        "src": "/assets/a-b0ftzbh116-2-1600.webp",
+        "width": 900,
+        "height": 1300
+      }
+    ]
+  },
+  "a-b0ftzbh116-3": {
+    "width": 900,
+    "height": 1300,
+    "variants": [
+      {
+        "src": "/assets/a-b0ftzbh116-3-640.webp",
+        "width": 640,
+        "height": 924
+      },
+      {
+        "src": "/assets/a-b0ftzbh116-3-1000.webp",
+        "width": 900,
+        "height": 1300
+      },
+      {
+        "src": "/assets/a-b0ftzbh116-3-1600.webp",
+        "width": 900,
+        "height": 1300
+      }
+    ]
+  },
+  "a-b0ftzbh116-4": {
+    "width": 900,
+    "height": 1300,
+    "variants": [
+      {
+        "src": "/assets/a-b0ftzbh116-4-640.webp",
+        "width": 640,
+        "height": 924
+      },
+      {
+        "src": "/assets/a-b0ftzbh116-4-1000.webp",
+        "width": 900,
+        "height": 1300
+      },
+      {
+        "src": "/assets/a-b0ftzbh116-4-1600.webp",
+        "width": 900,
+        "height": 1300
+      }
+    ]
+  },
+  "a-b0hhs1rmzj-1": {
+    "width": 896,
+    "height": 1195,
+    "variants": [
+      {
+        "src": "/assets/a-b0hhs1rmzj-1-640.webp",
         "width": 640,
         "height": 854
       },
       {
-        "src": "/assets/p-kumkum-banarasi-1000.webp",
-        "width": 1000,
-        "height": 1334
+        "src": "/assets/a-b0hhs1rmzj-1-1000.webp",
+        "width": 896,
+        "height": 1195
       },
       {
-        "src": "/assets/p-kumkum-banarasi-1600.webp",
-        "width": 1600,
-        "height": 2135
+        "src": "/assets/a-b0hhs1rmzj-1-1600.webp",
+        "width": 896,
+        "height": 1195
       }
     ]
   },
-  "p-rosegold-tissue": {
-    "width": 1600,
-    "height": 2400,
+  "a-b0hhs1rmzj-2": {
+    "width": 896,
+    "height": 1195,
     "variants": [
       {
-        "src": "/assets/p-rosegold-tissue-640.webp",
+        "src": "/assets/a-b0hhs1rmzj-2-640.webp",
         "width": 640,
-        "height": 960
+        "height": 854
       },
       {
-        "src": "/assets/p-rosegold-tissue-1000.webp",
-        "width": 1000,
-        "height": 1500
+        "src": "/assets/a-b0hhs1rmzj-2-1000.webp",
+        "width": 896,
+        "height": 1195
       },
       {
-        "src": "/assets/p-rosegold-tissue-1600.webp",
-        "width": 1600,
-        "height": 2400
+        "src": "/assets/a-b0hhs1rmzj-2-1600.webp",
+        "width": 896,
+        "height": 1195
       }
     ]
   },
-  "p-yellow-organza": {
-    "width": 1600,
-    "height": 2843,
+  "a-b0hhs1rmzj-3": {
+    "width": 896,
+    "height": 1195,
     "variants": [
       {
-        "src": "/assets/p-yellow-organza-640.webp",
+        "src": "/assets/a-b0hhs1rmzj-3-640.webp",
         "width": 640,
-        "height": 1137
+        "height": 854
       },
       {
-        "src": "/assets/p-yellow-organza-1000.webp",
-        "width": 1000,
-        "height": 1777
+        "src": "/assets/a-b0hhs1rmzj-3-1000.webp",
+        "width": 896,
+        "height": 1195
       },
       {
-        "src": "/assets/p-yellow-organza-1600.webp",
-        "width": 1600,
-        "height": 2843
+        "src": "/assets/a-b0hhs1rmzj-3-1600.webp",
+        "width": 896,
+        "height": 1195
       }
     ]
   },
-  "p-marigold-silk": {
-    "width": 1600,
-    "height": 2400,
+  "a-b0hhs1rmzj-4": {
+    "width": 896,
+    "height": 1195,
     "variants": [
       {
-        "src": "/assets/p-marigold-silk-640.webp",
+        "src": "/assets/a-b0hhs1rmzj-4-640.webp",
         "width": 640,
-        "height": 960
+        "height": 854
       },
       {
-        "src": "/assets/p-marigold-silk-1000.webp",
-        "width": 1000,
-        "height": 1500
+        "src": "/assets/a-b0hhs1rmzj-4-1000.webp",
+        "width": 896,
+        "height": 1195
       },
       {
-        "src": "/assets/p-marigold-silk-1600.webp",
-        "width": 1600,
-        "height": 2400
+        "src": "/assets/a-b0hhs1rmzj-4-1600.webp",
+        "width": 896,
+        "height": 1195
       }
     ]
   },
-  "p-ivory-kasavu": {
-    "width": 1600,
-    "height": 2400,
+  "a-b0dtkncyvf-1": {
+    "width": 1200,
+    "height": 1500,
     "variants": [
       {
-        "src": "/assets/p-ivory-kasavu-640.webp",
-        "width": 640,
-        "height": 960
-      },
-      {
-        "src": "/assets/p-ivory-kasavu-1000.webp",
-        "width": 1000,
-        "height": 1500
-      },
-      {
-        "src": "/assets/p-ivory-kasavu-1600.webp",
-        "width": 1600,
-        "height": 2400
-      }
-    ]
-  },
-  "p-blush-chanderi": {
-    "width": 1600,
-    "height": 2000,
-    "variants": [
-      {
-        "src": "/assets/p-blush-chanderi-640.webp",
+        "src": "/assets/a-b0dtkncyvf-1-640.webp",
         "width": 640,
         "height": 800
       },
       {
-        "src": "/assets/p-blush-chanderi-1000.webp",
+        "src": "/assets/a-b0dtkncyvf-1-1000.webp",
         "width": 1000,
         "height": 1250
       },
       {
-        "src": "/assets/p-blush-chanderi-1600.webp",
-        "width": 1600,
-        "height": 2000
+        "src": "/assets/a-b0dtkncyvf-1-1600.webp",
+        "width": 1200,
+        "height": 1500
+      }
+    ]
+  },
+  "a-b0dtkncyvf-2": {
+    "width": 1200,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/a-b0dtkncyvf-2-640.webp",
+        "width": 640,
+        "height": 800
+      },
+      {
+        "src": "/assets/a-b0dtkncyvf-2-1000.webp",
+        "width": 1000,
+        "height": 1250
+      },
+      {
+        "src": "/assets/a-b0dtkncyvf-2-1600.webp",
+        "width": 1200,
+        "height": 1500
+      }
+    ]
+  },
+  "a-b0dtkncyvf-3": {
+    "width": 1200,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/a-b0dtkncyvf-3-640.webp",
+        "width": 640,
+        "height": 800
+      },
+      {
+        "src": "/assets/a-b0dtkncyvf-3-1000.webp",
+        "width": 1000,
+        "height": 1250
+      },
+      {
+        "src": "/assets/a-b0dtkncyvf-3-1600.webp",
+        "width": 1200,
+        "height": 1500
+      }
+    ]
+  },
+  "a-b0dtkncyvf-4": {
+    "width": 1200,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/a-b0dtkncyvf-4-640.webp",
+        "width": 640,
+        "height": 800
+      },
+      {
+        "src": "/assets/a-b0dtkncyvf-4-1000.webp",
+        "width": 1000,
+        "height": 1250
+      },
+      {
+        "src": "/assets/a-b0dtkncyvf-4-1600.webp",
+        "width": 1200,
+        "height": 1500
+      }
+    ]
+  },
+  "a-b0fmstsnb2-1": {
+    "width": 1500,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/a-b0fmstsnb2-1-640.webp",
+        "width": 640,
+        "height": 640
+      },
+      {
+        "src": "/assets/a-b0fmstsnb2-1-1000.webp",
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "/assets/a-b0fmstsnb2-1-1600.webp",
+        "width": 1500,
+        "height": 1500
+      }
+    ]
+  },
+  "a-b0fmstsnb2-2": {
+    "width": 1500,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/a-b0fmstsnb2-2-640.webp",
+        "width": 640,
+        "height": 640
+      },
+      {
+        "src": "/assets/a-b0fmstsnb2-2-1000.webp",
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "/assets/a-b0fmstsnb2-2-1600.webp",
+        "width": 1500,
+        "height": 1500
+      }
+    ]
+  },
+  "a-b0fmstsnb2-3": {
+    "width": 1500,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/a-b0fmstsnb2-3-640.webp",
+        "width": 640,
+        "height": 640
+      },
+      {
+        "src": "/assets/a-b0fmstsnb2-3-1000.webp",
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "/assets/a-b0fmstsnb2-3-1600.webp",
+        "width": 1500,
+        "height": 1500
+      }
+    ]
+  },
+  "a-b0fmstsnb2-4": {
+    "width": 1500,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/a-b0fmstsnb2-4-640.webp",
+        "width": 640,
+        "height": 640
+      },
+      {
+        "src": "/assets/a-b0fmstsnb2-4-1000.webp",
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "/assets/a-b0fmstsnb2-4-1600.webp",
+        "width": 1500,
+        "height": 1500
+      }
+    ]
+  },
+  "a-b0gx9gbkfd-1": {
+    "width": 1125,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/a-b0gx9gbkfd-1-640.webp",
+        "width": 640,
+        "height": 853
+      },
+      {
+        "src": "/assets/a-b0gx9gbkfd-1-1000.webp",
+        "width": 1000,
+        "height": 1333
+      },
+      {
+        "src": "/assets/a-b0gx9gbkfd-1-1600.webp",
+        "width": 1125,
+        "height": 1500
+      }
+    ]
+  },
+  "a-b0gx9gbkfd-2": {
+    "width": 903,
+    "height": 1280,
+    "variants": [
+      {
+        "src": "/assets/a-b0gx9gbkfd-2-640.webp",
+        "width": 640,
+        "height": 907
+      },
+      {
+        "src": "/assets/a-b0gx9gbkfd-2-1000.webp",
+        "width": 903,
+        "height": 1280
+      },
+      {
+        "src": "/assets/a-b0gx9gbkfd-2-1600.webp",
+        "width": 903,
+        "height": 1280
+      }
+    ]
+  },
+  "a-b0gx9gbkfd-3": {
+    "width": 903,
+    "height": 1280,
+    "variants": [
+      {
+        "src": "/assets/a-b0gx9gbkfd-3-640.webp",
+        "width": 640,
+        "height": 907
+      },
+      {
+        "src": "/assets/a-b0gx9gbkfd-3-1000.webp",
+        "width": 903,
+        "height": 1280
+      },
+      {
+        "src": "/assets/a-b0gx9gbkfd-3-1600.webp",
+        "width": 903,
+        "height": 1280
+      }
+    ]
+  },
+  "a-b0gx9gbkfd-4": {
+    "width": 903,
+    "height": 1280,
+    "variants": [
+      {
+        "src": "/assets/a-b0gx9gbkfd-4-640.webp",
+        "width": 640,
+        "height": 907
+      },
+      {
+        "src": "/assets/a-b0gx9gbkfd-4-1000.webp",
+        "width": 903,
+        "height": 1280
+      },
+      {
+        "src": "/assets/a-b0gx9gbkfd-4-1600.webp",
+        "width": 903,
+        "height": 1280
+      }
+    ]
+  },
+  "a-b0hcypkypc-1": {
+    "width": 1500,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/a-b0hcypkypc-1-640.webp",
+        "width": 640,
+        "height": 640
+      },
+      {
+        "src": "/assets/a-b0hcypkypc-1-1000.webp",
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "/assets/a-b0hcypkypc-1-1600.webp",
+        "width": 1500,
+        "height": 1500
+      }
+    ]
+  },
+  "a-b0hcypkypc-2": {
+    "width": 1024,
+    "height": 1025,
+    "variants": [
+      {
+        "src": "/assets/a-b0hcypkypc-2-640.webp",
+        "width": 640,
+        "height": 641
+      },
+      {
+        "src": "/assets/a-b0hcypkypc-2-1000.webp",
+        "width": 1000,
+        "height": 1001
+      },
+      {
+        "src": "/assets/a-b0hcypkypc-2-1600.webp",
+        "width": 1024,
+        "height": 1025
+      }
+    ]
+  },
+  "a-b0hcypkypc-3": {
+    "width": 1024,
+    "height": 1024,
+    "variants": [
+      {
+        "src": "/assets/a-b0hcypkypc-3-640.webp",
+        "width": 640,
+        "height": 640
+      },
+      {
+        "src": "/assets/a-b0hcypkypc-3-1000.webp",
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "/assets/a-b0hcypkypc-3-1600.webp",
+        "width": 1024,
+        "height": 1024
+      }
+    ]
+  },
+  "a-b0hcypkypc-4": {
+    "width": 1024,
+    "height": 1024,
+    "variants": [
+      {
+        "src": "/assets/a-b0hcypkypc-4-640.webp",
+        "width": 640,
+        "height": 640
+      },
+      {
+        "src": "/assets/a-b0hcypkypc-4-1000.webp",
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "/assets/a-b0hcypkypc-4-1600.webp",
+        "width": 1024,
+        "height": 1024
+      }
+    ]
+  },
+  "a-b0dcshbw1g-1": {
+    "width": 1125,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/a-b0dcshbw1g-1-640.webp",
+        "width": 640,
+        "height": 853
+      },
+      {
+        "src": "/assets/a-b0dcshbw1g-1-1000.webp",
+        "width": 1000,
+        "height": 1333
+      },
+      {
+        "src": "/assets/a-b0dcshbw1g-1-1600.webp",
+        "width": 1125,
+        "height": 1500
+      }
+    ]
+  },
+  "a-b0dcshbw1g-2": {
+    "width": 1125,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/a-b0dcshbw1g-2-640.webp",
+        "width": 640,
+        "height": 853
+      },
+      {
+        "src": "/assets/a-b0dcshbw1g-2-1000.webp",
+        "width": 1000,
+        "height": 1333
+      },
+      {
+        "src": "/assets/a-b0dcshbw1g-2-1600.webp",
+        "width": 1125,
+        "height": 1500
+      }
+    ]
+  },
+  "a-b0dcshbw1g-3": {
+    "width": 1125,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/a-b0dcshbw1g-3-640.webp",
+        "width": 640,
+        "height": 853
+      },
+      {
+        "src": "/assets/a-b0dcshbw1g-3-1000.webp",
+        "width": 1000,
+        "height": 1333
+      },
+      {
+        "src": "/assets/a-b0dcshbw1g-3-1600.webp",
+        "width": 1125,
+        "height": 1500
+      }
+    ]
+  },
+  "a-b0dcshbw1g-4": {
+    "width": 1125,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/a-b0dcshbw1g-4-640.webp",
+        "width": 640,
+        "height": 853
+      },
+      {
+        "src": "/assets/a-b0dcshbw1g-4-1000.webp",
+        "width": 1000,
+        "height": 1333
+      },
+      {
+        "src": "/assets/a-b0dcshbw1g-4-1600.webp",
+        "width": 1125,
+        "height": 1500
+      }
+    ]
+  },
+  "a-b0ctxfdw7q-1": {
+    "width": 1000,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/a-b0ctxfdw7q-1-640.webp",
+        "width": 640,
+        "height": 960
+      },
+      {
+        "src": "/assets/a-b0ctxfdw7q-1-1000.webp",
+        "width": 1000,
+        "height": 1500
+      },
+      {
+        "src": "/assets/a-b0ctxfdw7q-1-1600.webp",
+        "width": 1000,
+        "height": 1500
+      }
+    ]
+  },
+  "a-b0ctxfdw7q-2": {
+    "width": 640,
+    "height": 640,
+    "variants": [
+      {
+        "src": "/assets/a-b0ctxfdw7q-2-640.webp",
+        "width": 640,
+        "height": 640
+      },
+      {
+        "src": "/assets/a-b0ctxfdw7q-2-1000.webp",
+        "width": 640,
+        "height": 640
+      },
+      {
+        "src": "/assets/a-b0ctxfdw7q-2-1600.webp",
+        "width": 640,
+        "height": 640
+      }
+    ]
+  },
+  "a-b0ctxfdw7q-3": {
+    "width": 640,
+    "height": 640,
+    "variants": [
+      {
+        "src": "/assets/a-b0ctxfdw7q-3-640.webp",
+        "width": 640,
+        "height": 640
+      },
+      {
+        "src": "/assets/a-b0ctxfdw7q-3-1000.webp",
+        "width": 640,
+        "height": 640
+      },
+      {
+        "src": "/assets/a-b0ctxfdw7q-3-1600.webp",
+        "width": 640,
+        "height": 640
+      }
+    ]
+  },
+  "a-b0ctxfdw7q-4": {
+    "width": 640,
+    "height": 640,
+    "variants": [
+      {
+        "src": "/assets/a-b0ctxfdw7q-4-640.webp",
+        "width": 640,
+        "height": 640
+      },
+      {
+        "src": "/assets/a-b0ctxfdw7q-4-1000.webp",
+        "width": 640,
+        "height": 640
+      },
+      {
+        "src": "/assets/a-b0ctxfdw7q-4-1600.webp",
+        "width": 640,
+        "height": 640
+      }
+    ]
+  },
+  "a-b0glgkgcb4-1": {
+    "width": 982,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/a-b0glgkgcb4-1-640.webp",
+        "width": 640,
+        "height": 978
+      },
+      {
+        "src": "/assets/a-b0glgkgcb4-1-1000.webp",
+        "width": 982,
+        "height": 1500
+      },
+      {
+        "src": "/assets/a-b0glgkgcb4-1-1600.webp",
+        "width": 982,
+        "height": 1500
+      }
+    ]
+  },
+  "a-b0glgkgcb4-2": {
+    "width": 982,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/a-b0glgkgcb4-2-640.webp",
+        "width": 640,
+        "height": 978
+      },
+      {
+        "src": "/assets/a-b0glgkgcb4-2-1000.webp",
+        "width": 982,
+        "height": 1500
+      },
+      {
+        "src": "/assets/a-b0glgkgcb4-2-1600.webp",
+        "width": 982,
+        "height": 1500
+      }
+    ]
+  },
+  "a-b0glgkgcb4-3": {
+    "width": 982,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/a-b0glgkgcb4-3-640.webp",
+        "width": 640,
+        "height": 978
+      },
+      {
+        "src": "/assets/a-b0glgkgcb4-3-1000.webp",
+        "width": 982,
+        "height": 1500
+      },
+      {
+        "src": "/assets/a-b0glgkgcb4-3-1600.webp",
+        "width": 982,
+        "height": 1500
+      }
+    ]
+  },
+  "a-b0glgkgcb4-4": {
+    "width": 982,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/a-b0glgkgcb4-4-640.webp",
+        "width": 640,
+        "height": 978
+      },
+      {
+        "src": "/assets/a-b0glgkgcb4-4-1000.webp",
+        "width": 982,
+        "height": 1500
+      },
+      {
+        "src": "/assets/a-b0glgkgcb4-4-1600.webp",
+        "width": 982,
+        "height": 1500
+      }
+    ]
+  },
+  "a-b0gm93p1r2-1": {
+    "width": 1031,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/a-b0gm93p1r2-1-640.webp",
+        "width": 640,
+        "height": 931
+      },
+      {
+        "src": "/assets/a-b0gm93p1r2-1-1000.webp",
+        "width": 1000,
+        "height": 1455
+      },
+      {
+        "src": "/assets/a-b0gm93p1r2-1-1600.webp",
+        "width": 1031,
+        "height": 1500
+      }
+    ]
+  },
+  "a-b0gm93p1r2-2": {
+    "width": 930,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/a-b0gm93p1r2-2-640.webp",
+        "width": 640,
+        "height": 1032
+      },
+      {
+        "src": "/assets/a-b0gm93p1r2-2-1000.webp",
+        "width": 930,
+        "height": 1500
+      },
+      {
+        "src": "/assets/a-b0gm93p1r2-2-1600.webp",
+        "width": 930,
+        "height": 1500
+      }
+    ]
+  },
+  "a-b0gm93p1r2-3": {
+    "width": 1102,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/a-b0gm93p1r2-3-640.webp",
+        "width": 640,
+        "height": 871
+      },
+      {
+        "src": "/assets/a-b0gm93p1r2-3-1000.webp",
+        "width": 1000,
+        "height": 1361
+      },
+      {
+        "src": "/assets/a-b0gm93p1r2-3-1600.webp",
+        "width": 1102,
+        "height": 1500
+      }
+    ]
+  },
+  "a-b0gm93p1r2-4": {
+    "width": 992,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/a-b0gm93p1r2-4-640.webp",
+        "width": 640,
+        "height": 968
+      },
+      {
+        "src": "/assets/a-b0gm93p1r2-4-1000.webp",
+        "width": 992,
+        "height": 1500
+      },
+      {
+        "src": "/assets/a-b0gm93p1r2-4-1600.webp",
+        "width": 992,
+        "height": 1500
+      }
+    ]
+  },
+  "a-b0gtqy6bm7-1": {
+    "width": 1031,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/a-b0gtqy6bm7-1-640.webp",
+        "width": 640,
+        "height": 931
+      },
+      {
+        "src": "/assets/a-b0gtqy6bm7-1-1000.webp",
+        "width": 1000,
+        "height": 1455
+      },
+      {
+        "src": "/assets/a-b0gtqy6bm7-1-1600.webp",
+        "width": 1031,
+        "height": 1500
+      }
+    ]
+  },
+  "a-b0gtqy6bm7-2": {
+    "width": 1117,
+    "height": 1400,
+    "variants": [
+      {
+        "src": "/assets/a-b0gtqy6bm7-2-640.webp",
+        "width": 640,
+        "height": 802
+      },
+      {
+        "src": "/assets/a-b0gtqy6bm7-2-1000.webp",
+        "width": 1000,
+        "height": 1253
+      },
+      {
+        "src": "/assets/a-b0gtqy6bm7-2-1600.webp",
+        "width": 1117,
+        "height": 1400
+      }
+    ]
+  },
+  "a-b0gtqy6bm7-3": {
+    "width": 1117,
+    "height": 1400,
+    "variants": [
+      {
+        "src": "/assets/a-b0gtqy6bm7-3-640.webp",
+        "width": 640,
+        "height": 802
+      },
+      {
+        "src": "/assets/a-b0gtqy6bm7-3-1000.webp",
+        "width": 1000,
+        "height": 1253
+      },
+      {
+        "src": "/assets/a-b0gtqy6bm7-3-1600.webp",
+        "width": 1117,
+        "height": 1400
+      }
+    ]
+  },
+  "a-b0gtqy6bm7-4": {
+    "width": 1117,
+    "height": 1400,
+    "variants": [
+      {
+        "src": "/assets/a-b0gtqy6bm7-4-640.webp",
+        "width": 640,
+        "height": 802
+      },
+      {
+        "src": "/assets/a-b0gtqy6bm7-4-1000.webp",
+        "width": 1000,
+        "height": 1253
+      },
+      {
+        "src": "/assets/a-b0gtqy6bm7-4-1600.webp",
+        "width": 1117,
+        "height": 1400
+      }
+    ]
+  },
+  "a-b0gpqjrp6p-1": {
+    "width": 1200,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/a-b0gpqjrp6p-1-640.webp",
+        "width": 640,
+        "height": 800
+      },
+      {
+        "src": "/assets/a-b0gpqjrp6p-1-1000.webp",
+        "width": 1000,
+        "height": 1250
+      },
+      {
+        "src": "/assets/a-b0gpqjrp6p-1-1600.webp",
+        "width": 1200,
+        "height": 1500
+      }
+    ]
+  },
+  "a-b0gpqjrp6p-2": {
+    "width": 1200,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/a-b0gpqjrp6p-2-640.webp",
+        "width": 640,
+        "height": 800
+      },
+      {
+        "src": "/assets/a-b0gpqjrp6p-2-1000.webp",
+        "width": 1000,
+        "height": 1250
+      },
+      {
+        "src": "/assets/a-b0gpqjrp6p-2-1600.webp",
+        "width": 1200,
+        "height": 1500
+      }
+    ]
+  },
+  "a-b0gpqjrp6p-3": {
+    "width": 1200,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/a-b0gpqjrp6p-3-640.webp",
+        "width": 640,
+        "height": 800
+      },
+      {
+        "src": "/assets/a-b0gpqjrp6p-3-1000.webp",
+        "width": 1000,
+        "height": 1250
+      },
+      {
+        "src": "/assets/a-b0gpqjrp6p-3-1600.webp",
+        "width": 1200,
+        "height": 1500
+      }
+    ]
+  },
+  "a-b0gpqjrp6p-4": {
+    "width": 1200,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/a-b0gpqjrp6p-4-640.webp",
+        "width": 640,
+        "height": 800
+      },
+      {
+        "src": "/assets/a-b0gpqjrp6p-4-1000.webp",
+        "width": 1000,
+        "height": 1250
+      },
+      {
+        "src": "/assets/a-b0gpqjrp6p-4-1600.webp",
+        "width": 1200,
+        "height": 1500
+      }
+    ]
+  },
+  "a-b0g6zncchd-1": {
+    "width": 1200,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/a-b0g6zncchd-1-640.webp",
+        "width": 640,
+        "height": 800
+      },
+      {
+        "src": "/assets/a-b0g6zncchd-1-1000.webp",
+        "width": 1000,
+        "height": 1250
+      },
+      {
+        "src": "/assets/a-b0g6zncchd-1-1600.webp",
+        "width": 1200,
+        "height": 1500
+      }
+    ]
+  },
+  "a-b0g6zncchd-2": {
+    "width": 1200,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/a-b0g6zncchd-2-640.webp",
+        "width": 640,
+        "height": 800
+      },
+      {
+        "src": "/assets/a-b0g6zncchd-2-1000.webp",
+        "width": 1000,
+        "height": 1250
+      },
+      {
+        "src": "/assets/a-b0g6zncchd-2-1600.webp",
+        "width": 1200,
+        "height": 1500
+      }
+    ]
+  },
+  "a-b0g6zncchd-3": {
+    "width": 1200,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/a-b0g6zncchd-3-640.webp",
+        "width": 640,
+        "height": 800
+      },
+      {
+        "src": "/assets/a-b0g6zncchd-3-1000.webp",
+        "width": 1000,
+        "height": 1250
+      },
+      {
+        "src": "/assets/a-b0g6zncchd-3-1600.webp",
+        "width": 1200,
+        "height": 1500
+      }
+    ]
+  },
+  "a-b0g6zncchd-4": {
+    "width": 1200,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/a-b0g6zncchd-4-640.webp",
+        "width": 640,
+        "height": 800
+      },
+      {
+        "src": "/assets/a-b0g6zncchd-4-1000.webp",
+        "width": 1000,
+        "height": 1250
+      },
+      {
+        "src": "/assets/a-b0g6zncchd-4-1600.webp",
+        "width": 1200,
+        "height": 1500
+      }
+    ]
+  },
+  "a-b0fhwqxyy5-1": {
+    "width": 1080,
+    "height": 1440,
+    "variants": [
+      {
+        "src": "/assets/a-b0fhwqxyy5-1-640.webp",
+        "width": 640,
+        "height": 853
+      },
+      {
+        "src": "/assets/a-b0fhwqxyy5-1-1000.webp",
+        "width": 1000,
+        "height": 1333
+      },
+      {
+        "src": "/assets/a-b0fhwqxyy5-1-1600.webp",
+        "width": 1080,
+        "height": 1440
+      }
+    ]
+  },
+  "a-b0fhwqxyy5-2": {
+    "width": 1080,
+    "height": 1440,
+    "variants": [
+      {
+        "src": "/assets/a-b0fhwqxyy5-2-640.webp",
+        "width": 640,
+        "height": 853
+      },
+      {
+        "src": "/assets/a-b0fhwqxyy5-2-1000.webp",
+        "width": 1000,
+        "height": 1333
+      },
+      {
+        "src": "/assets/a-b0fhwqxyy5-2-1600.webp",
+        "width": 1080,
+        "height": 1440
+      }
+    ]
+  },
+  "a-b0fhwqxyy5-3": {
+    "width": 1080,
+    "height": 1440,
+    "variants": [
+      {
+        "src": "/assets/a-b0fhwqxyy5-3-640.webp",
+        "width": 640,
+        "height": 853
+      },
+      {
+        "src": "/assets/a-b0fhwqxyy5-3-1000.webp",
+        "width": 1000,
+        "height": 1333
+      },
+      {
+        "src": "/assets/a-b0fhwqxyy5-3-1600.webp",
+        "width": 1080,
+        "height": 1440
+      }
+    ]
+  },
+  "a-b0fhwqxyy5-4": {
+    "width": 1080,
+    "height": 1440,
+    "variants": [
+      {
+        "src": "/assets/a-b0fhwqxyy5-4-640.webp",
+        "width": 640,
+        "height": 853
+      },
+      {
+        "src": "/assets/a-b0fhwqxyy5-4-1000.webp",
+        "width": 1000,
+        "height": 1333
+      },
+      {
+        "src": "/assets/a-b0fhwqxyy5-4-1600.webp",
+        "width": 1080,
+        "height": 1440
       }
     ]
   }
