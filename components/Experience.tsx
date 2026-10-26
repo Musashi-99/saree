@@ -15,6 +15,7 @@ import Modal from './Modal';
 import {collections, gallery, type Collection} from './content';
 import Shop from './Shop';
 import {BagButton, useCart} from './Cart';
+import {useHideOnScroll} from './useHideOnScroll';
 
 function Lotus({className=''}:{className?:string}) { return <svg className={className} viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M32 8C15 24 23 41 32 49C41 41 49 24 32 8ZM32 49C16 49 7 36 9 23C22 25 31 36 32 49ZM32 49C48 49 57 36 55 23C42 25 33 36 32 49ZM13 51Q32 62 51 51" stroke="currentColor" strokeWidth="1.2"/></svg>; }
 function TextLink({href,children}:{href:string;children:React.ReactNode}) { return <a className="text-link" href={href}>{children}<ArrowUpRight size={17}/></a>; }
@@ -34,6 +35,7 @@ export default function Experience() {
  const {saved}=useCart();
  const [motionPaused,setMotionPaused]=useState(false);
  const [replay,setReplay]=useState(0);
+ const headerHidden=useHideOnScroll();
  // An edit's "Shop" button filters the shop to that weave and scrolls to it.
  function shopEdit(category:string){setSelected(null);setFilter(category);requestAnimationFrame(()=>document.querySelector('#shop')?.scrollIntoView({behavior:'smooth'}));}
  function goGallery(delta:number){setGalleryIndex(i=>i===null?null:(i+delta+gallery.length)%gallery.length);}
@@ -43,7 +45,7 @@ export default function Experience() {
   <Interactive paused={motionPaused}/>
   <SilkVeil paused={motionPaused}/>
   <a href="#shop" className="skip-link">Skip to the shop</a>
-  <header className="header">
+  <header className={headerHidden?'header header-hidden':'header'}>
    <a className="wordmark" href="#home" aria-label="Aaradhya home"><Lotus/><span>AARADHYA<small>DIWALI 2026</small></span></a>
    <nav className="desktop-nav" aria-label="Main navigation">{nav.slice(0,3).map(([text,link])=><a key={link} href={link}>{text}</a>)}</nav>
    <div className="header-actions"><button className="menu-toggle" onClick={()=>setMenuOpen(true)} aria-label="Open navigation menu" aria-haspopup="dialog" data-magnetic><span>Explore</span><Menu size={19}/></button><BagButton/></div>

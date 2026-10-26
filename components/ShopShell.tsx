@@ -1,14 +1,16 @@
 'use client';
 import Link from 'next/link';
 import {BagButton} from './Cart';
+import {useHideOnScroll} from './useHideOnScroll';
 
 function Lotus({className=''}:{className?:string}) { return <svg className={className} viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M32 8C15 24 23 41 32 49C41 41 49 24 32 8ZM32 49C16 49 7 36 9 23C22 25 31 36 32 49ZM32 49C48 49 57 36 55 23C42 25 33 36 32 49ZM13 51Q32 62 51 51" stroke="currentColor" strokeWidth="1.2"/></svg>; }
 
 // Header and footer for the product and checkout pages, matching the homepage.
 export default function ShopShell({children}:{children:React.ReactNode}){
+ const headerHidden=useHideOnScroll();
  return <div className="site shop-page">
   <a href="#main" className="skip-link">Skip to content</a>
-  <header className="header">
+  <header className={headerHidden?'header header-hidden':'header'}>
    <Link className="wordmark" href="/" aria-label="Aaradhya home"><Lotus/><span>AARADHYA<small>DIWALI 2026</small></span></Link>
    <nav className="desktop-nav" aria-label="Main navigation"><Link href="/#shop">Shop</Link><Link href="/#collections">Diwali edits</Link><Link href="/#essence">Maa Lakshmi</Link></nav>
    <BagButton/>
